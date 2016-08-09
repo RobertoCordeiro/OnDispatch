@@ -1,0 +1,191 @@
+/* Telerik RadCalendar Vista skin */
+
+.calendarWrapper_Vista
+{
+	background:#fff;
+	cursor:default;
+	border:solid 1px #979797 !important;
+	border-collapse:separate !important;
+}
+
+.TableLayout_Vista
+{
+	width: 100%;		
+	background:url(Img/titlebarBg.gif) 0 15px repeat-x;
+}
+
+.TableLayout_Vista td,
+.TableLayout_Vista th
+{
+	text-align:right;
+	font:11px "segoe ui",arial,sans-serf;
+	padding:1px 0 1px 1px;
+	border:0;
+}
+
+.TableLayout_Vista td a
+{
+	display: block;
+	width:18px;
+	height: 15px;
+	padding:0 6px 0 0;
+	text-decoration:none;
+	color:#333;
+	cursor:default;	
+}
+
+.titlebar_Vista
+{
+	font:normal 11px "segoe ui",arial,sans-serf;
+	width: 100%;
+	color: #000;
+}
+
+.TableLayout_Vista .DaysOfWeek_Vista
+{
+	color:#333;
+	text-align: center;
+	width:18px;
+	height: 15px;
+	vertical-align:middle;
+}
+
+.TableLayout_Vista td.DaysOfWeek_Vista
+{
+	padding-left:2px;
+	padding-right:2px;
+}
+
+.radCalHover_Vista a,
+.radCalWeekendHover_Vista a
+{
+	background:url(img/hoverBg.gif) no-repeat;
+}
+
+.radCalToday_Vista a
+{
+	background:url(img/todayBg.gif) no-repeat;
+	color:#06c;
+}
+
+.radCalSelect_Vista a,
+.radCalWeekendSelect_Vista a
+{
+	background:url(img/selectedBg.gif) no-repeat;
+	color: #06c;
+}
+
+.TableLayout_Vista .otherMonth_Vista a
+{
+	color:#777;
+}
+.TableLayout_Vista .outOfRange_Vista span,
+.TableLayout_Vista .outOfRange_Vista a
+{
+	background: #fff;
+	color: #d1d1d1;
+	padding: 1px;
+	display: block;
+	width: 100%;
+	text-align: center !important;
+	height: 13px;
+	margin: 1px;
+}
+
+.MonthYearFastNav_Vista
+{
+	border:1px solid #979797;
+	font:normal 10px "segoe ui",arial,verdana,sans-serif;
+	background:#fff;
+	cursor:default;
+	color:#484848;
+}
+
+.MonthYearFastNav_Vista td
+{
+	vertical-align:middle;	
+	text-align:right;
+	height:11px;
+	padding:2px 5px;
+	border:1px solid #fff;
+}
+
+.MonthYearFastNav_Vista td.selected_Vista
+{
+	border:1px solid #06c;
+}
+
+.MonthYearFastNav_Vista .bottom_Vista
+{
+	text-align:right;
+	width:auto;
+	height:26px;
+	padding:0;
+	background:#fff;
+}
+
+.MonthYearFastNav_Vista td input
+{
+	background:none transparent;
+	border-width:1px;
+	border-style:none none solid;
+	border-color:#06c;
+	font: normal 10px "segoe ui",arial,sans-serif;
+	color:#06c;
+	width:auto;
+	margin-right:5px;
+	padding:0;
+}
+
+.radPopupImage_Vista
+{	
+	position: relative; 
+	_position: inherit;
+	outline: none;
+}
+*+html .radPopupImage_Vista
+{
+	position: inherit;
+}
+
+.radPopupImage_Vista img
+{
+	vertical-align: middle;
+	margin:0 2px;
+	border:0;
+}
+
+.radDisabled_Vista img
+{
+	 filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.radTemplateDay_Vista
+{	
+}
+
+.pickerWrapper_Vista
+{
+	vertical-align:middle;
+}
+
+.pickerWrapper_Vista table
+{
+	vertical-align:bottom;
+}
+
+.pickerWrapper_Vista table,
+.pickerWrapper_Vista td
+{
+	border: 0;
+	border-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.pickerWrapper_Vista .inputCell 
+{		
+	padding: 0 8px 0 0;	
+}

@@ -1,0 +1,524 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Telerik.Reporting.Processing</name>
+  </assembly>
+  <members>
+    <member name="P:Telerik.Reporting.Processing.Config.ExtensionsSection.All">
+      <summary>
+            Returns all the extensions in the config file(Render, Delivery, ...)
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.CalculatedColumn">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.CalculatedTable">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.DataSourceAdapter">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.DataSourceHelper">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.RankColumnBase">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.DenseRankColumn">
+      <summary>
+            DENSE_RANK from "Ranking Functions (Transact-SQL)" 
+            All equal values have the same rank
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.FilteringColumn">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.GroupInfo">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.GroupingColumn">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.SFTable">
+      <summary>
+            Table with Sorting and Filtering
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.SFTable.TopBottomFilter">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.GroupTable">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.GroupTableAdapter">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.OriginalColumn">
+      <summary>
+            Original data columns
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Data.SortingColumn">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.ExpressionNode">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.FunctionNode">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.AggregateNode">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.Aggregates">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.BinaryOpNode">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.ConstNode">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.DataStorageHelper">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.Expressions.DataStorageHelper.ResultSqlType(Telerik.Reporting.Processing.Expressions.StorageType,Telerik.Reporting.Processing.Expressions.StorageType,System.Boolean,System.Boolean,Telerik.Reporting.Processing.Expressions.Operator)">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.Expressions.DataStorageHelper.ResultType(Telerik.Reporting.Processing.Expressions.StorageType,Telerik.Reporting.Processing.Expressions.StorageType,System.Boolean,System.Boolean,Telerik.Reporting.Processing.Expressions.Operator)">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.DynamicObject">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.DynamicObject.DynamicProperty">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.DictionaryObject">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.ExpressionContext">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.ExpressionParser.NodeType">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.ExpressionParser.OperatorInfo">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.FunctionContext">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.InvalidExpressionException">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.Lexer">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.Lexer.StringReader">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.Lexer.ReservedWord">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.Lexer.ReservedWords">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.LexicalException">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.LikeNode">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.NameNode">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.Operand">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.Operator">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.Expressions.Operator.GetResultType(Telerik.Reporting.Processing.Expressions.Operator,Telerik.Reporting.Processing.Expressions.Operand,Telerik.Reporting.Processing.Expressions.Operand,Telerik.Reporting.Processing.Expressions.StorageType@,System.Object@)">
+      <summary>
+            Use for all op except And, Or, In, Is and IsNot
+            </summary>
+      <returns>if false to stop processing the op and return the retValue</returns>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.OperatorContext">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.ParserException">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.StorageType">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.Token">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.UnaryOpNode">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.Utils">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Expressions.ZeroOpNode">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ReportItemBase">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ReportItemBase.ItemCollection">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ReportItemBase.ProcessingStyle">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ReportItemBase.Evaluate(System.Object)">
+      <summary>
+            If the value is string that starts with =, it is considered as an expression string and
+            is parsed, evaluated against the current data item and returns the result of the exp; 
+            otherwise returns the value as is.
+            </summary>
+      <param name="value">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ReportItemBase.OnItemProcessing">
+      <summary>
+            Raises the ItemDataBinding event
+            </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ReportItemBase.OnItemProcessed">
+      <summary>
+            Raises the ItemDataBound event
+            </summary>
+    </member>
+    <member name="P:Telerik.Reporting.Processing.ReportItemBase.DataItem">
+      <summary>
+            Gets or sets a data item that is bound to the report item.
+            </summary>
+      <value>
+            An <see cref="T:System.Object" /> that represents a data item of the 
+            report item. 
+            </value>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Chart">
+      <summary>
+            Summary description for ReportItem class.
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.DataBinder">
+      <summary>
+        <para> Provides support for RAD designers to
+            generate and parse <see topic="cpconDatabindingExpressionSyntax" /> . This class cannot be inherited.</para>
+      </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.DataBinder.Eval(System.Object,System.String)">
+      <summary>
+        <para> Evaluates data-binding expressions at runtime.</para>
+      </summary>
+      <param name="container">The object reference against which the expression is evaluated. This must be a valild object identifier in the page's specified language.</param>
+      <param name=" expression">The navigation path from the <paramref name="container" /> to the property value to be placed in the bound control property. This must be a string type of property or field names separated by dots, such as <see langword="Tables[0].DefaultView.[0].Price" /> in C# or <see langword="Tables(0).DefaultView.(0).Price" /> in Visual Basic.</param>
+      <returns>
+        <para> An <see cref="T:System.Object" /> that results from the evaluation
+            of the data-binding expression.</para>
+      </returns>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.DataBinder.Eval(System.Object,System.String,System.String)">
+      <summary>
+        <para> Evaluates data-binding expressions at runtime and formats the result as text to be displayed
+            in the requesting browser.</para>
+      </summary>
+      <param name="container">The object reference against which the expression is evaluated. This must be a valild object identifier in the page's specified language.</param>
+      <param name=" expression">The navigation path from the <paramref name="container" /> to the property value to be placed in the bound control property. This must be a string type of property or field names separated by dots, such as <see langword="Tables[0].DefaultView.[0].Price" /> in C# or <see langword="Tables(0).DefaultView.(0).Price" /> in Visual Basic. </param>
+      <param name=" format">A .NET Framework format string, similar to those used by <see cref="M:System.String.Format(System.String,System.Object)" qualify="true" /> , that converts the <see cref="T:System.Object" /> (which results from the evaluation of the data-binding expression) to a <see cref="T:System.String" /> that can be displayed by the requesting browser.</param>
+      <returns>
+        <para>A<see cref="T:System.String" />
+            that results from the evaluation
+            of the data-binding expression and conversion to a string type.</para>
+      </returns>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.DataBinder.GetPropertyValue(System.Object,System.String)">
+      <summary>
+        <para> Retrieves the value of
+            the specified property of the specified object.</para>
+      </summary>
+      <param name="container">The object that contains the property.</param>
+      <param name=" propName">The property that contains the value to retrieve.</param>
+      <returns>
+        <para>The value of the specified property.</para>
+      </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <para>The <paramref name="container" /> parameter is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>The <paramref name="propName " />parameter is <see langword="null" /> or an empty string (""). </para>
+      </exception>
+      <exception cref="T:System.ArgumentException">The object in <paramref name="container" /> does not have the property in <paramref name="propName" />.</exception>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.DataBinder.GetPropertyValue(System.Object,System.String,System.String)">
+      <summary>
+        <para> Retrieves the value of the specified property of the specified object and formats the results.</para>
+      </summary>
+      <param name="container">The object that contains the property.</param>
+      <param name=" propName">The property that contains the value to retrieve.</param>
+      <param name=" format">A string that specifies the format to display the results.</param>
+      <returns>
+        <para>The value of the specified property in the format specified
+            by <paramref name="format" />.</para>
+      </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <para>The <paramref name="container" /> parameter is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>The <paramref name="propName " />parameter is <see langword="null" /> or an empty string (""). </para>
+      </exception>
+      <exception cref="T:System.ArgumentException">The object in <paramref name="container" /> does not have the property in <paramref name="propName" />.</exception>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.DbImage">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.DbImage.Dispose">
+      <summary>
+            Performs application-defined tasks associated with freeing, 
+            releasing, or resetting unmanaged resources.
+            </summary>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ReportSection">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.DetailSection">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Errors">
+      <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+    </member>
+    <member name="P:Telerik.Reporting.Processing.Errors.ResourceManager">
+      <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+    </member>
+    <member name="P:Telerik.Reporting.Processing.Errors.Culture">
+      <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+    </member>
+    <member name="P:Telerik.Reporting.Processing.Errors.RenderingFormatNotAvailable">
+      <summary>
+              Looks up a localized string similar to {0} rendering format is not available..
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ExtensionInfoCollection">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ExtensionInfoCollection.IndexOf(System.String)">
+      <param name="name">Case insensitive name</param>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ExtensionInfoCollection.Contains(System.String)">
+      <param name="name">Case insensitive name</param>
+    </member>
+    <member name="P:Telerik.Reporting.Processing.ExtensionInfoCollection.Item(System.String)">
+      <param name="name">Case insensitive name</param>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ExtensionManagerBase.Load(Telerik.Reporting.Processing.ExtensionInfoCollection,System.String[])">
+      <summary>
+            Returns a list of core(Telerik provided) IExtension types.
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Group">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.GroupSection">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.IRenderStream">
+      <summary>
+            Provides support for rendering multiple streams from a rendering extension.
+            </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.IRenderStream.Finish">
+      <summary>
+            Allows the rendering extension to indicate that there is no additional 
+            content to be added to the given stream.
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ItemFactory">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.PageSection">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Panel">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.PictueBoxUtil.Read(System.IO.Stream)">
+      <summary>
+            ConnectStream does not implement Stream.Length so we will
+            read from the stream sequentially.
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.PictureBox">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ReportProcessingException">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.RendererNotAvailableException">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Report">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Report.ReportDataSet">
+      <summary>
+      </summary>
+    </member>
+    <member name="P:Telerik.Reporting.Processing.Report.ReportDataSet.Root">
+      <summary>
+            Returns the view for the first table inside the data set 
+            from where the actual binding should start: 
+            1st group table if any otherwise MainTable
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Report.GlobalObjects">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ReportPrintDocument">
+      <summary>
+            We should consider to use only one ReportPrintDocument with 
+            the WinViewer
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ReportProcessor">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ReportProcessor.Render(System.String,Telerik.Reporting.Report,System.Collections.Hashtable,System.String@,System.String@,System.Text.Encoding@)">
+      <summary>
+            Renders a report in the specified format
+            </summary>
+      <param name="format">Export format</param>
+      <param name="report">Report to render.</param>
+      <param name="deviceInfo">Contains parameters to pass to the rendering extension.</param>
+      <param name="mimeType">The MIME type of the result buffer.</param>
+      <param name="extension">The file extension of the result buffer.</param>
+      <param name="encoding">The character encoding of the result buffer.</param>
+      <returns>Byte array that contains the rendered report.</returns>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ReportProcessor.Render(System.String,Telerik.Reporting.Report,System.Collections.Hashtable,Telerik.Reporting.Processing.CreateStream)">
+      <summary>
+            Renders a report in the specified format
+            </summary>
+      <param name="format">Export format</param>
+      <param name="report">Report to render</param>
+      <param name="deviceInfo">Contains parameters to pass to the rendering extension.</param>
+      <param name="createStramCallback">The delegate function to call to get a stream to render into.</param>
+      <returns>True if the rendering succeeds.</returns>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ReportProcessor.Print(Telerik.Reporting.Report,System.Drawing.Printing.PrinterSettings)">
+      <summary>
+            Prints a report
+            </summary>
+      <param name="report">Report to print</param>
+      <param name="printerSettings">Printer to be used. If null or invalid printer settings are specified, the Print Dialog appears.</param>
+    </member>
+    <member name="M:Telerik.Reporting.Processing.ReportProcessor.ProcessReport(Telerik.Reporting.Report)">
+      <summary>
+            Processes the report template and merge the data source with the 
+            items and builds complete report structure with all items populated
+            with data and ready to be rendered.
+            </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.ReportStream">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.Shape">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.SRErrors">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.StreamManager">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.SubReport">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Telerik.Reporting.Processing.TextBox">
+      <summary>
+      </summary>
+    </member>
+  </members>
+</doc>

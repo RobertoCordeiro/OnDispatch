@@ -1,0 +1,159 @@
+﻿<%@ Master Language="VB" %>
+<script language="VB" runat="server">
+
+  Private _UserName As String = ""
+  Private _CustomerAgentID As Long = 0
+  Private _WebLoginID As Long = 0
+  Private _AccessCoding As String = ""
+  Private _CustomerID As Long = 0
+  
+  ''' <summary>
+  ''' Returns/Sets the value for the title bar text
+  ''' </summary>
+  Public Property PageTitleText() As String
+    Get
+      Return PageTitle.Text
+    End Get
+    Set(ByVal value As String)
+      pagetitle.Text = value
+    End Set
+  End Property
+  
+  ''' <summary>
+  ''' Returns the customer ID for the currently logged in user
+  ''' </summary>
+  Public ReadOnly Property CustomerID() As Long
+    Get
+      Return _CustomerID
+    End Get
+  End Property
+  
+  Public ReadOnly Property UserID() As Long
+    Get
+      Return 2
+    End Get
+  End Property
+  
+  ''' <summary>
+  ''' Returns/Sets the WebLogin ID for the current user
+  ''' </summary>
+  Public Property WebLoginID() As Long
+    Get
+      Return _WebLoginID
+    End Get
+    Set(ByVal value As Long)
+      _WebLoginID = value
+      LoadUserDetail()
+    End Set
+  End Property
+
+  ''' <summary>
+  ''' Returns/Sets the text for the page header
+  ''' </summary>
+  Public Property PageHeaderText() As String
+    Get
+      Return lblPageHeader.Text
+    End Get
+    Set(ByVal value As String)
+      lblPageHeader.Text = value
+    End Set
+  End Property
+    
+  Public ReadOnly Property UserName() As String
+    Get
+      Return _UserName
+    End Get
+  End Property
+  
+  Public ReadOnly Property CustomerAgentID() As Long
+    Get
+      Return _CustomerAgentID
+    End Get
+  End Property
+  
+  ''' <summary>
+  ''' Initializes the page
+  ''' </summary>
+  Private Sub Page_Load(ByVal S As Object, ByVal E As EventArgs)
+    Response.Buffer = True
+    If CType(System.Configuration.ConfigurationManager.AppSettings("DownForMaintenance"), Boolean) Then
+      Response.Redirect(System.Configuration.ConfigurationManager.AppSettings("MaintenanceUrl"), True)
+      Response.Flush()
+      Response.End()
+    Else
+      Dim strCompanyName As String = System.Configuration.ConfigurationManager.AppSettings("CompanyName")
+      Dim lngCopyrightStartYear As Integer = CType(System.Configuration.ConfigurationManager.AppSettings("CopyrightStartYear"), Integer)
+      If lngCopyrightStartYear > DateTime.Now.Year Then
+        lblCopyYears.Text = lngCopyrightStartYear.ToString & " - " & DateTime.Now.Year.ToString
+      Else
+        lblCopyYears.Text = lngCopyrightStartYear.ToString
+      End If
+      lblCompanyName.Text = strCompanyName
+    End If
+  End Sub
+  
+  Private Sub LoadUserDetail()
+    If _WebLoginID > 0 Then
+      Dim cag As New BridgesInterface.CustomerAgentRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      Dim wbl As New BridgesInterface.WebLoginRecord(_WebLoginID, System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      cag.LoadByWebLoginID(_WebLoginID)
+      wbl.Load(_WebLoginID)
+      _AccessCoding = wbl.AccessCoding
+      _UserName = cag.FirstName & " " & cag.LastName
+      _CustomerAgentID = cag.CustomerAgentID
+      _CustomerID = cag.CustomerID
+      lblLoggedInAs.Text = _UserName
+      If _AccessCoding.Trim.ToLower <> "c" Then
+        Response.Redirect("/logout.aspx")
+      End If
+    End If
+  End Sub
+  
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head id="pagehead" runat="server">
+    <title id="pagetitle" runat="server" />
+    <link rel="stylesheet" type="text/css"  href="/stylesheets/default.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+  <table cellspacing="0" class="dialog">
+    <tbody>
+      <tr>
+        <td class="pageheader"><asp:Label ID="lblPageHeader" runat="server" /></td>
+      </tr>
+      <tr>
+        <td class="pagesubheader"><asp:Label ID="lblPageSubHeader" runat="server" /></td>
+      </tr>
+      <tr>
+        <td class="bodyarea">
+          <table style="width: 100%" cellspacing="0">
+            <tbody>
+              <tr>
+                <td><asp:ContentPlaceHolder ID="bodycontent" runat="server" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="footerarea">
+          <div>
+            Logged in as: <asp:Label ID="lblLoggedInAs" runat="server" /> [<a class="footerlink" href="/logout.aspx">Log Out</a>]
+          </div>
+          <table style="width: 100%">
+            <tbody>
+              <tr>
+                <td class="emblems"><a href="http://validator.w3.org/check?uri=referer"><img src="/graphics/xhtml10valid.png" alt="Valid XHTML 1.0 Transitional" /></a></td>
+                <td class="copynotice">&copy; <asp:label ID="lblCopyYears" runat="server" /> <asp:Label ID="lblCompanyName" runat="server" /></td>
+              </tr>
+            </tbody>
+          </table>        
+        </td>
+      </tr>
+    </tbody>
+  </table>   
+</body>
+</html>

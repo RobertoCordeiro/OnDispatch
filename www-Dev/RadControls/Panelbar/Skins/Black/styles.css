@@ -1,0 +1,140 @@
+.RadPanelbar_Black
+{
+	background-color: #1e1e1e;
+	border: 1px solid #000;
+}
+
+.RadPanelbar_Black .item
+{
+	border: 0;
+}
+
+.RadPanelbar_Black .link
+{
+	color: #656565;
+	text-decoration: none;
+	
+	border: 1px solid #232323;
+	border-bottom-color: #202020;
+	border-top-color: #0d0d0d;
+	background-color: #191919;
+	
+	width: auto;
+	
+	font: 12px SegoeUI, Arial, sans-serif;
+}
+
+.RadPanelbar_Black .last .link
+{
+	border-bottom-color: #232323;
+	outline: 0;
+}
+
+.RadPanelbar_Black .item .link:hover
+{
+	background: #191919 url(Img/HoverBg.gif) repeat-x 0 0;
+	color: #ccc;
+}
+
+* html .RadPanelbar_Black .item .link:hover
+{
+	background-position:0 1px;
+}
+*+html .RadPanelbar_Black .item .link:hover
+{
+	background-position:0 1px;
+}
+
+.RadPanelbar_Black .item .selected,
+.RadPanelbar_Black .item .selected:hover
+{
+	border: 1px solid #494949;
+	background: #343434 url(Img/SelectedBg.gif) repeat-x 0 0;
+	color: #ccc;
+}
+
+.RadPanelbar_Black .item .disabled:hover,
+.RadPanelbar_Black .item .disabled:hover .text
+{
+	background: #191919;
+	cursor: default;
+	color: #656565;
+}
+
+.RadPanelbar_Black .text
+{
+	margin: 4px 0 5px 8px;
+}
+
+.RadPanelbar_Black_rtl .text
+{
+	margin: 4px 8px 5px 0;
+}
+
+.RadPanelbar_Black .group
+{
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.RadPanelbar_Black .group .link
+{
+	font-size: 11px;
+	border: 0;
+	background: #1e1e1e;
+}
+
+.RadPanelbar_Black .level1 .link
+{
+	margin-left: 7px;
+}
+
+.RadPanelbar_Black_rtl .level1 .link
+{
+	margin-right: 7px;
+	margin-left: 0;
+}
+
+.RadPanelbar_Black .level2 .link
+{
+	margin-left: 14px;
+}
+
+.RadPanelbar_Black_rtl .level2 .link
+{
+	margin-right: 14px;
+	margin-left: 0;
+}
+
+.RadPanelbar_Black .level3 .link
+{
+	margin-left: 21px;
+}
+
+.RadPanelbar_Black_rtl .level3 .link
+{
+	margin-right: 21px;
+	margin-left: 0;
+}
+
+.RadPanelbar_Black .group .link:hover,
+.RadPanelbar_Black .group .selected
+{
+	text-decoration: underline;
+	background: #1e1e1e;
+	color: #656565;
+	border: 0;
+}
+
+.RadPanelbar_Black .group .link
+{
+		zoom:1; /*fixes hover effect and image text falling in IE6*/
+}
+
+.RadPanelbar_Black .group .disabled:hover,
+.RadPanelbar_Black .group .disabled:hover .text
+{
+	text-decoration: none;
+	cursor: default;
+	background: #1e1e1e;
+}

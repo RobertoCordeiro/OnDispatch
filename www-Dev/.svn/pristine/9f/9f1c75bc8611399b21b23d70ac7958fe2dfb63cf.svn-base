@@ -1,0 +1,695 @@
+﻿Imports System
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Web.UI.WebControls
+
+Namespace BridgesInterface
+    Public Class SearchEngine
+        ' Methods
+        Public Sub New(ByVal strConnectionString As String)
+            Me._ConnectionString = strConnectionString
+        End Sub
+
+        Public Sub CustomerAgentFindTicketByLastName(ByVal lngCustomerAgentID As Long, ByVal strLastName As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketByLastName")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@ContactLastName", SqlDbType.VarChar, Me.TrimTrunc(strLastName, &H40).Trim.Length).Value = Me.TrimTrunc(strLastName, &H40).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerAgentFindTicketByPhoneNumber(ByVal lngCustomerAgentID As Long, ByVal strPhoneNumber As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketByPhoneNumber")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, Me.TrimTrunc(strPhoneNumber, &H40).Trim.Length).Value = Me.TrimTrunc(strPhoneNumber, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerAgentFindTicketByReferenceNumber1(ByVal lngCustomerAgentID As Long, ByVal strReferenceNumber1 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketByReferenceNumber1")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@ReferenceNumber1", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber1, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber1, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerAgentFindTicketByReferenceNumber2(ByVal lngCustomerAgentID As Long, ByVal strReferenceNumber2 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketByReferenceNumber2")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@ReferenceNumber2", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber2, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber2, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerAgentFindTicketByReferenceNumber3(ByVal lngCustomerAgentID As Long, ByVal strReferenceNumber3 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketByReferenceNumber3")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@ReferenceNumber3", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber3, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber3, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerAgentFindTicketByReferenceNumber4(ByVal lngCustomerAgentID As Long, ByVal strReferenceNumber4 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketByReferenceNumber4")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@ReferenceNumber4", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber4, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber4, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerAgentFindTicketBySerialNumber(ByVal lngCustomerAgentID As Long, ByVal strSerialNumber As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketBySerialNumber")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@SerialNumber", SqlDbType.VarChar, Me.TrimTrunc(strSerialNumber, &H80).Trim.Length).Value = Me.TrimTrunc(strSerialNumber, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerAgentFindTicketByShippingLabel(ByVal lngCustomerAgentID As Long, ByVal strShippingLabel As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketByShippingLabel")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@ShippingLabel", SqlDbType.VarChar, Me.TrimTrunc(strShippingLabel, &H80).Trim.Length).Value = Me.TrimTrunc(strShippingLabel, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerAgentFindTicketByTicketID(ByVal lngCustomerAgentID As Long, ByVal lngTicketID As Long, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketByTicketID")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@TicketID", SqlDbType.VarChar, 8).Value = lngTicketID
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerAgentFindTicketByZipCode(ByVal lngCustomerAgentID As Long, ByVal strZipCode As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerAgentFindTicketByZipCode")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerAgentID", SqlDbType.Int).Value = lngCustomerAgentID
+            cmd.Parameters.Add("@ZipCode", SqlDbType.VarChar, Me.TrimTrunc(strZipCode, &H10).Trim.Length).Value = Me.TrimTrunc(strZipCode, &H10).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByCity(ByVal lngCustomerID As Long, ByVal strCity As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByCity")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@City", SqlDbType.VarChar, Me.TrimTrunc(strCity, &HFF).Trim.Length).Value = Me.TrimTrunc(strCity, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByLastName(ByVal lngCustomerID As Long, ByVal strLastName As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByLastName")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@ContactLastName", SqlDbType.VarChar, Me.TrimTrunc(strLastName, &H40).Trim.Length).Value = Me.TrimTrunc(strLastName, &H40).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByPhoneNumber(ByVal lngCustomerID As Long, ByVal strPhoneNumber As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByPhoneNumber")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, Me.TrimTrunc(strPhoneNumber, &H40).Trim.Length).Value = Me.TrimTrunc(strPhoneNumber, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByReferenceNumber1(ByVal lngCustomerID As Long, ByVal strReferenceNumber1 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByReferenceNumber1")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@ReferenceNumber1", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber1, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber1, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByReferenceNumber2(ByVal lngCustomerID As Long, ByVal strReferenceNumber2 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByReferenceNumber2")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@ReferenceNumber2", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber2, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber2, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByReferenceNumber3(ByVal lngCustomerID As Long, ByVal strReferenceNumber3 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByReferenceNumber3")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@ReferenceNumber3", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber3, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber3, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByReferenceNumber4(ByVal lngCustomerID As Long, ByVal strReferenceNumber4 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByReferenceNumber4")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@ReferenceNumber4", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber4, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber4, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketBySerialNumber(ByVal lngCustomerID As Long, ByVal strSerialNumber As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketBySerialNumber")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@SerialNumber", SqlDbType.VarChar, Me.TrimTrunc(strSerialNumber, &H80).Trim.Length).Value = Me.TrimTrunc(strSerialNumber, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByShippingLabel(ByVal lngCustomerID As Long, ByVal strShippingLabel As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByShippingLabel")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@ShippingLabel", SqlDbType.VarChar, Me.TrimTrunc(strShippingLabel, &H80).Trim.Length).Value = Me.TrimTrunc(strShippingLabel, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByState(ByVal lngCustomerID As Long, ByVal strState As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByState")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@Abbreviation", SqlDbType.VarChar, Me.TrimTrunc(strState, 2).Trim.Length).Value = Me.TrimTrunc(strState, 2).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByTicketID(ByVal lngCustomerID As Long, ByVal lngTicketID As Long, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByTicketID")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@TicketID", SqlDbType.VarChar, 8).Value = lngTicketID
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByWorkOrderID(ByVal lngCustomerID As Long, ByVal lngWorkOrderID As Long, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByWorkOrderID")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@WorkOrderID", SqlDbType.VarChar, 8).Value = lngWorkOrderID
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub CustomerFindTicketByZipCode(ByVal lngCustomerID As Long, ByVal strZipCode As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spCustomerFindTicketByZipCode")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = lngCustomerID
+            cmd.Parameters.Add("@ZipCode", SqlDbType.VarChar, Me.TrimTrunc(strZipCode, &H10).Trim.Length).Value = Me.TrimTrunc(strZipCode, &H10).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByCity(ByVal strCity As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByCity")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@City", SqlDbType.VarChar, Me.TrimTrunc(strCity, &HFF).Trim.Length).Value = Me.TrimTrunc(strCity, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByLastName(ByVal strLastName As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByLastName")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@ContactLastName", SqlDbType.VarChar, Me.TrimTrunc(strLastName, &H40).Trim.Length).Value = Me.TrimTrunc(strLastName, &H40).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByPhoneNumber(ByVal strPhoneNumber As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByPhoneNumber")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, Me.TrimTrunc(strPhoneNumber, &H40).Trim.Length).Value = Me.TrimTrunc(strPhoneNumber, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByReferenceNumber1(ByVal strReferenceNumber1 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByReferenceNumber1")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@ReferenceNumber1", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber1, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber1, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByReferenceNumber2(ByVal strReferenceNumber2 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByReferenceNumber2")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@ReferenceNumber2", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber2, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber2, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByReferenceNumber3(ByVal strReferenceNumber3 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByReferenceNumber3")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@ReferenceNumber3", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber3, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber3, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByReferenceNumber4(ByVal strReferenceNumber4 As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByReferenceNumber4")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@ReferenceNumber4", SqlDbType.VarChar, Me.TrimTrunc(strReferenceNumber4, &HFF).Trim.Length).Value = Me.TrimTrunc(strReferenceNumber4, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketBySerialNumber(ByVal strSerialNumber As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketBySerialNumber")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@SerialNumber", SqlDbType.VarChar, Me.TrimTrunc(strSerialNumber, &H80).Trim.Length).Value = Me.TrimTrunc(strSerialNumber, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByShippingLabel(ByVal strShippingLabel As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByShippingLabel")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@ShippingLabel", SqlDbType.VarChar, Me.TrimTrunc(strShippingLabel, &H80).Trim.Length).Value = Me.TrimTrunc(strShippingLabel, &HFF).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByState(ByVal strState As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByState")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@Abbreviation", SqlDbType.VarChar, Me.TrimTrunc(strState, 2).Trim.Length).Value = Me.TrimTrunc(strState, 2).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByTicketID(ByVal lngTicketID As Long, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByTicketID")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@TicketID", SqlDbType.VarChar, 8).Value = lngTicketID
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByWorkOrderID(ByVal lngWorkOrderID As Long, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByWorkOrderID")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@WorkOrderID", SqlDbType.VarChar, 8).Value = lngWorkOrderID
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+
+        Public Sub FindTicketByZipCode(ByVal strZipCode As String, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open
+            Dim cmd As New SqlCommand("spFindTicketByZipCode")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@ZipCode", SqlDbType.VarChar, Me.TrimTrunc(strZipCode, &H10).Trim.Length).Value = Me.TrimTrunc(strZipCode, &H10).Trim
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind
+            cnn.Close
+            cmd.Dispose
+        End Sub
+        Public Sub GetVendorOpenCalls(ByVal lngPartnerID As Long, ByRef dgv As DataGrid)
+            Dim cnn As New SqlConnection(Me._ConnectionString)
+            Dim da As New SqlDataAdapter
+            Dim ds As New DataSet
+            cnn.Open()
+            Dim cmd As New SqlCommand("spGetVendorOpenCalls")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@PartnerID", SqlDbType.Int).Value = lngPartnerID
+            cmd.Connection = cnn
+            da.SelectCommand = cmd
+            da.Fill(ds)
+            dgv.DataSource = ds
+            dgv.DataBind()
+            cnn.Close()
+            cmd.Dispose()
+        End Sub
+
+        Private Function TrimTrunc(ByVal strInput As String, ByVal intMaxLength As Integer) As String
+            Dim strReturn As String = strInput
+            If (strReturn.Trim.Length <= intMaxLength) Then
+                Return strReturn.Trim
+            End If
+            Return strReturn.Substring(0, intMaxLength).Trim
+        End Function
+
+
+        ' Properties
+        Public Property ConnectionString As String
+            Get
+                Return Me._ConnectionString
+            End Get
+            Set(ByVal value As String)
+                Me._ConnectionString = value
+            End Set
+        End Property
+
+
+        ' Fields
+        Private _ConnectionString As String = ""
+        Private Const LastNameMaxLength As Integer = &H40
+        Private Const PhoneNumberMaxLength As Integer = &H40
+        Private Const ReferenceNumberMaxLength As Integer = &HFF
+        Private Const SerialNumberMaxLength As Integer = &H80
+        Private Const ShippingLabelMaxLength As Integer = &H80
+        Private Const StateMaxLength As Integer = 2
+        Private Const ZipCodeMaxLength As Integer = &H10
+    End Class
+End Namespace
+

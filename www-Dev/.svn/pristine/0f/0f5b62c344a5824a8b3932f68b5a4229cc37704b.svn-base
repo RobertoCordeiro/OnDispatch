@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+  <div class="blok_header">
+    <div class="header">
+      <div class="logo"><a href="index.html"><img src="images/logo.gif" width="359" height="99" border="0" alt="logo" /></a></div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html"><span>Home Page </span></a></li>
+          <li><a href="portfolio.html"><span>Services</span></a></li>
+          <li><a href="portfolio.html" class="active"><span>Portfolio</span></a></li>
+          <li><a href="about.html"><span> About Us </span></a></li>
+          <li><a href="contact.html"><span> Contact Us</span></a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+  <div class="header_text_bg2">
+    <div class="header_text2">
+      <h2>Our Portfolio</h2>
+      <p>Lorem Ipsum as their default model text, and a search for 'lorem <br />
+        ipsum' will uncover many web sites still in their infancy. </p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="body_resize">
+    <div class="body">
+      <div class="port">
+        <h2>Portfolio Our Website <span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</span> </h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium mque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        <p>&nbsp;</p>
+        <div class="port_resize"> <a href="#"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>Portfolio Item</h2>
+          <img src="images/port_1.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>Morbi vel erat ac dolor accumsan pharetra. Vivamus fringilla iaculis justo eget venenatis...</p>
+        </div>
+        <div class="port_resize"> <a href="#"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>Portfolio Item</h2>
+          <img src="images/port_2.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>Morbi vel erat ac dolor accumsan pharetra. Vivamus fringilla iaculis justo eget venenatis...</p>
+        </div>
+        <div class="port_resize"> <a href="#"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>Portfolio Item</h2>
+          <img src="images/port_3.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>Morbi vel erat ac dolor accumsan pharetra. Vivamus fringilla iaculis justo eget venenatis...</p>
+        </div>
+        <div class="port_resize"> <a href="#"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>Portfolio Item</h2>
+          <img src="images/port_4.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>Morbi vel erat ac dolor accumsan pharetra. Vivamus fringilla iaculis justo eget venenatis...</p>
+        </div>
+        <div class="port_resize"> <a href="#"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>Portfolio Item</h2>
+          <img src="images/port_5.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>Morbi vel erat ac dolor accumsan pharetra. Vivamus fringilla iaculis justo eget venenatis...</p>
+        </div>
+        <div class="port_resize"> <a href="#"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>Portfolio Item</h2>
+          <img src="images/port_6.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>Morbi vel erat ac dolor accumsan pharetra. Vivamus fringilla iaculis justo eget venenatis...</p>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+<div class="FBG">
+  <div class="FBG_resize">
+    <div class="right">
+      <h2>About Us</h2>
+      <p>Vestibulum vehicula purus nec dui accumsan fermentum. <br />
+        Suspendisse potenti. Ut dapibus est id odio pretium blandit in eget leo. Aliquam erat volutpat. Curabitur blandit odio eget odio eleifend vel mattis augue convallis. </p>
+    </div>
+    <div class="left">
+      <h2>Contact Site </h2>
+      <ul>
+        <li>Share / Bookmark</li>
+        <li>Blog RSS</li>
+        <li>Twitter</li>
+        <li>Website News</li>
+      </ul>
+    </div>
+    <div class="left">
+      <h2>Web Development </h2>
+      <ul>
+        <li>Web Strategy</li>
+        <li>Web Applications</li>
+        <li>Flash Design</li>
+        <li>Hosting &amp; Domains</li>
+      </ul>
+    </div>
+    <div class="right">
+      <h2>What They Say</h2>
+      <p> <img src="images/test.gif" alt="picture" width="24" height="18" />&quot;Quis autem vel eum iure reprehenderit <br />
+        qui in ea voluptate velit esse voluptas nulla pariatur?&quot;</p>
+      <p><a href="#">by: John S., webdesigner</a></p>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</div>
+<div class="footer">
+  <div class="footer_resize"><a href="#"><img src="images/footer_logo.gif" alt="picture" width="214" height="84" border="0" /></a>
+    <p class="leftt">© Copyright YourSiteName. All Rights Reserved<br />
+      Home | Contact | RSS | (DT) <a href="http://www.dreamtemplate.com"><strong>Website Templates</strong></a></p>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+/* Docking Zone properties */
+
+.RadDockingZone
+{
+    border: 1px solid #a7bac5;
+    padding: 5px 0 0 5px;
+    background-color: #fff;
+}
+
+*>.RadDockingZone.rdVertical /* hidden from IE6 */
+{
+    padding-right:5px;
+}
+
+/* Dock Object properties */
+
+/* wrappers and borders */
+
+.RadDockableObjectFixed .rdPlaceHolder,
+.RadDockableObjectResizeable .rdPlaceHolder
+{
+    border-color:#666;
+}
+
+.RadDockableObjectFixed,
+.RadDockableObjectResizeable
+{
+    text-align: left;
+    border: 1px solid #a7bac5;
+    background-color: #fff;
+}
+
+/* titlebar and buttons */
+
+.RadDockableObjectFixed .RadDockableObjectTitleBarLeft,
+.RadDockableObjectResizeable .RadDockableObjectTitleBarLeft
+{
+	width: 10px;
+}
+
+.RadDockableObjectFixed .RadDockableObjectTitleBar,
+.RadDockableObjectResizeable .RadDockableObjectTitleBar
+{
+    top:1px; /*brd*/
+    height:20px;
+    background:url('Img/TitlebarH.gif') repeat-x #a6d9f4;
+    font:12px/20px Arial,sans-serif;
+    color: #5733aa;
+    border-style: solid;
+    border-width: 1px 0;
+    border-top-color: #a7bac5;
+    border-bottom-color: #3c7fb1;
+    padding-bottom: 1px;
+}
+
+.RadDockableObjectFixed .RadDockableObjectCommandButton,
+.RadDockableObjectFixed .RadDockableObjectTitle,
+.RadDockableObjectResizeable .RadDockableObjectCommandButton,
+.RadDockableObjectResizeable .RadDockableObjectTitle
+{
+    /*background: #a6d9f4 url('Img/TitlebarH.gif') repeat-x;*/
+}
+
+.RadDockableObjectFixed .rdHTitlebar .rdTitle,
+.RadDockableObjectResizeable .rdHTitlebar .rdTitle
+{
+	padding-top: 2px;
+    margin-left:12px;
+    margin-right: 45px;
+    text-indent: 2px;
+    text-overflow: ellipsys;
+}
+.RadDockableObjectFixed .rdVTitlebar .RadDockableObjectTitle,
+.RadDockableObjectResizeable .rdVTitlebar .RadDockableObjectTitle
+{
+    padding:13px 0 0 8px;
+    background:#a6d9f4 url('Img/TitlebarV.gif') repeat-y;
+    line-height:1.4em;
+}
+
+.RadDockableObjectFixed .rdTitlebar .rdCommands,
+.RadDockableObjectResizeable .rdTitlebar .rdCommands
+{
+	right: 4px;
+}
+
+.RadDockableObjectFixed .rdHTitlebar .rdCommands a,
+.RadDockableObjectResizeable .rdHTitlebar .rdCommands a
+{
+    margin:4px 0 0 0;
+}
+.RadDockableObjectFixed .rdVTitlebar .rdCommands a,
+.RadDockableObjectResizeable .rdVTitlebar .rdCommands a
+{
+    margin:0 4px 0 0;
+}
+
+.RadDockableObjectFixed .rdTitlebar .rdCommands a,
+.RadDockableObjectResizeable .rdTitlebar .rdCommands a
+{
+    height:15px;
+}
+.RadDockableObjectFixed .rdCollapse,
+.RadDockableObjectResizeable .rdCollapse
+{
+    width:15px;
+    background:url('Img/Collapse.gif') repeat-x;
+}
+.RadDockableObjectFixed .rdExpand,
+.RadDockableObjectResizeable .rdExpand
+{
+    width:15px;
+    background:url('Img/Expand.gif') repeat-x;
+}
+.RadDockableObjectFixed .rdClose,
+.RadDockableObjectResizeable .rdClose
+{
+    width:15px;
+    background:url('Img/Close.gif') no-repeat center center;
+}
+.RadDockableObjectFixed .rdPin,
+.RadDockableObjectResizeable .rdPin
+{
+    width:15px;
+    background:url('Img/Pin.gif') repeat-x;
+}
+.RadDockableObjectFixed .rdUnpin,
+.RadDockableObjectResizeable .rdUnpin
+{
+    width:15px;
+    background:url('Img/Unpin.gif') repeat-x;
+}
+
+.RadDockableObjectFixed .rdCustom,
+.RadDockableObjectResizeable .rdCustom
+{
+    width:15px;
+    background:url('Img/Custom.gif') no-repeat;
+}
+
+.RadDockableObjectResizeable
+{
+    border-width:3px;
+}
+
+.RadDockableObjectCommandButton
+{
+	width: 20px;
+}
+
+.RadDragHelper
+{
+	background-color: orange;
+}
+
+.RadDockableObjectHorizontalGrip
+{
+	background-color: #484848
+}

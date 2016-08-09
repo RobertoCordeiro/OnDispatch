@@ -1,0 +1,151 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+cvFileLibrary
+</name>
+</assembly>
+<members>
+<member name="P:cvFileLibrary.FileRecord.FileName">
+	<summary>
+ Returns/Sets the FileName field for the currently loaded record
+ </summary>
+</member><member name="P:cvFileLibrary.FileRecord.Extension">
+	<summary>
+ Returns/Sets the Extension field for the currently loaded record
+ </summary>
+</member><member name="P:cvFileLibrary.FileRecord.ConnectionString">
+	<summary>
+ Returns/Sets the connection string to the database
+ </summary>
+</member><member name="P:cvFileLibrary.FileRecord.BinaryData">
+	<summary>
+ Returns/Sets the BinaryData field for the currently loaded record
+ </summary>
+</member><member name="P:cvFileLibrary.FileRecord.FileID">
+	<summary>
+ Returns/Sets the FileID field for the currently loaded record
+ </summary>
+</member><member name="P:cvFileLibrary.FileRecord.CreatedBy">
+	<summary>
+ Returns/Sets the CreatedBy field for the currently loaded record
+ </summary>
+</member><member name="P:cvFileLibrary.FileRecord.DateCreated">
+	<summary>
+ Returns/Sets the DateCreated field for the currently loaded record
+ </summary>
+</member><member name="P:cvFileLibrary.FileRecord.Modified">
+	<summary>
+ Returns a boolean value indicating if the object has changed
+ since the last time it was loaded.
+ </summary>
+</member><member name="P:cvFileLibrary.FileRecord.FileSize">
+	<summary>
+ Returns the file size (in bytes) of the file
+ </summary>
+</member><member name="M:cvFileLibrary.FileRecord.ClearValues">
+	<summary>
+ Clears all values except for the connection string
+ </summary>
+</member><member name="M:cvFileLibrary.FileRecord.AppendChangeLog(System.String@,System.String)">
+	<summary>
+ Appends a line to a change log
+ </summary>
+	<param name="strLog">The log to append to</param>
+	<param name="strNewLine">The line to append to the log</param>
+</member><member name="M:cvFileLibrary.FileRecord.UpdateFileName(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the FileName field for this record.
+ </summary>
+	<param name="NewFileName">The new value for theFileName field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvFileLibrary.FileRecord.UpdateExtension(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the Extension field for this record.
+ </summary>
+	<param name="NewExtension">The new value for theExtension field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvFileLibrary.FileRecord.UpdateBinaryData(System.Byte[],System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the BinaryData field for this record.
+ </summary>
+	<param name="NewBinaryData">The new value for theBinaryData field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvFileLibrary.FileRecord.TrimTrunc(System.String,System.Int32)">
+	<summary>
+ Returns a string that has been trimmed and trunced down to its max length
+ </summary>
+	<param name="strInput">The string to manipulate</param>
+	<param name="intMaxLength">The maximum length the string can be</param>
+</member><member name="M:cvFileLibrary.FileRecord.HasChanged">
+	<summary>
+ Returns a boolean indicating if the object has changed
+ </summary>
+</member><member name="M:cvFileLibrary.FileRecord.GetFileByteStream(System.String)">
+	<summary>
+ Converts a file to a Byte Array for Entry Into the database.
+ </summary>
+	<param name="strPath">The path to the file</param>
+	<returns>A Byte Array</returns>
+</member><member name="M:cvFileLibrary.FileRecord.#ctor">
+	<summary>
+ Overloaded, initializes the object
+ </summary>
+</member><member name="M:cvFileLibrary.FileRecord.#ctor(System.String)">
+	<summary>
+ Overloaded, Initializes the object with a given connection string
+ </summary>
+	<param name="strConnectionString">The connection string to the database the customer is contained in</param>
+</member><member name="M:cvFileLibrary.FileRecord.#ctor(System.Int64,System.String)">
+	<summary>
+ Overloaded, Initializes the object and loads by the passed in Primary Key
+ </summary>
+	<param name="lngFileID">The primary key of the record you wish to load</param>
+	<param name="strConnectionString">The connection string to the database</param>
+	<remarks></remarks>
+</member><member name="M:cvFileLibrary.FileRecord.Add(System.Int64,System.String,System.String,System.String)">
+	<summary>
+  Adds a new File record to the database.
+ </summary>
+	<param name="lngCreatedBy">The value for the CreatedBy portion of the record</param>
+	<param name="strFileName">The value for the FileName portion of the record</param>
+	<param name="strExtension">The value for the Extension portion of the record</param>
+	<param name="strPath">The path to the file to bring into the database</param>
+</member><member name="M:cvFileLibrary.FileRecord.Add(System.Int64,System.String,System.String,System.Byte[])">
+	<summary>
+  Adds a new File record to the database.
+ </summary>
+	<param name="lngCreatedBy">The value for the CreatedBy portion of the record</param>
+	<param name="strFileName">The value for the FileName portion of the record</param>
+	<param name="strExtension">The value for the Extension portion of the record</param>
+	<param name="bytBuffer">The Byte Array Representing the binary data to inser</param>
+</member><member name="M:cvFileLibrary.FileRecord.Load(System.Int64)">
+	<summary>
+ Loads a File record by its primary key
+ </summary>
+</member><member name="M:cvFileLibrary.FileRecord.Save(System.String@)">
+	<summary>
+ Saves any changes to the record since it was last loaded
+ </summary>
+	<param name="strChangeLog">The string variable you want manipulated that returns a log of changes.</param>
+</member><member name="M:cvFileLibrary.FileRecord.Delete">
+	<summary>
+ Deletes the currently loaded File Record
+ </summary>
+</member><member name="M:cvFileLibrary.FileRecord.SetBinaryData(System.String)">
+	<summary>
+ Sets the Binary Data Properly from provided file path.
+ </summary>
+	<param name="strPath">The path that the file is in</param>
+</member><member name="T:cvFileLibrary.FileRecord">
+	<summary>
+ Represents a file stored as a blob in the database
+ </summary>
+	<remarks>
+   Author: George H. Slaterpryce III
+   Completed: 06/16/2007
+   Modifications: None
+ </remarks>
+</member>
+</members>
+</doc>

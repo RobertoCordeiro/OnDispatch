@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Reporting.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Reporting.Interfaces.Attributes.ExtensionAttribute">
+            <summary>
+            The base attribute.
+            This attribute intended for types which we want to use for extension.
+            Each other attribute must derived from the base
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Processing.ExtensionInfo">
+            <summary>
+            Store info for an extension
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Processing.ExtensionInfo.CreateInstance">
+            <summary>
+            create and get an instance of extensionType
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Processing.ExtensionInfo.PrepareDeviceInfo(System.Collections.Hashtable)">
+            <summary>
+            Combines the default parameter values with the values passed by the user
+            with type check
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.IExtension">
+            <summary>
+            Telerik Reporting extension
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.IExtension.Initialize(System.Collections.Hashtable)">
+            <summary>
+            Initializes the current extension with default settings
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Interfaces.IReportConverter.Convert(System.Object,System.IServiceProvider,Telerik.Reporting.Interfaces.IConverterLog,System.Collections.Hashtable)">
+            <param name="context">Reserved for future use</param>
+        </member>
+    </members>
+</doc>

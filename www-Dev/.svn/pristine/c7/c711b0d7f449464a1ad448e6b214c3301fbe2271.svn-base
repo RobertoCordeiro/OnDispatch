@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head><title>
+	National Appliance Network - [Login]
+</title><link rel="stylesheet" type="text/css" href="style.css" /></head>
+  <body style="text-align: center; background-color:#000000;">
+    <div>&nbsp;</div>
+    <div style="margin-left: auto; margin-right: auto; width: 450px">
+    <table style="border: 1; width:100%; font-family: arial;" cellpadding="0" cellspacing="0" bgcolor="#cacaca" bordercolor="#fffaaa">
+      <tr >
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <td style="vertical-align: top;" >          
+          <table style="width: 80%" >
+            <tr>             
+              <td style="vertical-align: top;" >
+  <form name="aspnetForm" method="post" action="login.aspx" id="aspnetForm">
+<div align="center">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTc0NzY0NjA4D2QWAmYPZBYGAgMPZBYCAgEPZBYCAgEPDxYCHgRUZXh0BR1XZWxjb21lIHRvIHRoZSBHbG9iYWwgT2ZmaWNlLmRkAgUPDxYCHwAFBDIwMDdkZAIHDw8WAh8ABSJDYXB0b3ZpcyBBZHZhbmNlZCBJbmR1c3RyaWVzLCBJbmMuZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFG2N0bDAwJGNudE1haW4kY2hrUmVtZW1iZXJNZULcdKB1TgLnrjSZUFmACm3UfZw6" />
+</div>
+
+    <div style="font-weight: bold;" align="center"><span id="ctl00_cntMain_lblWelcome"><a class="green5">National</a><a class="white"> Appliance Network</a> <br> <a class="blue1">Web Office Portal</a></a></span></div>
+    <div>&nbsp;</div>
+    
+    <div>&nbsp;</div>             
+    <div class="blue1">Please enter your credentials</div>            
+    <div>&nbsp;</div>
+    <div class="blue1">User Name</div>                
+    <div><input name="ctl00$cntMain$txtUserName" type="text" id="ctl00_cntMain_txtUserName" style="width: 98%" /></div>
+    <div class="blue1">Password</div>
+    <div><input name="ctl00$cntMain$txtPassword" type="password" id="ctl00_cntMain_txtPassword" style="width: 98%" /></div>
+    <div class="blue1"><input id="ctl00_cntMain_chkRememberMe" type="checkbox" name="ctl00$cntMain$chkRememberMe" /><label for="ctl00_cntMain_chkRememberMe">Remember me</label></div>
+    <div style="text-align: right;"><input type="submit" name="ctl00$cntMain$btnLogin" value="Log In" id="ctl00_cntMain_btnLogin" />&nbsp;</div>
+  
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBQKs3bm4DAL83emWDgL2+8bOCgLau4bGAQKauIDABGxwPFn4kLIcRO1wu+V6rUp6+t4N" />
+</div></form>
+</td>
+            </tr>
+            
+          </table>
+        </td>
+        
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+    </table >
+<table style="border: 1; width: 100%; font-family: arial;" cellpadding="0" cellspacing="0" bgcolor="#cacaca" bordercolor="#fffaaa">
+<tr>
+              <td><a href="index.html" class="blue1">&lt;&lt; Home</a></td>
+              <td class="green2">&copy; <span id="ctl00_lblCopyYears">2007</span> <span id="ctl00_lblCompanyName">National Appliance Network</span></td>
+            </tr>
+</table>
+    </div>
+  </body>
+</html>

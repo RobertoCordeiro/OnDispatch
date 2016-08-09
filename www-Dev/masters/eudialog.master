@@ -1,0 +1,242 @@
+<%@ Master Language="VB" %>
+<script language="VB" runat="server">
+
+  Private _UserName As String = ""
+  Private _UserID As Long = 0
+  Private _WebLoginID As Long = 0
+  Private _AccessCoding As String = ""
+  
+  ''' <summary>
+  ''' Returns/Sets the value for the title bar text
+  ''' </summary>
+  'Public Property PageTitleText() As String
+  '  Get
+  '    'Return PageTitle.Text
+  '  End Get
+  '  Set(ByVal value As String)
+  '    'pagetitle.Text = value
+  '  End Set
+  'End Property
+  
+  Public Property PageSubHeader() As String
+    Get
+      Return lblPageSubHeader.Text
+    End Get
+    Set(ByVal value As String)
+      lblPageSubHeader.Text = value
+    End Set
+  End Property
+  
+  ''' <summary>
+  ''' Returns/Sets the WebLogin ID for the current user
+  ''' </summary>
+  'Public Property WebLoginID() As Long
+  '  Get
+  '    Return _WebLoginID
+  '  End Get
+  '  Set(ByVal value As Long)
+  '    _WebLoginID = value
+  '    LoadUserDetail()
+  '  End Set
+  'End Property
+
+  ''' <summary>
+  ''' Returns/Sets the text for the page header
+  ''' </summary>
+  Public Property PageHeaderText() As String
+    Get
+      Return lblPageHeader.Text
+    End Get
+    Set(ByVal value As String)
+      lblPageHeader.Text = value
+    End Set
+  End Property
+    
+  'Public ReadOnly Property UserName() As String
+  '  Get
+  '    Return _UserName
+  '  End Get
+  'End Property
+  
+  'Public ReadOnly Property UserID() As Long
+  '  Get
+  '    Return _UserID
+  '  End Get
+  'End Property
+  
+  ''' <summary>
+  ''' Initializes the page
+  ''' </summary>
+  Private Sub Page_Load(ByVal S As Object, ByVal E As EventArgs)
+    Response.Buffer = True
+    If CType(System.Configuration.ConfigurationManager.AppSettings("DownForMaintenance"), Boolean) Then
+      Response.Redirect(System.Configuration.ConfigurationManager.AppSettings("MaintenanceUrl"), True)
+      Response.Flush()
+      Response.End()
+    Else
+      Dim blnRequireSecure As Boolean = System.Configuration.ConfigurationManager.AppSettings("RequireSecureConnection")
+      Dim strRedirect As String = ""
+      If blnRequireSecure Then
+        If (Request.ServerVariables("HTTPS") = "off") Then
+          Dim strQuery As String = ""
+          strRedirect = "https://www.bestservicers.com/eu/ticketdocumentsupload.aspx" '& Request.ServerVariables("SERVER_NAME")
+          strRedirect &= Request.ServerVariables("SCRIPT_NAME")
+          strQuery = Request.ServerVariables("QUERY_STRING")
+          If strQuery.Trim.Length > 0 Then
+            strRedirect &= "?"
+            strRedirect &= strQuery
+          End If
+          Response.Redirect(strRedirect, True)
+        End If
+      End If
+      'Dim strCompanyName As String = System.Configuration.ConfigurationManager.AppSettings("CompanyName")
+      'Dim lngCopyrightStartYear As Integer = CType(System.Configuration.ConfigurationManager.AppSettings("CopyrightStartYear"), Integer)
+      'If lngCopyrightStartYear > DateTime.Now.Year Then
+      '  lblCopyYears.Text = lngCopyrightStartYear.ToString & " - " & DateTime.Now.Year.ToString
+      'Else
+      '  lblCopyYears.Text = lngCopyrightStartYear.ToString
+      'End If
+      'lblCompanyName.Text = strCompanyName
+    End If
+  End Sub
+  
+  Private Sub LoadUserDetail()
+    If _WebLoginID > 0 Then
+      Dim usr As New BridgesInterface.UserRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      Dim wbl As New BridgesInterface.WebLoginRecord(_WebLoginID, System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      usr.LoadByWebLoginID(_WebLoginID)      
+      wbl.Load(_WebLoginID)
+      _AccessCoding = wbl.AccessCoding
+      _UserName = usr.NameTag
+      _UserID = usr.UserID
+      'lblLoggedInAs.Text = usr.NameTag
+      If _AccessCoding.Trim.ToLower <> "a" Then
+        Response.Redirect("/logout.aspx")
+      End If
+    End If
+  End Sub
+  
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+ <head id="Head1" runat="Server">
+    <title>Upload Documents</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="main">
+  <div class="blok_header">
+    <div class="header">
+      <div class="logo"><a href="/index.html"><img src="/images/fulllogo.jpg" width="359" height="99" border="0" alt="logo" /></a></div>
+      <div class="menu">
+        <ul>
+          <li><a href="/index.html"><span>Home</span></a></li>
+          <li><a href="/service.html"><span>Services</span></a></li>
+          <li><a href="/login.aspx"><span>Log In</span></a></li>
+          <li><a href="/contact.aspx"><span> Contact Us</span></a></li>
+          <li><a href="/join/default.aspx" ><span> Register </span></a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+  <div class="header_text_bg2">
+    <div class="header_text2">
+      <h2>Upload Documents</h2>
+      <p>Any documents related to this service can be updated into our system to expedite service.<br />
+         Example of documents would be: Proof of Purchase, Photos of any damage, etc.</p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="body_resize">
+    <div class="body" >
+      <div class="left" >
+         <table cellspacing="0" class="dialog" style ="background-color:#ebebeb; border-style:outset">
+           <tbody>
+              <tr class="pageheader">
+                 <td class="pagesubheader" style="font-size: 8pt; font-style: normal;"><asp:Label ID="lblPageSubHeader" runat="server" /></td>
+                 <td style="white-space:nowrap" class="pageheader"><asp:Label ID="lblPageHeader" runat="server" /></td>
+              </tr>
+              <tr>
+                 <td colspan="2" class="headermenu"><asp:ContentPlaceHolder ID="headermenucontent" runat="server" /></td>
+              </tr>
+              <tr>
+                 <td colspan="2" style="padding-left: 2px; padding-right: 8px;"><asp:ContentPlaceHolder ID="bodycontent" runat="server" /></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="footerarea">
+                 <div>
+                    <a class="footerlink" href="/logout.aspx">Log Out</a>
+                 </div>
+                </td>
+               </tr>
+             </tbody>
+           </table>   
+ </div>
+      <div class="right">
+        <h2>Step 1:<br />
+        <span>First choose what type of document you will upload into our system that is related to this service. Choose from Document Types List.</span></h2>
+        <h2>Step 2:<br />
+        <span>Look for the document saved in your computer by clicking the browse button.Please load PDF files as documents, and jpeg or gif files as pictures</span></h2>
+        <h2>Step 3:<br />
+        <span>Click the upload button and you will be able to see the document uploaded on the ticket</span></h2>
+
+        <div class="clr"></div>
+        
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+<div class="FBG">
+  <div class="FBG_resize">
+    <div class="right">
+      <h2>Services You Can Count On</h2>
+      <p>We work with your business and adapt our system to comply with your requirements all the way through the process of dispatching, managing and completing a service call.
+        Our Network of Technicians can improve your customer experience and add value to your warranty on-site service representation.</p>
+    </div>
+    <div class="left">
+      <h2>Features </h2>
+      <ul>
+        <li>Support Services</li>
+        <li>Training</li>
+        <li>Depot Repair</li>
+        <li>Statewide Coverage</li>
+      </ul>
+    </div>
+    <div class="left">
+      <h2>Client Advantages </h2>
+      <ul>
+        <li>Highly Training Technician</li>
+        <li>Improve Customer Experience</li>
+        <li>Enhance Brand Loyalty</li>
+        <li>Total Accountability</li>
+      </ul>
+    </div>
+    <div class="right">
+      <h2>Our Message</h2>
+      <p> <img src="/images/test.gif" alt="picture" width="24" height="18" />&quot;To my customer: I may not have the answer, but I'll find it. I may not have the time, but I'll make it. I may not be the biggest, but I'll be the most committed to your success.
+        &quot;</p>
+      
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</div>
+<div class="footer">
+  <div class="footer_resize"><a href="/index.html"><img src="/images/fulllogo.jpg" alt="picture" width="214" height="84" border="0" /></a>
+    <p class="leftt">Copyright 2010 © Best Servicers of America. All Rights Reserved<br />
+      <a href="/policy.html"><strong>Private Policy</strong></a></p>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</div>
+</body>
+</html>

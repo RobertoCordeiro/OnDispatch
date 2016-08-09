@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.ReportViewer.WebForms</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.ReportViewer.WebForms.DataSourceHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.DataSourceTable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.DataTableFromEnumerable">
+            <summary>
+            Summary description for DataTableFromEnumerable.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.EmbeddedResourceOperation">
+            <summary>
+            Summary description for EmbeddedResourceOperation.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.HandlerOperation">
+            <summary>
+            Summary description for HandlerOperation.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.EmbeddedResources">
+            <summary>
+            Summary description for EmbeddedResources.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ExportGroup">
+            <summary>
+            Summary description for ExportToolbarGroup.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ToolbarGroup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ExportFormatButton">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ToolbarButton">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.HandlerOperationTypes">
+            <summary>
+            Summary description for HandlerOperationTypes.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.HtmlReportStreamManager">
+            <summary>
+            Manages the streams of the HTML report - the main HTML stream, the image streams, other streams if available.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ImageStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.MainTable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.PageNavigationGroup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.PrintGroup">
+            <summary>
+            Summary description for PrintGroup.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.PropertyDescriptorFinder">
+            <summary>
+            Summary description for PropertyDescriptorFinder.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.RefreshGroup">
+            <summary>
+            Summary description for RefreshGroup.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportDataOperation">
+            <summary>
+            Summary description for ReportDataOperation.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportDataSource">
+            <summary>
+            ReportDataSource class is responsible for transforming the data source
+            to a data set that contains grouped and sorted data, 
+            and calculated aggregates. The result data set contains 0..* [Group_N] tables
+            corresponding to the GroupExpressions and [Main Table] table with all the data
+            from the data source.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportDataSourceAdapter">
+            <summary>
+            Transforms an enumerable data source to
+            </summary>
+        </member>
+        <member name="M:Telerik.ReportViewer.WebForms.ReportDataSourceAdapter.Fill(System.Data.DataSet)">
+            <summary>
+            Fills the given DataSet with the transformed data source.
+            </summary>
+            <param name="dataSet"></param>
+        </member>
+        <member name="M:Telerik.ReportViewer.WebForms.ReportDataSourceAdapter.TransformDataSource(System.Data.DataSet)">
+            <summary>
+            Adds group tables and the main table to the given data set.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportExportOperation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportImageOperation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportPageOperation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportPrintOperation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportToolbar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.ReportViewer.WebForms.ReportViewer.ConfigContainsHandler">
+            <summary>
+            Checks whether the ReportViewer HttpHandler is registered in the user application's web.config
+            </summary>
+            <returns>True if HttpHandler is set; otherwise False</returns>
+        </member>
+        <member name="P:Telerik.ReportViewer.WebForms.ReportViewer.ZoomPercent">
+            <summary>Gets or sets the percentage of zoom used for the report display.</summary>
+            <returns>An integer value containing the percentage of zoom.</returns>
+        </member>
+        <member name="P:Telerik.ReportViewer.WebForms.ReportViewer.Skin">
+            <summary>
+            Gets or sets the name of the skin that is used by the viewer.
+            </summary>
+            <value>
+            A string containing the name of the currently used skin. The default value is
+            <strong>Default</strong>.
+            </value>        
+        </member>
+        <member name="P:Telerik.ReportViewer.WebForms.ReportViewer.SkinsPath">
+            <summary>
+            Gets or sets the relative path of the folder containing the skins.
+            </summary>
+            <value>
+            A string specifying the relative path to the folder which contains
+            ReportViewer skins. The default value is "~/ReportViewer/Skins".
+            </value>        
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportViewerFrame">
+            <summary>
+            Summary description for ReportViewerFrame.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ReportViewerHandlerNotRegisteredException">
+            <summary>
+            Summary description for ReportViewerHandlerNotRegisteredException.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ServerReport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.SR">
+            <summary>
+            Summary description for SRStrings
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.SRCategoryAttribute">
+            <summary>
+            Summary description for SRCategoryAttribute.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.SRErrors">
+            <summary>
+            Summary description for SRErrors.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.StreamManager">
+            <summary>
+            Manages the streams of the HTML report - the main HTML stream, the image streams, other streams if available.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.TextButton">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ToolbarImageButton">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ToolbarTextBox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.Utils">
+            <summary>
+            Summary description for Utils.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Telerik.ReportViewer.WebForms.UrlQueryBuilder" -->
+        <member name="T:Telerik.ReportViewer.WebForms.WaitControl">
+            <summary>
+            Summary description for WaitControl.
+            </summary>
+        </member>
+        <member name="T:Telerik.ReportViewer.WebForms.ZoomButton">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

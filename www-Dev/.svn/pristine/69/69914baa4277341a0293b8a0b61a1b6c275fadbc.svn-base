@@ -1,0 +1,114 @@
+.RadPanelbar_Default2006
+{
+	background: white;
+	white-space: nowrap;
+}
+
+.RadPanelbar_Default2006 .rootGroup
+{
+	border: solid 1px #e5e5e5;
+	border-bottom: 0;
+}
+
+.RadPanelbar_Default2006 .text
+{
+	color: #333333;
+	padding: 0px 23px;
+	font: normal 11px Arial, Verdana, Sans-serif;
+}
+
+.RadPanelbar_Default2006 .image
+{
+	margin: 4px 0px;
+}
+
+
+.RadPanelbar_Default2006 .rootGroup .text
+{
+	background: url('Img/headerArrow.gif') no-repeat 11px center;
+	line-height: 18px;
+	border-bottom: solid 1px #bbbbbb;
+	border-top: solid 1px white;
+}
+
+.RadPanelbar_Default2006 .rootGroup .link
+{
+	background: white url('Img/HeaderBg.gif') repeat-x;
+}
+
+.RadPanelbar_Default2006 .group .text
+{
+	border-bottom: solid 1px #f5f5f5;
+	border-top: 0;
+	background: none;
+	color: #666666;
+}
+
+.RadPanelbar_Default2006 .group .link
+{
+	background: none;
+}
+
+
+.RadPanelbar_Default2006 .rootGroup .expanded
+{
+	background: white url('Img/SelectBg.gif') repeat-x;
+}
+
+.RadPanelbar_Default2006 .group .expanded
+{
+	background: none;
+	border-bottom: 0px;
+}
+
+.RadPanelbar_Default2006 .rootGroup .expanded .text
+{
+	background: url('Img/HeaderArrowExpanded.gif') no-repeat 11px center;
+	border-bottom: solid 1px #bbbbbb;
+	border-top: solid 1px white;
+}
+
+.RadPanelbar_Default2006 .rootGroup .selected .text
+{
+	font-weight: bold;
+}
+
+.RadPanelbar_Default2006 .group .selected .text
+{
+	text-decoration: underline;
+	font-weight: normal;
+	border-bottom: solid 1px #f5f5f5;
+	border-top: 0;
+	background: none;
+	color: black;
+}
+
+.RadPanelbar_Default2006 .group .expanded .text
+{
+	border-top:0;
+	color: #000;
+	border-bottom: solid 1px #f5f5f5;
+	background: none;
+}
+
+.RadPanelbar_Default2006 .level2 .text
+{
+	padding-left: 36px;
+	line-height: 14px;
+}
+
+.RadPanelbar_Default2006 .rootGroup .disabled:hover,
+.RadPanelbar_Default2006 .rootGroup .disabled .text
+{
+	color: #ccc;
+	cursor: default;
+}
+
+.RadPanelbar_Default2006 .rootGroup .group .disabled:hover,
+.RadPanelbar_Default2006 .rootGroup .group .disabled .text
+{
+	text-decoration: none;
+	background: none;
+	color: #ccc;
+	cursor: default;
+}

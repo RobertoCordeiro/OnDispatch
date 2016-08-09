@@ -1,0 +1,213 @@
+/* Telerik RadCalendar WebBlue skin */
+
+table.calendarWrapper_WebBlue
+{
+	background: #fff;
+	cursor: default;
+	border: solid 1px #a0aab6;
+	filter: progid:DXImageTransform.Microsoft.dropShadow(Color=a0aab6,offX=2,offY=2,positive=true);
+}
+
+table.calendarWrapper_WebBlue td
+{
+	border:0;
+}
+
+.titlebar_WebBlue
+{
+	width: 100%;
+	height: 20px;
+	border-bottom: solid 1px #8a9db5;
+	background: #b9c4d2 url('Img/titlebarBg.gif') repeat-x;
+	font: bold 11px Arial, Verdana, Sans-serf;
+	color: #fff;
+}
+
+.TableLayout_WebBlue
+{
+	width:100%;
+}
+
+.calendarWrapper_WebBlue .TableLayout_WebBlue td, 
+.calendarWrapper_WebBlue .TableLayout_WebBlue th
+{
+	border-bottom: solid 1px #f4f4f4;
+	font: normal 11px Arial, Verdana, Sans-serf;
+}
+
+.TableLayout_WebBlue td a,
+.TableLayout_WebBlue td span
+{
+	display:block;
+	text-align:right;
+	padding-right:2px;
+	text-decoration:none;
+	cursor: default;
+}
+
+.TableLayout_WebBlue td a
+{
+	color: #000;
+}
+
+.DaysOfWeek_WebBlue
+{
+	color: #535353;
+	text-align: center;
+	text-transform: uppercase;
+	border-bottom: solid 1px #dde1e4 !important;
+	background: url('Img/DaysOfWeekBg.gif');
+}
+
+th.DaysOfWeek_WebBlue
+{
+	line-height: 17px;
+}
+
+td.DaysOfWeek_WebBlue
+{
+	padding-right:3px;
+	padding-left:3px;
+}
+
+.calendarWrapper_WebBlue .otherMonth_WebBlue a
+{
+	border: solid 1px #fff;
+	color: #d1d1d1;
+}
+
+.calendarWrapper_WebBlue .outOfRange_WebBlue span
+{
+	background: #fff;
+	color: #d1d1d1;
+}
+
+.radCalDefault_WebBlue a,
+.radCalWeekendDefault_WebBlue a
+{
+	border: solid 1px #fff;
+	background: #fff;
+	color: #000;
+}
+
+.radCalHover_WebBlue a, 
+.radCalWeekendHover_WebBlue a
+{
+	border: solid 1px #e3d7c0;
+	background: #f9f6dd;
+}
+
+.radCalToday_WebBlue a
+{
+	border: solid 1px #a0aab6;
+	color: #000;
+}
+
+.radCalTodaySelected_WebBlue a
+{
+	border: solid 1px #a0aab6;
+	background: #ced8dd;
+	color: #000;
+}
+
+.radCalSelect_WebBlue a, 
+.radCalWeekendSelect_WebBlue a
+{
+	border: solid 1px #a0aab6;
+	background: #ced8dd;
+	color: #000;
+}
+
+.MonthYearFastNav_WebBlue
+{
+	border: 1px solid #a0aab6;
+	background: white;
+	font: normal 8pt Tahoma;
+	color: #000;
+	border-collapse: separate;
+	filter: progid:DXImageTransform.Microsoft.dropShadow(Color=a0aab6,offX=2,offY=2,positive=true);
+	cursor: pointer;
+}
+
+.MonthYearFastNav_WebBlue td
+{
+	background: white;
+	vertical-align: middle;
+	text-align: center;
+	border: solid 1px white !important;
+}
+
+.MonthYearFastNav_WebBlue td.selected_WebBlue
+{
+	background: #f9f6dd;
+	color: black;
+	text-align: center;
+	border: solid 1px #e3d7c0 !important;
+}
+
+.MonthYearFastNav_WebBlue td.bottom_WebBlue
+{
+	text-align: right;
+	padding-left: 9px;
+}
+
+.MonthYearFastNav_WebBlue td input
+{
+	background: #ced8dd;
+	border: solid 1px #69798c;
+	font: normal 11px Arial, Verdana, Sans-serf;
+	color: #000000;
+	float: left;
+	width: auto;
+	margin-right: 6px;
+}
+
+.radPopupImage_WebBlue
+{
+	position: relative;
+	_position: inherit; /*IE6 fix*/
+	outline: none;
+}
+* + html .radPopupImage_WebBlue
+{
+	position: inherit;
+}
+
+.radPopupImage_WebBlue img
+{
+	vertical-align: middle;
+	margin:0 2px;
+	border:0;
+}
+
+.radDisabled_WebBlue img
+{
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.pickerWrapper_WebBlue
+{
+	vertical-align:middle;
+	height:18px !important;
+}
+
+.pickerWrapper_WebBlue table
+{
+	vertical-align: bottom;
+	_vertical-align:middle;
+}
+
+.pickerWrapper_WebBlue table, 
+.pickerWrapper_WebBlue td
+{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.pickerWrapper_WebBlue .inputCell 
+{
+	padding: 0 4px 0 0;	
+}

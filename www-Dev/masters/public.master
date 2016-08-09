@@ -1,0 +1,85 @@
+﻿<%@ Master Language="VB" %>
+<script language="VB" runat="server">
+
+  ''' <summary>
+  ''' Returns/Sets the value for the title bar text
+  ''' </summary>
+  Public Property PageTitleText() As String
+    Get
+      Return PageTitle.Text
+    End Get
+    Set(ByVal value As String)
+      pagetitle.Text = value
+    End Set
+  End Property
+
+  ''' <summary>
+  ''' Returns/Sets the text for the page header
+  ''' </summary>
+  Public Property PageHeaderText() As String
+    Get
+      Return lblPageHeader.Text
+    End Get
+    Set(ByVal value As String)
+      lblPageHeader.Text = value
+    End Set
+  End Property
+  
+  ''' <summary>
+  ''' Initializes the page
+  ''' </summary>
+  Private Sub Page_Load(ByVal S As Object, ByVal E As EventArgs)
+    Response.Buffer = True
+    If CType(System.Configuration.ConfigurationManager.AppSettings("DownForMaintenance"), Boolean) Then
+      Response.Redirect(System.Configuration.ConfigurationManager.AppSettings("MaintenanceUrl"), True)
+      Response.Flush()
+      Response.End()
+    Else
+      Dim strCompanyName As String = System.Configuration.ConfigurationManager.AppSettings("CompanyName")
+      Dim lngCopyrightStartYear As Integer = CType(System.Configuration.ConfigurationManager.AppSettings("CopyrightStartYear"), Integer)
+      If lngCopyrightStartYear > DateTime.Now.Year Then
+        lblCopyYears.Text = lngCopyrightStartYear.ToString & " - " & DateTime.Now.Year.ToString
+      Else
+        lblCopyYears.Text = lngCopyrightStartYear.ToString
+      End If
+      lblCompanyName.Text = strCompanyName
+    End If
+  End Sub
+  
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head id="pagehead" runat="server">
+    <title id="pagetitle" runat="server" />
+    <link rel="stylesheet" type="text/css"  href="../stylesheets/default.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+  <table cellspacing="0" class="bodytable">
+    <tbody>
+      <tr>
+        <td class="pageheader"><asp:Label ID="lblPageHeader" runat="server" /></td>
+      </tr>
+      <tr>
+        <td class="headermenu"><a class="unselectedheaderlink" href="../index.html">Home</a></td>
+      </tr>
+      <tr>
+        <td class="bodyarea"><asp:ContentPlaceHolder ID="bodycontent" runat="server" /></td>
+      </tr>
+      <tr>
+        <td class="footerarea">
+          <table style="width: 100%">
+            <tbody>
+              <tr>
+                <td class="emblems"><a href="http://validator.w3.org/check?uri=referer"><img src="/graphics/xhtml10valid.png" alt="Valid XHTML 1.0 Transitional" /></a></td>
+                <td class="copynotice">&copy; <asp:label ID="lblCopyYears" runat="server" /> <asp:Label ID="lblCompanyName" runat="server" /></td>
+              </tr>
+            </tbody>
+          </table>        
+        </td>
+      </tr>
+    </tbody>
+  </table>   
+</body>
+</html>

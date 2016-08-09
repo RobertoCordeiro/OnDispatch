@@ -1,0 +1,250 @@
+﻿<%@ Master Language="VB" %>
+<script language="VB" runat="server">
+
+  Private _UserName As String = ""
+  Private _CustomerAgentID As Long = 0
+  Private _WebLoginID As Long = 0
+  Private _AccessCoding As String = ""
+  Private _CustomerID As Long = 0
+  Private _ActiveMenu as String = ""
+  
+  ''' <summary>
+  ''' Returns/Sets the value for the title bar text
+  ''' </summary>
+  Public Property PageTitleText() As String
+    Get
+      Return PageTitle.Text
+    End Get
+    Set(ByVal value As String)
+      pagetitle.Text = value
+    End Set
+  End Property
+  
+  ''' <summary>
+  ''' Returns the customer ID for the currently logged in user
+  ''' </summary>
+  Public ReadOnly Property CustomerID() As Long
+    Get
+      Return _CustomerID
+    End Get
+  End Property
+  
+  Public ReadOnly Property UserID() As Long
+    Get
+      Return 2
+    End Get
+  End Property
+  
+  ''' <summary>
+  ''' Returns/Sets the WebLogin ID for the current user
+  ''' </summary>
+  Public Property WebLoginID() As Long
+    Get
+      Return _WebLoginID
+    End Get
+    Set(ByVal value As Long)
+      _WebLoginID = value
+      LoadUserDetail()
+    End Set
+  End Property
+
+  ''' <summary>
+  ''' Returns/Sets the text for the page header
+  ''' </summary>
+  Public Property PageHeaderText() As String
+    Get
+      Return lblPageHeader.Text
+    End Get
+    Set(ByVal value As String)
+      lblPageHeader.Text = value
+    End Set
+  End Property
+    
+  Public ReadOnly Property UserName() As String
+    Get
+      Return _UserName
+    End Get
+  End Property
+  
+  Public ReadOnly Property CustomerAgentID() As Long
+    Get
+      Return _CustomerAgentID
+    End Get
+  End Property
+  Public Property ActiveMenu() as String
+   Get
+     Return _ActiveMenu
+   end get
+     Set(ByVal value As String)
+      _ActiveMenu = value
+    End Set
+   
+  end Property
+  
+  ''' <summary>
+  ''' Initializes the page
+  ''' </summary>
+  Private Sub Page_Load(ByVal S As Object, ByVal E As EventArgs)
+    Response.Buffer = True
+    If CType(System.Configuration.ConfigurationManager.AppSettings("DownForMaintenance"), Boolean) Then
+      Response.Redirect(System.Configuration.ConfigurationManager.AppSettings("MaintenanceUrl"), True)
+      Response.Flush()
+      Response.End()
+    Else
+      Dim strCompanyName As String = System.Configuration.ConfigurationManager.AppSettings("CompanyName")
+      Dim lngCopyrightStartYear As Integer = CType(System.Configuration.ConfigurationManager.AppSettings("CopyrightStartYear"), Integer)
+      If lngCopyrightStartYear > DateTime.Now.Year Then
+        lblCopyYears.Text = lngCopyrightStartYear.ToString & " - " & DateTime.Now.Year.ToString
+      Else
+        lblCopyYears.Text = lngCopyrightStartYear.ToString
+      End If
+      lblCompanyName.Text = strCompanyName
+    End If
+    Dim x as New HtmlGenericControl("li")
+      if _ActiveMenu <> "" then
+        x = FindControl(_ActiveMenu)   
+            x.Focus()
+        
+        Response.Cookies("mnuActive").Value = x.ID.ToString 
+        Response.Cookies("mnuActive").Expires = DateTime.Now.AddDays(1)
+        _ActiveMenu= x.ID.ToString 
+      else
+       GetMenuActive() 
+      end if
+  End Sub
+  
+  Private Sub LoadUserDetail()
+    If _WebLoginID > 0 Then
+      Dim cag As New BridgesInterface.CustomerAgentRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      Dim wbl As New BridgesInterface.WebLoginRecord(_WebLoginID, System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      cag.LoadByWebLoginID(_WebLoginID)
+      wbl.Load(_WebLoginID)
+      _AccessCoding = wbl.AccessCoding
+      _UserName = cag.FirstName & " " & cag.LastName
+      _CustomerAgentID = cag.CustomerAgentID
+      _CustomerID = cag.CustomerID
+      lblLoggedInAs.Text = _UserName
+      If Not cag.AdminAgent then
+         F.Visible = false
+      Else
+         F.Visible = True
+      end if
+      If _AccessCoding.Trim.ToLower <> "c" Then
+        Response.Redirect("/logout.aspx")
+      End If
+    End If
+  End Sub
+  Protected Sub SetMenuActive (ByVal sender as Object,ByVal e as  BulletedListEventArgs )
+    Dim x as New HtmlGenericControl("li")
+    x.FindControl (e.Index)
+    
+    Response.Cookies("mnuActive").Value = x.ID.ToString 
+    Response.Cookies("mnuActive").Expires = DateTime.Now.AddDays(1)
+    x.Attributes.CssStyle.Add ("class","active")
+    x.Focus
+    'session ("mnuActive") = x
+    
+  end sub
+  
+  Protected Sub DeleteMenuActive ()
+   Response.Cookies("mnuActive").Expires = DateTime.Now.AddDays(-1)
+  end Sub
+  
+  Protected Sub GetMenuActive ()
+    Dim ldp as String
+     ldp = "A"
+    'ldp = session("mnuActive").ToString
+    
+    If Not Request.Cookies("mnuActive") Is Nothing then
+      ldp = Server.HtmlEncode (Request.Cookies("mnuActive").Value)
+    end if
+    
+   if (Not (ldp) Is Nothing) then
+        Dim x as New HtmlGenericControl ("li")
+        x = FindControl(ldp)   
+            x.Focus()
+        x.Attributes.CssStyle.Add ("class","active")
+   end if
+  end sub
+  
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head id="pagehead" runat="server">
+    <title id="pagetitle" runat="server" />
+    <link rel="stylesheet" type="text/css"  href="/stylesheets/clientstyle.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16195812-1");
+pageTracker._setDomainName(".bestservicers.com");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</head>
+<body>
+  <table cellspacing="0" class="bodytable">
+    <tbody>
+      <tr>
+        <td class="pageheader"><asp:Label ID="lblPageHeader" runat="server" /></td>
+      </tr>
+      <tr>
+        <td class="pagesubheader"><asp:Label ID="lblPageSubHeader" runat="server" /></td>
+      </tr>
+      <tr>
+        <td class="bodyarea">
+          <table style="width: 100%" cellspacing="0">
+            <tbody>
+              <tr>
+                <td style="width: 100%;" class="nav">
+                  <div id="navcontainer">
+                  <ul id="navlist">
+                    <li id="A" runat="server"  onclick="SetMenuActive"><a href="/clients/default.aspx">Home</a></li>
+                    <li id="B" runat="server"  onclick="SetMenuActive"><a href="/clients/tickets.aspx">Tickets</a>
+                    </li>
+                    <li id="C" runat="server" onclick="SetMenuActive"><a href="/clients/coverage.aspx">Coverage</a>
+                    </li>
+                      <li id="F" runat="server" onclick="SetMenuActive"><a href="/clients/Invoices.aspx?mode=open">Invoices</a>
+                    </li>
+                    <li id="D" runat="server"  onclick="SetMenuActive"><a href="/clients/account.aspx">My Account</a></li>  
+                    <li id="E" runat="server"  onclick="SetMenuActive"><a href="/clients/viewfaq.aspx">FAQ</a></li>
+                    <li class="li_nc" onclick="DeleteMenuActive"><a href="/logout.aspx">Log Out</a></li>
+                  </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                  <td class="headermenu"><asp:ContentPlaceHolder ID="headermenucontent" runat="server" /></td>
+              </tr>
+              <tr>
+               <td><asp:ContentPlaceHolder ID="bodycontent" runat="server" /></td>
+               <td style="width: 1px; border-left: solid 1px green"><img src="/graphics/minheight.png" alt="Client Interface" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="footerarea">
+          <div>
+            Logged in as: <asp:Label ID="lblLoggedInAs" runat="server" /><a class="footerlink" href="/logout.aspx" visible ="false"></a>
+          </div>
+          <table style="width: 100%">
+            <tbody>
+              <tr>
+                <td class="emblems"><a href="http://validator.w3.org/check?uri=referer"><img src="/graphics/xhtml10valid.png" alt="Valid XHTML 1.0 Transitional" /></a></td>
+                <td class="copynotice">&copy; <asp:label ID="lblCopyYears" runat="server" /> <asp:Label ID="lblCompanyName" runat="server" /></td>
+              </tr>
+            </tbody>
+          </table>        
+        </td>
+      </tr>
+    </tbody>
+  </table>   
+</body>
+</html>

@@ -1,0 +1,336 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+cvTrafficMaster
+</name>
+</assembly>
+<members>
+<member name="P:cvTrafficMaster.TransactionRecord.Referrer">
+	<summary>
+ Returns/Sets the Referrer field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.TransactionRecord.UserAgent">
+	<summary>
+ Returns/Sets the UserAgent field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.TransactionRecord.RemoteAddress">
+	<summary>
+ Returns/Sets the RemoteAddress field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.TransactionRecord.ScriptName">
+	<summary>
+ Returns/Sets the ScriptName field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.TransactionRecord.QueryString">
+	<summary>
+ Returns/Sets the QueryString field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.TransactionRecord.ServerName">
+	<summary>
+ Returns/Sets the ServerName field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.TransactionRecord.ConnectionString">
+	<summary>
+ Returns/Sets the connection string to the database
+ </summary>
+</member><member name="P:cvTrafficMaster.TransactionRecord.TransactionID">
+	<summary>
+ Returns/Sets the TransactionID field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.TransactionRecord.TransactionDate">
+	<summary>
+ Returns/Sets the TransactionDate field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.TransactionRecord.Modified">
+	<summary>
+ Returns a boolean value indicating if the object has changed
+ since the last time it was loaded.
+ </summary>
+</member><member name="M:cvTrafficMaster.TransactionRecord.ClearValues">
+	<summary>
+ Clears all values except for the connection string
+ </summary>
+</member><member name="M:cvTrafficMaster.TransactionRecord.AppendChangeLog(System.String@,System.String)">
+	<summary>
+ Appends a line to a change log
+ </summary>
+	<param name="strLog">The log to append to</param>
+	<param name="strNewLine">The line to append to the log</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.UpdateReferrer(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the Referrer field for this record.
+ </summary>
+	<param name="NewReferrer">The new value for theReferrer field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.UpdateUserAgent(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the UserAgent field for this record.
+ </summary>
+	<param name="NewUserAgent">The new value for theUserAgent field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.UpdateRemoteAddress(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the RemoteAddress field for this record.
+ </summary>
+	<param name="NewRemoteAddress">The new value for theRemoteAddress field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.UpdateScriptName(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the ScriptName field for this record.
+ </summary>
+	<param name="NewScriptName">The new value for theScriptName field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.UpdateQueryString(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the QueryString field for this record.
+ </summary>
+	<param name="NewQueryString">The new value for theQueryString field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.UpdateServerName(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the ServerName field for this record.
+ </summary>
+	<param name="NewServerName">The new value for theServerName field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.TrimTrunc(System.String,System.Int32)">
+	<summary>
+ Returns a string that has been trimmed and trunced down to its max length
+ </summary>
+	<param name="strInput">The string to manipulate</param>
+	<param name="intMaxLength">The maximum length the string can be</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.HasChanged">
+	<summary>
+ Returns a boolean indicating if the object has changed
+ </summary>
+</member><member name="M:cvTrafficMaster.TransactionRecord.GetHost(System.String)">
+	<summary>
+ Returns the host of an url
+ </summary>
+	<param name="strURL">The Url to Parse</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.#ctor">
+	<summary>
+ Overloaded, initializes the object
+ </summary>
+</member><member name="M:cvTrafficMaster.TransactionRecord.#ctor(System.String)">
+	<summary>
+ Overloaded, Initializes the object with a given connection string
+ </summary>
+	<param name="strConnectionString">The connection string to the database the customer is contained in</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.#ctor(System.Int64,System.String)">
+	<summary>
+ Overloaded, Initializes the object and loads by the passed in Primary Key
+ </summary>
+	<param name="lngTransactionID">The primary key of the record you wish to load</param>
+	<param name="strConnectionString">The connection string to the database</param>
+	<remarks></remarks>
+</member><member name="M:cvTrafficMaster.TransactionRecord.Add(System.String)">
+	<summary>
+  Adds a new Transaction record to the database.
+ </summary>
+	<param name="strScriptName">The value for the ScriptName portion of the record</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.Load(System.Int64)">
+	<summary>
+ Loads a Transaction record by its primary key
+ </summary>
+</member><member name="M:cvTrafficMaster.TransactionRecord.Save(System.String@)">
+	<summary>
+ Saves any changes to the record since it was last loaded
+ </summary>
+	<param name="strChangeLog">The string variable you want manipulated that returns a log of changes.</param>
+</member><member name="M:cvTrafficMaster.TransactionRecord.Delete">
+	<summary>
+ Deletes the currently loaded Transaction Record
+ </summary>
+</member><member name="P:cvTrafficMaster.ExcludeRecord.RemoteAddress">
+	<summary>
+ Returns/Sets the RemoteAddress field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.ExcludeRecord.Reason">
+	<summary>
+ Returns/Sets the Reason field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.ExcludeRecord.ConnectionString">
+	<summary>
+ Returns/Sets the connection string to the database
+ </summary>
+</member><member name="P:cvTrafficMaster.ExcludeRecord.ExcludeID">
+	<summary>
+ Returns/Sets the ExcludeID field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.ExcludeRecord.DateCreated">
+	<summary>
+ Returns/Sets the DateCreated field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.ExcludeRecord.Modified">
+	<summary>
+ Returns a boolean value indicating if the object has changed
+ since the last time it was loaded.
+ </summary>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.ClearValues">
+	<summary>
+ Clears all values except for the connection string
+ </summary>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.AppendChangeLog(System.String@,System.String)">
+	<summary>
+ Appends a line to a change log
+ </summary>
+	<param name="strLog">The log to append to</param>
+	<param name="strNewLine">The line to append to the log</param>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.UpdateRemoteAddress(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the RemoteAddress field for this record.
+ </summary>
+	<param name="NewRemoteAddress">The new value for theRemoteAddress field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.UpdateReason(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the Reason field for this record.
+ </summary>
+	<param name="NewReason">The new value for theReason field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.TrimTrunc(System.String,System.Int32)">
+	<summary>
+ Returns a string that has been trimmed and trunced down to its max length
+ </summary>
+	<param name="strInput">The string to manipulate</param>
+	<param name="intMaxLength">The maximum length the string can be</param>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.HasChanged">
+	<summary>
+ Returns a boolean indicating if the object has changed
+ </summary>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.#ctor">
+	<summary>
+ Overloaded, initializes the object
+ </summary>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.#ctor(System.String)">
+	<summary>
+ Overloaded, Initializes the object with a given connection string
+ </summary>
+	<param name="strConnectionString">The connection string to the database the customer is contained in</param>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.#ctor(System.Int64,System.String)">
+	<summary>
+ Overloaded, Initializes the object and loads by the passed in Primary Key
+ </summary>
+	<param name="lngExcludeID">The primary key of the record you wish to load</param>
+	<param name="strConnectionString">The connection string to the database</param>
+	<remarks></remarks>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.Add(System.String,System.String)">
+	<summary>
+  Adds a new Exclude record to the database.
+ </summary>
+	<param name="strRemoteAddress">The value for the RemoteAddress portion of the record</param>
+	<param name="strReason">The value for the Reason portion of the record</param>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.Load(System.Int64)">
+	<summary>
+ Loads a Exclude record by its primary key
+ </summary>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.Save(System.String@)">
+	<summary>
+ Saves any changes to the record since it was last loaded
+ </summary>
+	<param name="strChangeLog">The string variable you want manipulated that returns a log of changes.</param>
+</member><member name="M:cvTrafficMaster.ExcludeRecord.Delete">
+	<summary>
+ Deletes the currently loaded Exclude Record
+ </summary>
+</member><member name="P:cvTrafficMaster.FlagRecord.Description">
+	<summary>
+ Returns/Sets the Description field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.FlagRecord.RemoteHost">
+	<summary>
+ Returns/Sets the RemoteHost field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.FlagRecord.ConnectionString">
+	<summary>
+ Returns/Sets the connection string to the database
+ </summary>
+</member><member name="P:cvTrafficMaster.FlagRecord.FlagID">
+	<summary>
+ Returns/Sets the FlagID field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.FlagRecord.DateCreated">
+	<summary>
+ Returns/Sets the DateCreated field for the currently loaded record
+ </summary>
+</member><member name="P:cvTrafficMaster.FlagRecord.Modified">
+	<summary>
+ Returns a boolean value indicating if the object has changed
+ since the last time it was loaded.
+ </summary>
+</member><member name="M:cvTrafficMaster.FlagRecord.ClearValues">
+	<summary>
+ Clears all values except for the connection string
+ </summary>
+</member><member name="M:cvTrafficMaster.FlagRecord.AppendChangeLog(System.String@,System.String)">
+	<summary>
+ Appends a line to a change log
+ </summary>
+	<param name="strLog">The log to append to</param>
+	<param name="strNewLine">The line to append to the log</param>
+</member><member name="M:cvTrafficMaster.FlagRecord.UpdateDescription(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the Description field for this record.
+ </summary>
+	<param name="NewDescription">The new value for theDescription field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.FlagRecord.UpdateRemoteHost(System.String,System.Data.SqlClient.SqlConnection@)">
+	<summary>
+ Updates the RemoteHost field for this record.
+ </summary>
+	<param name="NewRemoteHost">The new value for theRemoteHost field</param>
+	<param name="cnn">The Connection to use</param>
+</member><member name="M:cvTrafficMaster.FlagRecord.TrimTrunc(System.String,System.Int32)">
+	<summary>
+ Returns a string that has been trimmed and trunced down to its max length
+ </summary>
+	<param name="strInput">The string to manipulate</param>
+	<param name="intMaxLength">The maximum length the string can be</param>
+</member><member name="M:cvTrafficMaster.FlagRecord.HasChanged">
+	<summary>
+ Returns a boolean indicating if the object has changed
+ </summary>
+</member><member name="M:cvTrafficMaster.FlagRecord.#ctor">
+	<summary>
+ Overloaded, initializes the object
+ </summary>
+</member><member name="M:cvTrafficMaster.FlagRecord.#ctor(System.String)">
+	<summary>
+ Overloaded, Initializes the object with a given connection string
+ </summary>
+	<param name="strConnectionString">The connection string to the database the customer is contained in</param>
+</member><member name="M:cvTrafficMaster.FlagRecord.#ctor(System.Int64,System.String)">
+	<summary>
+ Overloaded, Initializes the object and loads by the passed in Primary Key
+ </summary>
+	<param name="lngFlagID">The primary key of the record you wish to load</param>
+	<param name="strConnectionString">The connection string to the database</param>
+	<remarks></remarks>
+</member><member name="M:cvTrafficMaster.FlagRecord.Add(System.String,System.String)">
+	<summary>
+  Adds a new Flag record to the database.
+ </summary>
+	<param name="strDescription">The value for the Description portion of the record</param>
+	<param name="strRemoteHost">The value for the RemoteHost portion of the record</param>
+</member><member name="M:cvTrafficMaster.FlagRecord.Load(System.Int64)">
+	<summary>
+ Loads a Flag record by its primary key
+ </summary>
+</member><member name="M:cvTrafficMaster.FlagRecord.LoadByRemoteHost(System.String)">
+	<summary>
+ Loads a flag by it's remote host (IP)
+ </summary>
+	<param name="strRemoteHost">IP Address</param>
+</member><member name="M:cvTrafficMaster.FlagRecord.Save(System.String@)">
+	<summary>
+ Saves any changes to the record since it was last loaded
+ </summary>
+	<param name="strChangeLog">The string variable you want manipulated that returns a log of changes.</param>
+</member><member name="M:cvTrafficMaster.FlagRecord.Delete">
+	<summary>
+ Deletes the currently loaded Flag Record
+ </summary>
+</member>
+</members>
+</doc>

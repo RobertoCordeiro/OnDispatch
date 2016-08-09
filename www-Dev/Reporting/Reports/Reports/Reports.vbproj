@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F09831D4-F035-4B3A-8847-41104045003F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Reports</RootNamespace>
+    <AssemblyName>Reports</AssemblyName>
+    <MyType>Windows</MyType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Reports.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Reports.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Reporting, Version=1.5.1.0, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <HintPath>C:\Program Files\Telerik\Reporting Q3 2007\bin\Telerik.Reporting.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Reporting.Interfaces, Version=2.0.1.0, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Reporting.Processing, Version=1.5.1.0, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <HintPath>C:\Program Files\Telerik\Reporting Q3 2007\bin\Telerik.Reporting.Processing.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.ReportViewer.WebForms, Version=2.0.1.0, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BridgesDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BridgesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BridgesDataSet.vb">
+      <DependentUpon>BridgesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceSingles.Designer.vb">
+      <DependentUpon>InvoiceSingles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceSingles.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InvoiceSingleTicket.Designer.vb">
+      <DependentUpon>InvoiceSingleTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceSingleTicket.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptVendorInvoices.Designer.vb">
+      <DependentUpon>rptVendorInvoices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rptVendorInvoices.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Report1.Designer.vb">
+      <DependentUpon>Report1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptOldInvoices.Designer.vb">
+      <DependentUpon>rptOldInvoices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rptOldInvoices.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="srptParts.Designer.vb">
+      <DependentUpon>srptParts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="srptParts.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InvoiceSingles.resx">
+      <DependentUpon>InvoiceSingles.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceSingleTicket.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InvoiceSingleTicket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptVendorInvoices.resx">
+      <DependentUpon>rptVendorInvoices.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Report1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptOldInvoices.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>rptOldInvoices.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="srptParts.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>srptParts.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BridgesDataSet.xsc">
+      <DependentUpon>BridgesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BridgesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BridgesDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BridgesDataSet.xss">
+      <DependentUpon>BridgesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,219 @@
+/* Telerik RadInput Mac skin */
+
+.radInput_Mac
+{
+	font: bold 12px arial,verdana,sans-serif;
+	vertical-align:middle;
+}
+
+.radInput_Mac,
+.radInput_Mac table
+{
+	/*set the commented width style if you have set ShowButton="true" in the control*/
+	width: 180px !important; /*width: 200px !important; */
+	height: 28px !important;	
+}
+
+*+html .radInput_Mac,
+*+html .radInput_Mac table
+{
+	height: 32px !important;	
+}
+
+.radInput_Mac table
+{
+	vertical-align:bottom;
+}
+
+.radInput_Mac table,
+.radInput_Mac table td
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.radInput_Mac textarea
+{
+	vertical-align:bottom;
+	overflow:auto;
+}
+
+.radEnabledCss_Mac,
+.radDisabledCss_Mac,
+.radEmptyMessageCss_Mac,
+.radFocusedCss_Mac,
+.radNegativeCss_Mac,
+.radInvalidCss_Mac,
+.radHoverCss_Mac
+{
+	height: 22px;
+	width: 169px !important;
+	padding: 6px 5px 0;
+	margin:0;
+	border: 0;
+	font: bold 12px arial,verdana,sans-serif;
+	vertical-align: middle;
+	_background-attachment: fixed;
+}
+
+span.radInput_Mac .radEnabledCss_Mac,
+span.radInput_Mac .radDisabledCss_Mac,
+span.radInput_Mac .radEmptyMessageCss_Mac,
+span.radInput_Mac .radFocusedCss_Mac,
+span.radInput_Mac .radNegativeCss_Mac,
+span.radInput_Mac .radInvalidCss_Mac,
+span.radInput_Mac .radHoverCss_Mac
+{
+	vertical-align: bottom;
+	_vertical-align: middle;
+}
+
+textarea.radEnabledCss_Mac,
+textarea.radDisabledCss_Mac,
+textarea.radEmptyMessageCss_Mac,
+textarea.radFocusedCss_Mac,
+textarea.radNegativeCss_Mac,
+textarea.radInvalidCss_Mac,
+textarea.radHoverCss_Mac
+{
+	_padding: 6px 12px 0;
+}
+
+*+html textarea.radEnabledCss_Mac,
+*+html textarea.radDisabledCss_Mac,
+*+html textarea.radEmptyMessageCss_Mac,
+*+html textarea.radFocusedCss_Mac,
+*+html textarea.radNegativeCss_Mac,
+*+html textarea.radInvalidCss_Mac,
+*+html textarea.radHoverCss_Mac
+{
+	padding: 6px 12px 0;
+}
+
+.radHoverCss_Mac
+{
+	background: transparent url('Img/over.gif') no-repeat right bottom;
+	color: #262626;
+}
+
+.radEnabledCss_Mac,
+.radEmptyMessageCss_Mac,
+.radNegativeCss_Mac
+{
+	background: transparent url('Img/default.gif') no-repeat right bottom;
+	color: #262626;
+}
+
+.radDisabledCss_Mac
+{
+	background: transparent url('Img/default.gif') no-repeat right bottom;
+	color: Gray;
+}
+
+.radFocusedCss_Mac
+{
+	background: transparent url('Img/focus.gif') no-repeat right bottom;
+	color: #262626;
+}
+
+/* nasty Safari hack */
+:root .radFocusedCss_Mac 
+{
+	[hack: safari; /* (the first property will always fail, it is a dummy one) */
+	background: none;
+	height: 19px !important;
+	width: 172px !important;
+	margin: 3px 10px 0 3px;
+	padding: 3px 0 0 2px !important;]
+}
+
+.radInvalidCss_Mac
+{
+	background: transparent url('Img/error.gif') no-repeat right bottom;
+	color: red;
+}
+
+.radLabelCss_Mac
+{
+	font: 10px verdana,arial,sans-serif;
+	color: #b7b7b7; 
+	padding-right: 5px;
+	white-space:nowrap;
+}
+
+/* input buttons */
+
+/* SPIN BUTTONS */
+.radInput_Mac .spinImgCell
+{			
+	padding: 5px 0 0 0;	
+}
+
+.radInput_Mac a.spinbutton
+{
+	display: block;
+	text-indent: -9999px;
+	width: 12px;
+	height: 9px; 
+	line-height: 9px;
+	background: transparent url('Img/SpinButtonSprites.gif') no-repeat;
+	font-size: 1px;
+	position: relative;
+	_position: inherit; /*IE fix*/
+	outline: none;	
+}
+*+html .radInput_Mac a.spinbutton
+{
+	position: inherit;
+}
+
+.radInput_Mac a.spinbutton.up
+{
+	background-position: left 0;
+}
+
+.radInput_Mac a.spinbutton.down
+{
+	background-position: left -9px;
+}
+
+.radInput_Mac a.gobutton
+{
+	display: block;
+	text-indent: -9999px;
+	width: 20px;
+	height: 17px; 
+	line-height: 17px;
+	background: transparent url('Img/button.gif') no-repeat;
+	font-size: 1px;
+	position: relative;
+	_position: inherit; /*IE fix*/
+	outline: none;
+}
+*+html .radInput_Mac a.gobutton
+{
+	position: inherit;
+}
+
+/* end of input buttons */
+
+.radHint_Mac
+{
+	background: white url(Img/hintBg.gif) no-repeat;
+	_background-attachment: fixed;
+	height: 25px;	
+	width: 179px;
+	padding-top: 8px;
+	margin-top:-5px;
+}
+
+.radHint_Mac a,
+.Hint_Mac a:visited,
+.radHint_Mac a:hover
+{
+	color: black;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 2px;
+}

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+cvReporter
+</name>
+</assembly>
+<members>
+<member name="T:cvReporter.Report.HorizontalAlignments">
+	<summary>
+ An enumerator that holds the different types
+ of alignments that text can be in.
+ </summary>
+</member><member name="T:cvReporter.Report.VerticalAlignments">
+	<summary>
+ An enumerator that hold the different types of vertical
+ alignments that text can be in
+ </summary>
+</member><member name="P:cvReporter.Report.PageLayout.Width">
+	<summary>
+ The width (in pixels) of the report
+ </summary>
+</member><member name="P:cvReporter.Report.PageLayout.Height">
+	<summary>
+ The height (in pixels) of the report
+ </summary>
+</member><member name="P:cvReporter.Report.PageLayout.BackColor">
+	<summary>
+ Returns/Sets the background color of the report
+ </summary>
+</member><member name="P:cvReporter.Report.PageLayout.Body">
+	<summary>
+ Returns/Sets the body of the report
+ </summary>
+</member><member name="T:cvReporter.Report.PageLayout">
+	<summary>
+ A class representing the layout information for a page.
+ </summary>
+	<remarks>
+   Completed: 02/05/2007
+   Author: George H. Slaterpryce III
+   Modifications: None
+ </remarks>
+</member><member name="P:cvReporter.Report.PageBody.TextAreas">
+	<summary>
+ Returns/Sets the text areas associated with the body
+ </summary>
+</member><member name="P:cvReporter.Report.PageBody.Images">
+	<summary>
+ Returns/Sets the images associated with the body
+ </summary>
+</member><member name="P:cvReporter.Report.PageBody.BackColor">
+	<summary>
+ Returns/Sets the background color fo the body portion
+ of the report
+ </summary>
+</member><member name="P:cvReporter.Report.PageBody.Labels">
+	<summary>
+ Returns/Sets the labels associated with the body
+ </summary>
+</member><member name="T:cvReporter.Report.PageBody">
+	<summary>
+ A class representing the body portion of a report.
+ </summary>
+</member><member name="P:cvReporter.Report.ReportImage.ImageName">
+	<summary>
+ Returns/Sets the name of the image
+ </summary>
+</member><member name="P:cvReporter.Report.ReportImage.Image">
+	<summary>
+ Returns/Sets the data for the image
+ </summary>
+</member><member name="T:cvReporter.Report.ReportImage">
+	<summary>
+ A class representing an image on a report.
+ </summary>
+	<remarks>
+   Completed: 02/05/2007
+   Author: George H. Slaterpryce III
+   Modifications: None
+ </remarks>
+</member><member name="P:cvReporter.Report.TextArea.Top">
+	<summary>
+ The position of the Y coordinate of the upper left
+ hand corner of the label
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.Left">
+	<summary>
+ The position for the X coordinate of the upper right
+ hand corner of the label
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.Width">
+	<summary>
+ The width of the text area
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.Height">
+	<summary>
+ The height of the text area
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.Text">
+	<summary>
+ The text contained in the text area
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.Font">
+	<summary>
+ Returns/Sets the font of the text area
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.Pages">
+	<summary>
+ Returns the text pages for the text area
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.BackColor">
+	<summary>
+ Returns/Sets the background color for the text area
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.ForeColor">
+	<summary>
+ Returns/Sets the color of the text for the text area
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.HorizontalAlignment">
+	<summary>
+ Returns/Sets the horizontal alignment of the text
+ </summary>
+</member><member name="P:cvReporter.Report.TextArea.VerticalAlignment">
+	<summary>
+ Returns/Sets the vertical alignment of the text
+ </summary>
+</member><member name="M:cvReporter.Report.TextArea.Overflow">
+	<summary>
+ Returns the number of textareas it would take to display
+ the text in the text area. 0 based
+ </summary>
+</member><member name="M:cvReporter.Report.TextArea.#ctor">
+	<summary>
+ Initializes the object
+ </summary>
+</member><member name="M:cvReporter.Report.TextArea.#ctor(System.Int32,System.Int32,System.String)">
+	<summary>
+ Initializes the object
+ </summary>
+	<param name="intWidth">The width of the text area</param>
+	<param name="intHeight">The height of the text area</param>
+	<param name="strText">The text for the text area</param>
+</member><member name="T:cvReporter.Report.TextArea">
+	<summary>
+ Defines a text area, which is an area that can span several
+ pages and displays the appropriate text for each page, unlike
+ a label which shows only a finite amount of text (whatever fits
+ in the alloted size) and shows the same text on every page.
+ </summary>
+</member><member name="P:cvReporter.Report.Label.Top">
+	<summary>
+ The position of the Y coordinate of the upper left
+ hand corner of the label
+ </summary>
+</member><member name="P:cvReporter.Report.Label.Left">
+	<summary>
+ The position for the X coordinate of the upper right
+ hand corner of the label
+ </summary>
+</member><member name="P:cvReporter.Report.Label.Width">
+	<summary>
+ The width of the text area
+ </summary>
+</member><member name="P:cvReporter.Report.Label.Height">
+	<summary>
+ The height of the text area
+ </summary>
+</member><member name="P:cvReporter.Report.Label.Text">
+	<summary>
+ The text contained in the text area
+ </summary>
+</member><member name="P:cvReporter.Report.Label.Font">
+	<summary>
+ Returns/Sets the font of the text area
+ </summary>
+</member><member name="P:cvReporter.Report.Label.BackColor">
+	<summary>
+ Returns/Sets the background color for the text area
+ </summary>
+</member><member name="P:cvReporter.Report.Label.ForeColor">
+	<summary>
+ Returns/Sets the color of the text for the text area
+ </summary>
+</member><member name="P:cvReporter.Report.Label.HorizontalAlignment">
+	<summary>
+ Returns/Sets the horizontal alignment of the text
+ </summary>
+</member><member name="P:cvReporter.Report.Label.VerticalAlignment">
+	<summary>
+ Returns/Sets the vertical alignment of the text
+ </summary>
+</member><member name="P:cvReporter.Report.ReportName">
+	<summary>
+ The name of the report
+ </summary>
+</member><member name="P:cvReporter.Report.Layout">
+	<summary>
+ Layout information for the report
+ </summary>
+</member><member name="M:cvReporter.Report.SaveAsTiff(System.String)">
+	<summary>
+ Saves the report to a specified file name
+ </summary>
+	<param name="strFileName">THe File Name to Save As</param>
+	<remarks></remarks>
+</member><member name="M:cvReporter.Report.Render">
+	<summary>
+ Renders all the pages for the report
+ </summary>
+</member><member name="T:cvReporter.Report">
+	<summary>
+ A class that helps build a report for printing or viewing as a tiff
+ </summary>
+	<remarks>
+   Author: George H. Slaterpryce III
+   Completed: 06/08/2007
+   Modifications: None
+ </remarks>
+</member>
+</members>
+</doc>

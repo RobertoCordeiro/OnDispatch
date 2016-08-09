@@ -1,0 +1,373 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+cvCommon
+</name>
+</assembly>
+<members>
+<member name="M:cvCommon.Validators.IsValidEmail(System.String)">
+	<summary>
+ Determines if a string is a valid email
+ </summary>
+	<param name="strEmail">The string to test to see if it is a valid email address</param>
+</member><member name="M:cvCommon.Validators.IsValidUrl(System.String)">
+	<summary>
+ Determines if a string is a valid URL
+ </summary>
+	<param name="strUrl">The string to test to see if it is a valid URL</param>
+</member><member name="M:cvCommon.Validators.IsValidPasswordFormat(System.String)">
+	<summary>
+ Determines if a string is a valid password.
+ </summary>
+	<param name="strPassword">The string to test</param>
+</member><member name="M:cvCommon.Manipulators.RandomString(System.Int32)">
+	<summary>
+ Produces a random string of the length indicated
+ </summary>
+	<param name="intLength">The Length of the String to Create</param>
+</member><member name="M:cvCommon.Manipulators.NumberSuffix(System.Int64)">
+	<summary>
+ Returns the proper number suffix for a given whole number, I.E. 1st 2nd, 3rd, 430th, etc
+ </summary>
+	<param name="lngNumber">The number to get the suffix for</param>
+</member><member name="T:cvCommon.Manipulators">
+	<summary>
+ An object that provides access to functions that manipulate and produce strings of text
+ and other types of data
+ </summary>
+	<remarks>
+   Author: George H. Slaterpryce III
+   Completed: 06/12/2007
+   Modifications: 
+     1. Added NumberSuffixe (George, 06/15/2007)
+ </remarks>
+</member><member name="P:cvCommon.Email.BCC">
+	<summary>
+ Returns/Sets the BCC Field
+ </summary>
+</member><member name="P:cvCommon.Email.HTMLBody">
+	<summary>
+ Returns/Sets A bit determining if the body of the email is in html format or plain text
+ </summary>
+</member><member name="P:cvCommon.Email.SendTo">
+	<summary>
+ Sets/Returns the email address to send to
+ </summary>
+</member><member name="P:cvCommon.Email.SendFrom">
+	<summary>
+ Returns/Sets the email address to send from
+ </summary>
+</member><member name="P:cvCommon.Email.Subject">
+	<summary>
+ Returns/Sets the subject of the email message
+ </summary>
+</member><member name="P:cvCommon.Email.Body">
+	<summary>
+ Returns/Sets the body of the email
+ </summary>
+</member><member name="P:cvCommon.Email.CC">
+	<summary>
+ Returns/Sets the CC email address
+ </summary>
+</member><member name="P:cvCommon.Email.Host">
+	<summary>
+ Returns/Sets the host to relay the email off of
+ </summary>
+</member><member name="M:cvCommon.Email.#ctor(System.String)">
+	<summary>
+ Creates a new instance of the object
+ </summary>
+	<param name="strHost">The email host to relay off of</param>
+</member><member name="M:cvCommon.Email.Send(System.String,System.String,System.String,System.String)">
+	<summary>
+ Overloaded, Sends an email message
+ </summary>
+	<param name="strSendTo">The email address to send to</param>
+	<param name="strSendFrom">The email address to send from</param>
+	<param name="strSubject">The subject of the email</param>
+	<param name="strBody">The body of the email</param>
+</member><member name="M:cvCommon.Email.Send">
+	<summary>
+ OverLoaded, Sends an email message
+ </summary>
+</member><member name="M:cvCommon.Email.ClearValues">
+	<summary>
+ Clears all the values except the host.
+ </summary>
+</member><member name="T:cvCommon.Email">
+	<summary>
+ A class that allows easy programatic sending of emails.
+ </summary>
+	<remarks>
+   Author: George H. Slaterpryce III
+   Completed: 05/15/2007
+   Modifications: Adapted from the old cvweb.email object (George, 05/15/2007)
+                  Added BCC Field (George, 05/17/2007)
+ </remarks>
+</member><member name="M:cvCommon.Export.DataGridToExcel(System.Web.HttpResponse@,System.Web.UI.WebControls.DataGrid@,System.String,System.String,System.Boolean)">
+	<summary>
+ Exports a Grid View to an Excel File
+ </summary>
+	<param name="Response">Response Object</param>
+	<param name="dgv">DataGrid to Convert</param>
+	<param name="strFileName">File Name for the Exported File</param>
+	<param name="strSheetName">Sheet Name</param>
+</member><member name="M:cvCommon.Export.BinaryFileOut(System.Web.HttpResponse@,cvFileLibrary.FileRecord@,System.Boolean)">
+	<summary>
+ Outputs a binary file stored in the database to the response object.
+ </summary>
+	<param name="Response">The response object to use</param>
+	<param name="fil">The file to send to the response</param>
+	<param name="blnSSL">Determines if the response object output is sent via secure socket connection or non-secure (SSL)</param>
+	<remarks></remarks>
+</member><member name="M:cvCommon.Export.GetContentType(System.String)">
+	<summary>
+ Returns the application file type for the HTTP Header for a given extension
+ </summary>
+	<param name="strExtension">The extension to check for application file type.</param>
+</member><member name="M:cvCommon.Export.ConvertDataGridToHtml(System.Web.UI.WebControls.DataGrid)">
+	<summary>
+ Concerts a Datagrid to HTML
+ </summary>
+	<param name="dgv">DataGrid to Convert</param>
+</member><member name="T:cvCommon.Export">
+	<summary>
+ An object designed to easily export a datagrid to excel.
+ </summary>
+	<remarks>
+   Author: George H. Slaterpryce III
+   Completed: 08/27/2007
+   Modifications: None
+ </remarks>
+</member><member name="P:cvCommon.Loaders.ConnectionString">
+	<summary>
+ The connection string to the database
+ </summary>
+</member><member name="M:cvCommon.Loaders.#ctor(System.String)">
+	<summary>
+ Initializes the object
+ </summary>
+	<param name="strConnectionString">The connectionstring to the database to use</param>
+</member><member name="M:cvCommon.Loaders.LoadSimpleDataGrid(System.String,System.Web.UI.WebControls.DataGrid@)">
+	<summary>
+ Loads a datagrid with the data from the provided named stored procedure, Stored Procedure must be one that does not have any parameters
+ </summary>
+	<param name="strStoredProcedure">Name of the stored procedure to use</param>
+	<param name="dgv">DataGrid control to populate</param>
+</member><member name="M:cvCommon.Loaders.LoadSimpleDataGrid(System.String,System.Web.UI.WebControls.DataGrid@,System.Boolean,System.Web.UI.WebControls.DataGridSortCommandEventArgs,System.String,System.String)">
+	<summary>
+ Loads a datagrid with the data from the provided named stored procedure, Stored Procedure must be one that does not have any parameters. Also provides for sorting
+ </summary>
+	<param name="strStoredProcedure">Name of the stored procedure to use</param>
+	<param name="dgv">DataGrid control to populate</param>
+	<param name="blnSortable">Whether to enable sorting on the DataGrid control</param>
+	<param name="e">The DataGrid's DataGridSortCommandEventArgs</param>
+	<param name="strCurrentSort">The column that the DataGrid is currently sorted on</param>
+	<param name="strCurrentSortDirection">The direction in which the DataGrid is currently sorted</param>
+</member><member name="M:cvCommon.Loaders.LoadSingleLongParameterDataGrid(System.String,System.String,System.Int64,System.Web.UI.WebControls.DataGrid@)">
+	<summary>
+ Loads a datagrid with data from the provided named stored procedure and inputs the required single parameter (must be a long(int) parameter)
+ </summary>
+	<param name="strStoredProcedure">The name of the stored procedure</param>
+	<param name="strParameterName">The paramter name (I.E. @ID)</param>
+	<param name="lngParameterValue">The Value of the parameter</param>
+	<param name="dgv">The Datagrid to load</param>
+	<remarks></remarks>
+</member><member name="M:cvCommon.Loaders.LoadSingleDateParameterDataGrid(System.String,System.String,System.DateTime,System.Web.UI.WebControls.DataGrid@)">
+	<summary>
+ Loads a datagrid with data from the provided named stored procedure and inputs the required single parameter (must be a date parameter)
+ </summary>
+	<param name="strStoredProcedure">The name of the stored procedure</param>
+	<param name="strParameterName">The paramter name (I.E. @ID)</param>
+	<param name="datParameterValue">The Value of the parameter</param>
+	<param name="dgv">The Datagrid to load</param>
+	<remarks></remarks>
+</member><member name="M:cvCommon.Loaders.LoadSingleLongParameterDataGrid(System.String,System.String,System.Int64,System.Web.UI.WebControls.DataGrid@,System.Boolean,System.Web.UI.WebControls.DataGridSortCommandEventArgs,System.String,System.String)">
+	<summary>
+ Loads a datagrid with data from the provided named stored procedure and inputs the required single parameter (must be a long(int) parameter). Also provides for sorting
+ </summary>
+	<param name="strStoredProcedure">The name of the stored procedure</param>
+	<param name="strParameterName">The paramter name (I.E. @ID)</param>
+	<param name="lngParameterValue">The Value of the parameter</param>
+	<param name="dgv">The Datagrid to load</param>
+	<param name="blnSortable">Whether to enable sorting on the DataGrid control</param>
+	<param name="e">The DataGrid's DataGridSortCommandEventArgs</param>
+	<param name="strCurrentSort">The column that the DataGrid is currently sorted on</param>
+	<param name="strCurrentSortDirection">The direction in which the DataGrid is currently sorted</param>
+	<remarks></remarks>
+</member><member name="M:cvCommon.Loaders.LoadLongStringParameterDataGrid(System.String,System.String,System.Int64,System.String,System.String,System.Web.UI.WebControls.DataGrid@)">
+	<summary>
+ Loads a datagrid with data from the provided named stored procedure and inputs the required single parameter (must be a long(int) parameter)
+ </summary>
+	<param name="strStoredProcedure">The name of the stored procedure</param>
+	<param name="strParameter1Name">The paramter name (I.E. @ID)</param>
+	<param name="lngParameter1Value">The Value of the parameter</param>
+	<param name="strParameter2Value">The value of the second parameter</param>
+	<param name="strParameter2Name">The name of the second parameter</param>
+	<param name="dgv">The Datagrid to load</param>
+	<remarks></remarks>
+</member><member name="M:cvCommon.Loaders.LoadLongStringParameterDataGrid(System.String,System.String,System.Int64,System.String,System.String,System.Web.UI.WebControls.DataGrid@,System.Boolean,System.Web.UI.WebControls.DataGridSortCommandEventArgs,System.String,System.String)">
+	<summary>
+ Loads a datagrid with data from the provided named stored procedure and inputs the required single parameter (must be a long(int) parameter). Also provides for sorting
+ </summary>
+	<param name="strStoredProcedure">The name of the stored procedure</param>
+	<param name="strParameter1Name">The paramter name (I.E. @ID)</param>
+	<param name="lngParameter1Value">The Value of the parameter</param>
+	<param name="strParameter2Value">The value of the second parameter</param>
+	<param name="strParameter2Name">The name of the second parameter</param>
+	<param name="dgv">The Datagrid to load</param>
+	<param name="blnSortable">Whether to enable sorting on the DataGrid control</param>
+	<param name="e">The DataGrid's DataGridSortCommandEventArgs</param>
+	<param name="strCurrentSort">The column that the DataGrid is currently sorted on</param>
+	<param name="strCurrentSortDirection">The direction in which the DataGrid is currently sorted</param>
+	<remarks></remarks>
+</member><member name="M:cvCommon.Loaders.LoadTwoLongParameterDataGrid(System.String,System.String,System.Int64,System.String,System.Int64,System.Web.UI.WebControls.DataGrid@)">
+	<summary>
+ Loads a datagrid with data from the provided named stored procedure and inputs the required single parameter (must be a long(int) parameter)
+ </summary>
+	<param name="strStoredProcedure">The name of the stored procedure</param>
+	<param name="strParameter1Name">The paramter name (I.E. @ID)</param>
+	<param name="lngParameter1Value">The Value of the parameter</param>
+	<param name="lngParameter2Value">The value of the second parameter</param>
+	<param name="strParameter2Name">The name of the second parameter</param>
+	<param name="dgv">The Datagrid to load</param>
+	<remarks></remarks>
+</member><member name="M:cvCommon.Loaders.LoadTwoLongParameterDataGrid(System.String,System.String,System.Int64,System.String,System.Int64,System.Web.UI.WebControls.DataGrid@,System.Boolean,System.Web.UI.WebControls.DataGridSortCommandEventArgs,System.String,System.String)">
+	<summary>
+ Loads a datagrid with data from the provided named stored procedure and inputs the required single parameter (must be a long(int) parameter). Also provides for sorting
+ </summary>
+	<param name="strStoredProcedure">The name of the stored procedure</param>
+	<param name="strParameter1Name">The paramter name (I.E. @ID)</param>
+	<param name="lngParameter1Value">The Value of the parameter</param>
+	<param name="lngParameter2Value">The value of the second parameter</param>
+	<param name="strParameter2Name">The name of the second parameter</param>
+	<param name="dgv">The Datagrid to load</param>
+	<param name="blnSortable">Whether to enable sorting on the DataGrid control</param>
+	<param name="e">The DataGrid's DataGridSortCommandEventArgs</param>
+	<param name="strCurrentSort">The column that the DataGrid is currently sorted on</param>
+	<param name="strCurrentSortDirection">The direction in which the DataGrid is currently sorted</param>
+	<remarks></remarks>
+</member><member name="M:cvCommon.Loaders.LoadSimpleDropDownList(System.String,System.String,System.String,System.Web.UI.WebControls.DropDownList@)">
+	<summary>
+ Loads a dropdown box with data from a stored procudure that has no parameters
+ </summary>
+	<param name="strStoredProcedure">The stored procedure to use as a data source</param>
+	<param name="strDataColumnName">Column that contains the data you wish to bind to the value of the item</param>
+	<param name="strTextColumnName">Column that contains the data you wish to display as text</param>
+	<param name="drp">The dropdownlist to populate</param>
+</member><member name="M:cvCommon.Loaders.LoadSingleLongParameterDropDownList(System.String,System.String,System.Int64,System.String,System.String,System.Web.UI.WebControls.DropDownList@)">
+	<summary>
+ Loads a dropdown box with data from a store procedure that has a single long(int) value parameter
+ </summary>
+	<param name="strStoredProcedure">The stored procedure to use</param>
+	<param name="strParameterName">The parameter name</param>
+	<param name="strTextColumnName">The column that contains the data you wish to have displayed for the item</param>
+	<param name="strDataColumnName">The column that contains the data you wish to bind to the value of the item</param>
+	<param name="lngParameterValue">The value of the parameter</param>
+	<param name="drp">The dropdownlist to populate</param>
+</member><member name="M:cvCommon.Loaders.LoadSingleLongParameterRepeater(System.String,System.String,System.Int64,System.Web.UI.WebControls.Repeater@)">
+	<summary>
+ Loads a repeater from a single parameter stored procedure
+ </summary>
+	<param name="strStoredProcedure">The Stored Procedure to Use</param>
+	<param name="strParameterName">The name of the parameter for the stored procedure</param>
+	<param name="lngParameterValue">The value for the stored procedure</param>
+	<param name="rpt">The repeater to load</param>
+</member><member name="M:cvCommon.Loaders.FillAndSort(System.Boolean,System.Web.UI.WebControls.DataGrid,System.Data.DataSet,System.Web.UI.WebControls.DataGridSortCommandEventArgs,System.String,System.String)">
+	<summary>
+ Fills a DataGrid with a DataSet (or a derived DataView if the DataGrid is sortable) and sets up bi-directional sorting if enabled
+ </summary>
+	<param name="blnSortable">Whether to enable sorting on the DataGrid control</param>
+	<param name="dgv">The DataGrid to sort</param>
+	<param name="ds">The DataSet that is used to populate the DataGrid</param>
+	<param name="e">The DataGrid's DataGridSortCommandEventArgs</param>
+	<param name="strCurrentSort">The column that the DataGrid is currently sorted on</param>
+	<param name="strCurrentSortDirection">The direction in which the DataGrid is currently sorted</param>
+	<remarks></remarks>
+</member><member name="T:cvCommon.Loaders">
+	<summary>
+ Provides loaders for common types of objects
+ </summary>
+	<remarks>
+   Author: George H. Slaterpryce III
+   Completed: 07/01/2007
+   Modifications: 
+     (1) Added overload for LoadSimpleDataGrid to allow for bidirectional sorting (Bill Hedge, 08/12/2007)
+     (2) Added subroutine to handle bi-directional sorting on a DataGrid (Bill Hedge, 08/12/2007)
+     (3) Removed (2) and added private subroutine to handle bi-directional sorting on a DataGrid as well as load the DataGrid with data from either a DataSet (non-sortable) or a DataView (sortable) (Bill Hedge, 08/19/2007)
+     (4) Modified (1) to use (3) instead of (2) (Bill Hedge, 08/19/2007)
+     (5) Added overload for LoadSingleLongParameterDataGrid to allow for bi-directional sorting (Bill Hedge, 08/19/2007)
+     (6) Added overload for LoadLongStringParameterDataGrid to allow for bi-directional sorting (Bill Hedge, 08/19/2007)
+     (7) Added overload for LoadTwoLongParameterDataGrid to allow for bi-directional sorting (Bill Hedge, 08/19/2007)
+ </remarks>
+</member><member name="M:cvCommon.Security.GCypher2DBQueryPack(System.String)">
+	<summary>
+ Creates a query string to use when using like searches for a GCyphered field on a table
+ </summary>
+	<param name="strInput">The text to GCypher</param>
+</member><member name="M:cvCommon.Security.GCypher2(System.String)">
+	<summary>
+ Encyphers a given bit of text
+ </summary>
+	<param name="strInput">The Text to Encypher</param>
+</member><member name="M:cvCommon.Security.GDecypher2(System.String)">
+	<summary>
+ Decypyers an encyphered string that was encyphered using GCypher2
+ </summary>
+	<param name="strInput">The text to decypher</param>
+</member><member name="M:cvCommon.Security.RandomPassword">
+	<summary>
+ Generates a random password
+ </summary>
+</member><member name="M:cvCommon.Security.ReturnWord(System.Int32)">
+	<summary>
+ Returns a word for a number passed into it. Used for generating random passwords
+ </summary>
+	<param name="index">The index of the word to pull</param>
+</member><member name="T:cvCommon.Security">
+	<summary>
+ Common library of security functions
+ </summary>
+	<remarks>
+   Author: George H. Slaterpryce III
+   Completed: 05/16/2007
+   Modifications: None
+ </remarks>
+</member><member name="M:cvCommon.Googler.MapAddress(System.String,System.String)">
+	<summary>
+ Returns the HREF/URL to map a street address from google.
+ </summary>
+	<param name="strStreetAddress">The Street Address</param>
+	<param name="strZipCode">The Zip Code</param>
+</member><member name="M:cvCommon.Googler.MapZipCode(System.String)">
+	<summary>
+ Returns the HREF/URL to get the map for a particular zip code.
+ </summary>
+	<param name="strZipCode">The Zip Code to Map</param>
+</member><member name="M:cvCommon.Googler.ZipToZip(System.String,System.String)">
+	<summary>
+ Returns the HREF/URL to get to a map of directions from one zip code to another
+ </summary>
+	<param name="strZipCode1">Origin Zip Code</param>
+	<param name="strZipCode2">Destination Zip Code</param>
+</member><member name="M:cvCommon.Googler.GetDirections(System.String,System.String,System.String,System.String)">
+	<summary>
+ Returns the HREF/URL to get street directions from one address to another
+ </summary>
+	<param name="strAddress1">The Origin Address</param>
+	<param name="strZipCode1">The Origin Zip Code</param>
+	<param name="strAddress2">The Destination Address</param>
+	<param name="strZipCode2">The Destination Zip Code</param>
+</member><member name="T:cvCommon.Googler">
+	<summary>
+ Provides link builders and etc, for using google web apps.
+ </summary>
+	<remarks>
+   Author: George H. Slaterpryce III
+   Date: 08/17/2007
+   Modifications: None
+ </remarks>
+</member>
+</members>
+</doc>

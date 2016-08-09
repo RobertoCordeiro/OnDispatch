@@ -1,0 +1,86 @@
+<%@ Page Language="vb" masterpagefile="~/masters/agentdialog.master" %>
+<%@ MasterType VirtualPath="~/masters/agentdialog.master" %>
+<script runat="server"> 
+  
+  Private _ID As Long = 0
+  
+  Private Sub Page_Load(ByVal s As Object, ByVal E As EventArgs)
+    If User.Identity.IsAuthenticated Then
+      Master.WebLoginID = CType(User.Identity.Name, Long)
+      Master.PageHeaderText = " Edit Manufacturer"
+      Master.PageTitleText = " Edit Manufacturer"
+      Master.PageSubHeader = "<a href=""default.aspx"">My Desktop</a> &gt; <a href=""makers.aspx"">Manufacturer Model Control</a> &gt; Edit Manufacturer"
+    End If
+    Try
+      _ID = CType(Request.QueryString("id"), Long)
+    Catch ex As Exception
+      _ID = 0
+    End Try
+    lblReturnUrl.Text = Request.QueryString("returnurl")
+    If _ID > 0 Then
+      If Not IsPostBack Then
+        LoadManufacturer(_ID)
+      End If
+    Else
+      Response.Redirect(lblReturnUrl.Text, True)
+    End If
+  End Sub
+
+  Private Sub LoadManufacturer(ByVal lngID As Long)
+    Dim man As New BridgesInterface.ManufacturerRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+    man.Load(lngID)
+    txtManufacturer.Text = man.Manufacturer
+  End Sub
+  
+  Private Sub btnCancel_Click(ByVal S As Object, ByVal E As EventArgs)
+    Response.Redirect(lblReturnUrl.Text)
+  End Sub
+
+  Private Sub btnEdit_Click(ByVal S As Object, ByVal E As EventArgs)
+    Dim strChangeLog As String = ""
+    If isComplete() Then
+      divErrors.Visible = False
+      Dim man As New BridgesInterface.ManufacturerRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      man.Load(_ID)
+      man.Manufacturer = txtManufacturer.Text
+      man.Save(strChangeLog)
+      Dim act As New BridgesInterface.ActionRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      Dim strIp As String = Request.QueryString("REMOTE_ADDR")
+      Dim strType As String = Request.ServerVariables("HTTP_USER_AGENT")
+      If IsNothing(strIp) Then
+        strIp = "unknown"
+      End If
+      If IsNothing(strType) Then
+        strType = "web"
+      End If
+      act.Add(2, "web", strType, strIp, "web", 28, man.ManufacturerID, strChangeLog)
+      Response.Redirect(lblReturnUrl.Text, True)
+    Else
+      divErrors.Visible = True
+    End If
+    
+  End Sub
+  
+  
+  
+  Private Function isComplete() As Boolean
+    Dim blnReturn As Boolean = True
+    Dim strErrors As String = ""
+    If txtManufacturer.Text.Trim.Length = 0 Then
+      strErrors &= "<li>Manufacturer is Required</li>"
+      blnReturn = False
+    End If
+    divErrors.InnerHtml = "<ul>" & strErrors & "</ul>"
+    Return blnReturn
+  End Function
+  
+</script>
+<asp:Content ContentPlaceHolderID="bodycontent" ID="cntBody" runat="server">
+  <form id="frmDialog" runat="server">
+    <div class="errorzone" runat="server" visible="false" id="divErrors" />
+    <div class="label">Manufacturer</div>
+    <asp:TextBox style="width: 99%" runat="server" ID="txtManufacturer" />    
+    <div style="text-align: right;"><asp:Button OnClick="btnCancel_Click" ID="btnCancel" runat="server" Text="Cancel" />&nbsp;<asp:Button ID="btnEdit" runat="server" OnClick="btnEdit_Click" Text="Submit" /></div>
+    <asp:Label ID="lblReturnUrl" Visible="false" runat="server" />
+  </form>
+</asp:Content>

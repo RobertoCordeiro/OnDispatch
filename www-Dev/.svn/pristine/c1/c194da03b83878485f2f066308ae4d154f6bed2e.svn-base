@@ -1,0 +1,602 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+cvGraphing
+</name>
+</assembly>
+<members>
+<member name="P:cvGraphing.GraphLayerDataMember.Caption">
+	<summary>
+ Returns/Sets the caption to display for this particular member
+ </summary>
+</member><member name="P:cvGraphing.GraphLayerDataMember.X">
+	<summary>
+ Returns/Sets the horizontal coordinate for this member
+ </summary>
+</member><member name="P:cvGraphing.GraphLayerDataMember.Y">
+	<summary>
+ Returns/Sets the vertical coordinate for this member
+ </summary>
+</member><member name="P:cvGraphing.GraphLayerDataMember.Value">
+	<summary>
+ Returns the value of this member
+ </summary>
+</member><member name="P:cvGraphing.GraphLayerDataMember.Format">
+	<summary>
+ Returns/Sets the format string for this member
+ </summary>
+</member><member name="M:cvGraphing.GraphLayerDataMember.#ctor">
+	<summary>
+ Overloaded Constructor, Creates a new instance of the object
+ </summary>
+</member><member name="M:cvGraphing.GraphLayerDataMember.#ctor(System.String,System.Single)">
+	<summary>
+ Overloaded Constructor, Creates a new instance of the object
+ </summary>
+	<param name="strCaption">The caption to display next to the member</param>
+	<param name="Value">The value of the member</param>
+</member><member name="M:cvGraphing.GraphLayerDataMember.#ctor(System.String,System.Single,System.Single)">
+	<summary>
+ Overloaded Constructor, Creates a new instance of the object
+ </summary>
+	<param name="strCaption">The caption to display next to the member</param>
+	<param name="sngX">The X Coordinate of the member</param>
+	<param name="sngY">The Y Coordinate of the member</param>
+</member><member name="T:cvGraphing.GraphLayerDataMember">
+	<summary>
+ An Object representing each bit of data for a layer on a graph
+ </summary>
+	<remarks>
+ Completed: 10/26/2006
+ Author: George H. Slaterpryce III
+ Modifications: None
+ </remarks>
+</member><member name="T:cvGraphing.Graph.GraphTypes">
+	<summary>
+ The types of graphs available to be rendered.
+ </summary>
+</member><member name="T:cvGraphing.Graph.TitlePositions">
+	<summary>
+ The various positions that the title can be in.
+ </summary>
+</member><member name="T:cvGraphing.Graph.PlotGraphTypes">
+	<summary>
+ The various ways a plot graph can be drawn
+ </summary>
+</member><member name="T:cvGraphing.Graph.GraphRenderingErrors">
+	<summary>
+ The various rendering errors that can happen
+ </summary>
+	<remarks></remarks>
+</member><member name="P:cvGraphing.Graph.CurveTension">
+	<summary>
+ Returns/Sets the overrided max value
+ </summary>
+</member><member name="P:cvGraphing.Graph.PlotGraphType">
+	<summary>
+ Returns/Sets how a plot graph will be drawn, ignored for the other graph types
+ </summary>
+</member><member name="P:cvGraphing.Graph.TitlePosition">
+	<summary>
+ Resturns/Sets the position that the title will be draw to
+ </summary>
+</member><member name="P:cvGraphing.Graph.GraphType">
+	<summary>
+ Returns/Sets the type of graph the graph will be rendered as.
+ </summary>
+</member><member name="P:cvGraphing.Graph.ShowTickMarks">
+	<summary>
+ Returns/Sets whether or not the image is drawn with tick marks on it.
+ </summary>
+</member><member name="P:cvGraphing.Graph.ShowZeroPointReticle">
+	<summary>
+ Determines if the zero point reticle is shown, The reticle marks the 0 point on the graph where both x and y = 0
+ </summary>
+</member><member name="P:cvGraphing.Graph.ShowGrid">
+	<summary>
+ Returns/Sets whether or not to show grid lines
+ </summary>
+</member><member name="P:cvGraphing.Graph.ShowTitle">
+	<summary>
+ Returns/Sets whether or not the title is shown in the graph image
+ </summary>
+</member><member name="P:cvGraphing.Graph.UseOverrideValues">
+	<summary>
+ Returns/Sets whether or not the ceiling,floor, min and max are set using the values in the override* properties, for use when dataset range is known.
+ </summary>
+</member><member name="P:cvGraphing.Graph.ShowCeilingAndFloor">
+	<summary>
+ Returns/Sets  if the ceiling and floor values are shown on the graph
+ </summary>
+</member><member name="P:cvGraphing.Graph.Height">
+	<summary>
+ Returns/Sets the height of the graph
+ </summary>
+</member><member name="P:cvGraphing.Graph.Width">
+	<summary>
+ Returns/Sets the width of the graph in pixels
+ </summary>
+</member><member name="P:cvGraphing.Graph.ReticleStroke">
+	<summary>
+ Returns/Sets the width of the lines used to draw the Zero Point reticle.
+ </summary>
+</member><member name="P:cvGraphing.Graph.GridStroke">
+	<summary>
+ Returns/Sets the line width used to draw the grid
+ </summary>
+</member><member name="P:cvGraphing.Graph.TickStroke">
+	<summary>
+ Returns/Sets the line width used to draw the tick marks
+ </summary>
+</member><member name="P:cvGraphing.Graph.CeilingAndFloorCaptionColor">
+	<summary>
+ Returns/Sets the color of the ceiling/floor captions
+ </summary>
+</member><member name="P:cvGraphing.Graph.BackColor">
+	<summary>
+ Returns/Sets the background color for the graph
+ </summary>
+</member><member name="P:cvGraphing.Graph.GridColor">
+	<summary>
+ Returns/Sets the grid line color
+ </summary>
+</member><member name="P:cvGraphing.Graph.ReticleColor">
+	<summary>
+ Returns/Sets the color of the Zero Point Reticle
+ </summary>
+</member><member name="P:cvGraphing.Graph.TickMarkColor">
+	<summary>
+ Returns/Sets the color of the tick marks
+ </summary>
+</member><member name="P:cvGraphing.Graph.TitleColor">
+	<summary>
+ Returns/Sets the color of the title string
+ </summary>
+</member><member name="P:cvGraphing.Graph.Title">
+	<summary>
+ Returns/Sets the displayed title of the graph.
+ </summary>
+</member><member name="P:cvGraphing.Graph.GeneratorText">
+	<summary>
+ Returns/Sets the text that will be used to identify the generating program
+ in the saved graph file format.
+ </summary>
+</member><member name="P:cvGraphing.Graph.OverrideMax">
+	<summary>
+ Returns/Sets the overrided max value
+ </summary>
+</member><member name="P:cvGraphing.Graph.OverrideMin">
+	<summary>
+ returns/Sets the Overrided min value
+ </summary>
+</member><member name="P:cvGraphing.Graph.OverrideFloor">
+	<summary>
+ Returns/Sets the Overrided floor value
+ </summary>
+</member><member name="P:cvGraphing.Graph.OverrideCeiling">
+	<summary>
+ Returns/Sets the Overrided ceiling value
+ </summary>
+</member><member name="P:cvGraphing.Graph.Layers">
+	<summary>
+ Returns/Sets the collection of layers (or sets) of data for the graph to draw.
+ </summary>
+</member><member name="P:cvGraphing.Graph.TitleFont">
+	<summary>
+ Returns/Sets the color of the title string
+ </summary>
+</member><member name="P:cvGraphing.Graph.CeilingFloorFont">
+	<summary>
+ Returns/Sets the font used for the ceiling and floor captions
+ </summary>
+</member><member name="P:cvGraphing.Graph.Image">
+	<summary>
+ Returns the graph image
+ </summary>
+</member><member name="P:cvGraphing.Graph.Ceiling">
+	<summary>
+ Returns the highest Y Value that the data represents
+ </summary>
+</member><member name="P:cvGraphing.Graph.Floor">
+	<summary>
+ Returns the lowest Y Value that the data represents
+ </summary>
+</member><member name="P:cvGraphing.Graph.Min">
+	<summary>
+ Returns the highest X value that the data represents
+ </summary>
+</member><member name="P:cvGraphing.Graph.Max">
+	<summary>
+ Returns the lowest X value that the data represents
+ </summary>
+</member><member name="M:cvGraphing.Graph.#ctor">
+	<summary>
+ Initializes a new instance of the object
+ </summary>
+</member><member name="M:cvGraphing.Graph.#ctor(System.Single,System.Single)">
+	<summary>
+ Initializes a new instance of the object
+ </summary>
+	<param name="sngHeight">The height of the graph in pixels</param>
+	<param name="sngWidth">The width of the graph in pixels</param>
+</member><member name="M:cvGraphing.Graph.#ctor(System.Single,System.Single,System.Drawing.Color)">
+	<summary>
+ Initializes a new instance of the object
+ </summary>
+	<param name="sngHeight">The height of the graph in pixels</param>
+	<param name="sngWidth">The width of the graph in pixels</param>
+	<param name="clrBackGroundColor">The background color of the graph</param>
+</member><member name="M:cvGraphing.Graph.#ctor(System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)">
+	<summary>
+ Initializes a new instance of the object
+ </summary>
+	<param name="sngHeight">The height of the graph in pixels</param>
+	<param name="sngWidth">The width of the graph in pixels</param>
+	<param name="clrBackGroundColor">The background color of the graph</param>
+	<param name="clrGridColor">The color of the grid</param>
+</member><member name="M:cvGraphing.Graph.SaveToFile(System.String)">
+	<summary>
+ Saves a graph object to an XGraph formatted file
+ </summary>
+	<param name="strPath">The path/filename you wish to save the file as</param>
+</member><member name="M:cvGraphing.Graph.LoadFromFile(System.String)">
+	<summary>
+ Load an XGraph standard file.
+ </summary>
+	<param name="strPath">The path to the XGraph you wish to load</param>
+</member><member name="M:cvGraphing.Graph.ClearValues">
+	<summary>
+ Clears the object and resets everything to like it was when the object was initialized.
+ </summary>
+</member><member name="M:cvGraphing.Graph.DetermineCeilingFloor">
+	<summary>
+ Calcualtes and stores the ceiling and floor
+ </summary>
+</member><member name="M:cvGraphing.Graph.CalcZeroPointY">
+	<summary>
+ Calculates the unpaded point where Y = 0
+ </summary>
+</member><member name="M:cvGraphing.Graph.CalcZeroPointX">
+	<summary>
+ Calculates the unpadded point where X = 0
+ </summary>
+</member><member name="M:cvGraphing.Graph.CalculateZeroPoints">
+	<summary>
+ Calculates the zeropoints X and Y
+ </summary>
+	<remarks></remarks>
+</member><member name="M:cvGraphing.Graph.DrawZeroPointReticle(System.Drawing.Graphics@)">
+	<summary>
+ Draws the zero point reticle
+ </summary>
+	<param name="gph">The graphics object to draw with</param>
+</member><member name="M:cvGraphing.Graph.DrawVerticalGrid(System.Drawing.Graphics@)">
+	<summary>
+ Draws the vertical grid lines
+ </summary>
+	<param name="gph">The graphics object to draw with</param>
+</member><member name="M:cvGraphing.Graph.DrawHorizontalGrid(System.Drawing.Graphics@)">
+	<summary>
+ Draws the Horizontal grid lines
+ </summary>
+	<param name="gph">The graphics object to draw with</param>
+</member><member name="M:cvGraphing.Graph.DrawVerticalTickMarks(System.Drawing.Graphics@)">
+	<summary>
+ Draws the tickmarks on the vertical zero barrier
+ </summary>
+	<param name="gph">The graphics object you wish to paint with</param>
+</member><member name="M:cvGraphing.Graph.DrawHorizontalTickMarks(System.Drawing.Graphics@)">
+	<summary>
+ Draws the tickmarks on the horizontal zero barrier
+ </summary>
+	<param name="gph">The graphics object you wish to paint with</param>
+</member><member name="M:cvGraphing.Graph.DrawRenderError(System.Drawing.Graphics@)">
+	<summary>
+ Draws the image for an improperly rendered graph.
+ </summary>
+	<param name="gph">The graphics object you wish to draw with</param>
+</member><member name="M:cvGraphing.Graph.DrawGrid(System.Drawing.Graphics@)">
+	<summary>
+ Draws the grid
+ </summary>
+	<param name="gph">The graphics object to draw with</param>
+</member><member name="M:cvGraphing.Graph.DrawTickMarks(System.Drawing.Graphics@)">
+	<summary>
+ Draws the tick marks
+ </summary>
+	<param name="gph">The graphics object to draw with</param>
+</member><member name="M:cvGraphing.Graph.DrawLineGraphData(System.Drawing.Graphics@,cvGraphing.GraphLayer@)">
+	<summary>
+ Draw a line graph with the member information
+ </summary>
+	<param name="gph">The graphics object to draw with</param>
+	<remarks></remarks>
+</member><member name="M:cvGraphing.Graph.DrawCurveGraphData(System.Drawing.Graphics@,cvGraphing.GraphLayer@)">
+	<summary>
+ Draws a curved line graph with the member information
+ </summary>
+	<param name="gph"></param>
+	<remarks></remarks>
+</member><member name="M:cvGraphing.Graph.DrawBezierGraphData(System.Drawing.Graphics@,cvGraphing.GraphLayer@)">
+	<summary>
+ Draws a bezier line representing the points
+ </summary>
+	<param name="gph">The graphics object you wish to draw with</param>
+	<param name="lyr">The layer you wish to draw on.</param>
+</member><member name="M:cvGraphing.Graph.DrawMountainGraphData(System.Drawing.Graphics@,cvGraphing.GraphLayer@)">
+	<summary>
+ Draws a mountain graph with member information
+ </summary>
+	<param name="gph">The graphics object you wish to draw with</param>
+	<remarks></remarks>
+</member><member name="M:cvGraphing.Graph.DrawPlotGraph(System.Drawing.Graphics@,cvGraphing.GraphLayer@)">
+	<summary>
+ Draws the plot graph based on data members
+ </summary>
+	<param name="gph">The graphics object you wish to draw with.</param>
+</member><member name="M:cvGraphing.Graph.DrawBarGraph(System.Drawing.Graphics@,cvGraphing.GraphLayer@)">
+	<summary>
+ draws a bar graph with the member data
+ </summary>
+	<param name="gph">The graphics object you wish to draw with</param>
+</member><member name="M:cvGraphing.Graph.DrawPieGraph(System.Drawing.Graphics@,cvGraphing.GraphLayer@)">
+	<summary>
+ Draws a pie graph with the member data
+ </summary>
+	<param name="gph">The graphics object you wish to draw with</param>
+	<param name="lyr">The layer you wish to draw on</param>
+</member><member name="M:cvGraphing.Graph.DrawGraphData(System.Drawing.Graphics@,cvGraphing.GraphLayer@)">
+	<summary>
+ Determine which graph type to draw and draw the graph
+ </summary>
+	<param name="gph">The graphics object to draw with</param>
+	<remarks></remarks>
+</member><member name="M:cvGraphing.Graph.DrawCaptions(System.Drawing.Graphics@,System.Drawing.Point[],cvGraphing.GraphLayer@)">
+	<summary>
+ Draw the individual captions for each point
+ </summary>
+</member><member name="M:cvGraphing.Graph.DrawPoints(System.Drawing.Graphics@,System.Drawing.Point[],cvGraphing.GraphLayer@)">
+	<summary>
+ Draws a dot at each point in the value data
+ </summary>
+	<param name="gph">The graphics object you wish to draw with</param>
+	<param name="aryPoints">The array of points to mark</param>
+</member><member name="M:cvGraphing.Graph.DrawTitle(System.Drawing.Graphics@)">
+	<summary>
+ Draws the title on the graph
+ </summary>
+	<param name="gph">The graphics object to draw with</param>
+</member><member name="M:cvGraphing.Graph.DrawCeilingAndFloor(System.Drawing.Graphics@)">
+	<summary>
+ Draws the ceiling and floor values on the Y Intercept
+ </summary>
+</member><member name="M:cvGraphing.Graph.WriteLayerDataMemberToXML(System.Xml.XmlWriter,cvGraphing.GraphLayerDataMember@,System.Int32)">
+	<summary>
+ Writes an GraphLayerDataMember to the XGraph file
+ </summary>
+	<param name="wrt">The XML Document Writer you wish to use</param>
+	<param name="gldm">The GraphLayerDataMember you wish to write to the XGraph file</param>
+	<param name="intPos">The Position/Index of the GraphLayerDataMember</param>
+</member><member name="M:cvGraphing.Graph.WriteLayerToXML(System.Xml.XmlWriter,cvGraphing.GraphLayer@,System.Int32)">
+	<summary>
+ Writes a GraphLayer to an XGraph File
+ </summary>
+	<param name="wrt">The XMLDocumentWriter you wish to use</param>
+	<param name="lyr">The layer to write to the XGraph file</param>
+	<param name="intLayerNumber">The Index/Position of the layer</param>
+</member><member name="M:cvGraphing.Graph.WriteFontToXML(System.Xml.XmlWriter@,System.String,System.Drawing.Font)">
+	<summary>
+ Writes a System.Drawing.Font to an XGraph File
+ </summary>
+	<param name="wrt">The XMLDocumentWriter you wish to use</param>
+	<param name="strElementName">The name of the element to contain the data in</param>
+	<param name="fnt">The font you wish to convert to xml</param>
+</member><member name="M:cvGraphing.Graph.WriteColorToXML(System.Xml.XmlWriter@,System.String,System.Drawing.Color)">
+	<summary>
+ Writes a System.Drawing.Color to an XGraph file
+ </summary>
+	<param name="wrt">The XMLDocumentWriter you wish to use</param>
+	<param name="strElementName">The element name for the color</param>
+	<param name="col">The system.drawing.color you wish to convert to xml</param>
+</member><member name="M:cvGraphing.Graph.LoadVersionInfoFromXML(System.Xml.XmlNode@)">
+	<summary>
+ Gets the version info from the XGraph file
+ </summary>
+	<param name="xnod">The node to look for the version information in</param>
+</member><member name="M:cvGraphing.Graph.LoadBaseColorsFromXML(System.Xml.XmlNode@)">
+	<summary>
+ Loads the base colors for the graph
+ </summary>
+	<param name="xnod">The node the colors are stored in</param>
+</member><member name="M:cvGraphing.Graph.LoadLayerColorsFromXML(System.Xml.XmlNode@,cvGraphing.GraphLayer@)">
+	<summary>
+ Loads the colors for a layer
+ </summary>
+	<param name="xnod">The node the colors are stored in</param>
+	<param name="lyr">The layer you want to load the colors for</param>
+</member><member name="M:cvGraphing.Graph.LoadGraphLayerDataMemberColorsFromXML(System.Xml.XmlNode@,cvGraphing.GraphLayerDataMember@)">
+	<summary>
+ Loads the colors for a GraphLayerDataMember
+ </summary>
+	<param name="xnod">The XmlNode the colors are stored in</param>
+	<param name="gldm">The GraphLayerDataMember you wish to load the colors for</param>
+</member><member name="M:cvGraphing.Graph.LoadBaseLayoutFromXML(System.Xml.XmlNode@)">
+	<summary>
+ Loads the Layout data for the base graph
+ </summary>
+	<param name="xnod">The node the layout data is stored in</param>
+</member><member name="M:cvGraphing.Graph.LoadLayerLayoutFromXML(System.Xml.XmlNode@,cvGraphing.GraphLayer@)">
+	<summary>
+ Loads the Layout data for a Layer
+ </summary>
+	<param name="xnod">The XmlNode the Layout information is stored in</param>
+	<param name="lyr">The layer you are loading the Layout data for.</param>
+</member><member name="M:cvGraphing.Graph.LoadGraphLayerDataMemberLayoutFromXML(System.Xml.XmlNode@,cvGraphing.GraphLayerDataMember@)">
+	<summary>
+ Loads a GraphLayerDataMember with Layout data
+ </summary>
+	<param name="xnod">The XmlNode the information is stored in</param>
+	<param name="gldm">The GraphLayerDataMember you wish to load the layout data for</param>
+</member><member name="M:cvGraphing.Graph.LoadBaseSizingFromXML(System.Xml.XmlNode@)">
+	<summary>
+ Loads the base sizing data for the graph
+ </summary>
+	<param name="xnod">The XmlNode the sizing data is stored in</param>
+</member><member name="M:cvGraphing.Graph.LoadLayerSizingFromXML(System.Xml.XmlNode@,cvGraphing.GraphLayer@)">
+	<summary>
+ Loads the sizing data for a GraphLayer
+ </summary>
+	<param name="xnod">The XmlNode the sizing data is stored in</param>
+	<param name="lyr">The layer you wish to load sizing data to</param>
+</member><member name="M:cvGraphing.Graph.LoadBaseFontsFromXML(System.Xml.XmlNode@)">
+	<summary>
+ Loads the fonts for the base graph
+ </summary>
+	<param name="xnod">The XmlNode the information is stored in</param>
+</member><member name="M:cvGraphing.Graph.LoadLayerFontsFromXML(System.Xml.XmlNode@,cvGraphing.GraphLayer@)">
+	<summary>
+ Loads the fonts for a given layer
+ </summary>
+	<param name="xnod">The XmlNode the information is stored in</param>
+	<param name="lyr">The layer you wish to load the font data for</param>
+</member><member name="M:cvGraphing.Graph.LoadBaseRenderingOptionsFromXML(System.Xml.XmlNode@)">
+	<summary>
+ Loads the rendering options for the graph
+ </summary>
+	<param name="xnod">The XmlNode this information is stored in</param>
+</member><member name="M:cvGraphing.Graph.LoadLayersFromXML(System.Xml.XmlNodeList@)">
+	<summary>
+ Loads the layers for a graph from an XGraph (xml) file
+ </summary>
+	<param name="xlst">The list of XmlNodes containing the Layer information</param>
+</member><member name="M:cvGraphing.Graph.LoadBaseDataFromXML(System.Xml.XmlNode@)">
+	<summary>
+ Loads teh base data for the graph
+ </summary>
+	<param name="xnod">The XmlNode the information is stored in</param>
+</member><member name="M:cvGraphing.Graph.LoadLayerDataFromXML(System.Xml.XmlNodeList@,cvGraphing.GraphLayer@)">
+	<summary>
+ Loads the data section of a GraphLayer object from an XGraph file
+ </summary>
+	<param name="xlst">The list of layers you wish to load</param>
+	<param name="lyr">The layer you wish to load the data section to</param>
+</member><member name="M:cvGraphing.Graph.LoadGraphLayerDataMemberDataFromXML(System.Xml.XmlNode@,cvGraphing.GraphLayerDataMember)">
+	<summary>
+ Loads the data portion of a GraphLayerDataMember object from an XML Node
+ </summary>
+	<param name="xnod">The node the information is stored in</param>
+	<param name="gldm">The GraphLayerDataMember object you wish to load the data for</param>
+</member><member name="M:cvGraphing.Graph.GeneratePoints(cvGraphing.GraphLayer@)">
+	<summary>
+ Draws the captions, point markers for each point and returns an array
+ of points for the system to draw other graphs with.
+ </summary>
+	<returns>Array of System.Drawing.Point</returns>
+</member><member name="M:cvGraphing.Graph.Render">
+	<summary>
+ Resturns a system.drawing.image of the rendered graph
+ </summary>
+</member><member name="M:cvGraphing.Graph.ColorFromXMLNode(System.Xml.XmlNode@)">
+	<summary>
+ Creates a system.drawing.color from a properly formatted XmlNode
+ </summary>
+	<param name="xnod">the XmlNode you wish to convert to a color</param>
+</member><member name="M:cvGraphing.Graph.FontFromXMLNode(System.Xml.XmlNode@)">
+	<summary>
+ Creates a system.drawing.font from a properly formatted XmlNode
+ </summary>
+	<param name="xnod">The XMLNode you wish to convert to a font</param>
+</member><member name="M:cvGraphing.Graph.LayerFromXMLNode(System.Xml.XmlNode@)">
+	<summary>
+ Creates a GraphLayer from a properly formatted XmlNode
+ </summary>
+	<param name="xnod">The XmlNode you wish to convert</param>
+</member><member name="M:cvGraphing.Graph.GraphLayerDataMemberFromXMLNode(System.Xml.XmlNode@)">
+	<summary>
+ Creates a GraphLayerDataMember from a properly formatted XmlNode
+ </summary>
+	<param name="xnod">The XmlNode you wish to convert from</param>
+</member><member name="T:cvGraphing.Graph">
+	<summary>
+ An Object Capable of storing and rendering a data graph in various different forms.
+ </summary>
+	<remarks>
+ Completed: 10/25/2006
+ Author: George H. Slaterpryce III
+ Modifications: 
+   (0) Version Updated to 0.5.1
+   (1) Moved version information to attributes on the version element
+   (2) Added CurveTension Property to allow user to further control the graph
+   (3) Added Bezier Graph type
+   (4) Version Updated to 0.5.2
+   (5) Fixed issue with ReticleStroke not affecting the verticle reticle line
+   (6) Added the Pie Graph type
+   (7) Version Updated to 0.5.3
+   (8) Fixed Bezier graph issue of erroring out when exact number of points needed not provided.
+ </remarks>
+</member><member name="P:cvGraphing.GraphLayer.UseMemberColors">
+	<summary>
+ Returns/Sets whether or not each point is drawn with it's own color and overrides the layers forecolor
+ </summary>
+	<value></value>
+</member><member name="P:cvGraphing.GraphLayer.ShowCaptions">
+	<summary>
+ Returns/Sets whether or not the captions of each graphmember are shown.
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.ShowPoints">
+	<summary>
+ Returns/Sets whether or not each point is marked with a dot.
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.ShowValues">
+	<summary>
+ Returns/Sets whether or not the values are shown next to each point.
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.LineStroke">
+	<summary>
+ Returns/Sets the line width used to draw the curves and lines of the graph data
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.PointSize">
+	<summary>
+ The size of the point dot in pixels (Point will be sized by whatever value you size squared.. I.E. if you enter 3 the point will be 3x3 pixels in size)
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.BarPad">
+	<summary>
+ Returns/Sets the padding for each bar in the bar graph.
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.PointColor">
+	<summary>
+ Returns/Sets the color that each point (if drawn) will be drawn with
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.ForeColor">
+	<summary>
+ Returns/Sets the foreground color for the graph (What base color the bars/lines will be)
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.CaptionColor">
+	<summary>
+ Returns/Sets the color for the captions and values of each point
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.Members">
+	<summary>
+ Returns/Sets the collection of graphmembers for the graph
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.CaptionFont">
+	<summary>
+ Returns/Sets the font used to draw the captions next to each point
+ </summary>
+</member><member name="P:cvGraphing.GraphLayer.Visible">
+	<summary>
+ Returns/Sets whether or not the layer is visible.
+ </summary>
+</member><member name="T:cvGraphing.GraphLayer">
+	<summary>
+ An Object representing a layer of data for a graph
+ </summary>
+	<remarks>
+ Completed: 10/26/2006
+ Author: George H. Slaterpryce III
+ Modifications: None
+ </remarks>
+</member>
+</members>
+</doc>

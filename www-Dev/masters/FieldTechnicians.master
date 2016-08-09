@@ -1,0 +1,315 @@
+﻿<%@ Master Language="VB"  %>
+<script language="VB" runat="server">
+
+  Private _UserName As String = ""
+  Private _PartnerID As Long = 0
+  Private _PartnerAgentID As Long = 0
+  Private _WebLoginID As Long = 0
+  Private _AccessCoding As String = ""
+  Private _ActiveMenu as String = ""
+  Private _AdminAgent as Boolean = False
+  
+  
+  ''' <summary>
+  ''' Returns/Sets the value for the title bar text
+  ''' </summary>
+  Public Property PageTitleText() As String
+    Get
+      Return PageTitle.Text
+    End Get
+    Set(ByVal value As String)
+      pagetitle.Text = value
+    End Set
+  End Property
+    
+  ''' <summary>
+  ''' Returns/Sets the WebLogin ID for the current user
+  ''' </summary>
+  Public Property WebLoginID() As Long
+    Get
+      Return _WebLoginID
+    End Get
+    Set(ByVal value As Long)
+      _WebLoginID = value
+      LoadUserDetail()
+    End Set
+  End Property
+
+  ''' <summary>
+  ''' Returns/Sets the text for the page header
+  ''' </summary>
+  Public Property PageHeaderText() As String
+    Get
+      Return lblPageHeader.Text
+    End Get
+    Set(ByVal value As String)
+      lblPageHeader.Text = value
+    End Set
+  End Property
+
+  Public ReadOnly Property UserID() As Long
+    Get
+      Return 2
+    End Get
+  End Property
+  
+  Public ReadOnly Property UserName() As String
+    Get
+      Return _UserName
+    End Get
+  End Property
+  
+  Public ReadOnly Property PartnerID() As Long
+    Get
+      Return _PartnerID
+    End Get
+  End Property
+  
+  Public ReadOnly Property PartnerAgentID() As Long
+    Get
+      Return _PartnerAgentID
+    End Get
+  End Property
+  Public Property ActiveMenu() as String
+   Get
+     Return _ActiveMenu
+   end get
+     Set(ByVal value As String)
+      _ActiveMenu = value
+    End Set
+   
+  end Property
+  Public Property AdminAgent() as String
+   Get
+     Return _AdminAgent
+   end get
+     Set(ByVal value As String)
+      _AdminAgent = value
+    End Set
+   
+  end Property
+  
+  ''' <summary>
+  ''' Initializes the page
+  ''' </summary>
+  Private Sub Page_Load(ByVal S As Object, ByVal E As EventArgs)
+    Response.Buffer = True
+    
+    If CType(System.Configuration.ConfigurationManager.AppSettings("DownForMaintenance"), Boolean) Then
+      Response.Redirect(System.Configuration.ConfigurationManager.AppSettings("MaintenanceUrl"), True)
+      Response.Flush()
+      Response.End()
+    Else
+      Dim blnRequireSecure As Boolean = System.Configuration.ConfigurationManager.AppSettings("RequireSecureConnection")
+      If blnRequireSecure Then
+        If (Request.ServerVariables("HTTPS") = "off") Then
+          Dim strRedirect As String = ""
+          Dim strQuery As String = ""
+          strRedirect = "https://" & Request.ServerVariables("SERVER_NAME")
+          strRedirect &= Request.ServerVariables("SCRIPT_NAME")
+          strQuery = Request.ServerVariables("QUERY_STRING")
+          If strQuery.Trim.Length > 0 Then
+            strRedirect &= "?"
+            strRedirect &= strQuery
+          End If
+          Response.Redirect(strRedirect, True)
+        End If
+      End If
+      Dim strCompanyName As String = System.Configuration.ConfigurationManager.AppSettings("CompanyName")
+      lnkEmail.HRef = "mailto:" & System.Configuration.ConfigurationManager.AppSettings("PartnerSupportEmail")
+      lblPartnerSupportEmail.Text = System.Configuration.ConfigurationManager.AppSettings("PartnerSupportEmail")
+      lblPhone.Text = System.Configuration.ConfigurationManager.AppSettings("PhoneNumber")
+      Dim lngCopyrightStartYear As Integer = CType(System.Configuration.ConfigurationManager.AppSettings("CopyrightStartYear"), Integer)
+      If lngCopyrightStartYear > DateTime.Now.Year Then
+        lblCopyYears.Text = lngCopyrightStartYear.ToString & " - " & DateTime.Now.Year.ToString
+      Else
+        lblCopyYears.Text = lngCopyrightStartYear.ToString
+      End If
+      lblCompanyName.Text = strCompanyName
+      
+      Dim x as New HtmlGenericControl("li")
+      if _ActiveMenu <> "" then
+        x = FindControl(_ActiveMenu)   
+                Response.Cookies("mnuActive").Value = _ActiveMenu
+                Response.Cookies("mnuActive").Expires = DateTime.Now.AddDays(1)
+                x.Attributes.CssStyle.Add("class", "active")
+                x.Focus()
+        _ActiveMenu= x.ID.ToString 
+      else
+       GetMenuActive()
+      end if
+      
+    Dim pta As New BridgesInterface.PartnerAgentRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+    pta.Load(_PartnerAgentID)
+      _AdminAgent = pta.AdminAgent 
+      If not pta.AdminAgent then
+        J.Visible = False
+        K.Visible = False
+                L.Visible = False
+                M.Visible = False
+        O.Visible = False 
+        Q.Visible = False
+        _AdminAgent = False
+      end if
+    End If
+    
+   
+  End Sub
+  
+  Private Sub LoadUserDetail()
+    If _WebLoginID > 0 Then
+      Dim pta As New BridgesInterface.PartnerAgentRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      Dim wbl As New BridgesInterface.WebLoginRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      wbl.Load(_WebLoginID)
+      pta.LoadByWebLoginID(_WebLoginID)
+      wbl.Load(_WebLoginID)
+      _AccessCoding = wbl.AccessCoding
+      _UserName = pta.NameTag
+      _PartnerAgentID = pta.PartnerAgentID
+      _PartnerID = pta.PartnerID
+      _AdminAgent = pta.AdminAgent 
+      lblLoggedInAs.Text = pta.FirstName & " " & pta.MiddleName & " " & pta.LastName & ". (" & wbl.Login & ")"
+            If _AccessCoding.Trim.ToLower <> "e" Then
+
+                'PopUpMsg("Only Field Service Technicians can access this menu item. Access Denied!")
+                Response.Redirect("/logout.aspx")
+            End If
+    End If
+  End Sub
+  Protected Sub SetMenuActive (ByVal sender as Object,ByVal e as  BulletedListEventArgs )
+    Dim x as New HtmlGenericControl("li")
+    x.FindControl (e.Index)
+    
+    Response.Cookies("mnuActive").Value = x.ID.ToString 
+    Response.Cookies("mnuActive").Expires = DateTime.Now.AddDays(1)
+    
+    'session ("mnuActive") = x
+    
+  end sub
+  
+  Protected Sub GetMenuActive ()
+    Dim ldp as String
+     ldp = ""
+    'ldp = session("mnuActive").ToString
+    
+    If Not Request.Cookies("mnuActive") Is Nothing then
+      ldp = Server.HtmlEncode (Request.Cookies("mnuActive").Value)
+    end if
+    
+   if (Not (ldp) Is Nothing) then
+        Dim x as New HtmlGenericControl ("li")
+        x = FindControl(ldp)   
+        x.Focus 
+            x.Attributes.CssStyle("Current") = True
+           
+   end if
+  end sub
+  
+  Protected Sub DeleteMenuActive ()
+   Response.Cookies("mnuActive").Expires = DateTime.Now.AddDays(-1)
+    End Sub
+    Private Sub PopUpMsg(ByVal strMessage As String)
+        'Begin building the script 
+        Dim strScript As String = "<SCRIPT LANGUAGE=""JavaScript"">" & vbCrLf
+        strScript += "alert(""" & strMessage & """)" & vbCrLf
+        strScript += "<" & "/" & "SCRIPT" & ">"
+        'Register the script for the client side 
+        Page.ClientScript.RegisterStartupScript(GetType(String), "messageBox", strScript)
+    End Sub
+   
+
+  
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head id="pagehead" runat="server">
+    <title id="pagetitle" runat="server" />
+    <link rel="stylesheet" type="text/css"  href="/stylesheets/default.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+  <table cellspacing="0" class="bodytable">
+    <tbody>
+      <tr>
+        <td class="pageheader"><asp:Label ID="lblPageHeader" runat="server" /></td>
+      </tr>
+      <tr>
+        <td class="bodyarea">
+          <table style="width: 100%" cellspacing="0">
+            <tbody>
+              <tr>
+                <td>
+                  <div id="navigation1">
+                  <ul>
+                    <li id="A" runat="server" onclick="SetMenuActive" ><a class="clienttablink" href="/FieldTechnicians/default.aspx">Messages</a></li>
+                    <li id="C" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/predispatch.aspx">Pre-Dispatch</a></li>
+                    <li id="B" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/workorders.aspx?act=B">Open Tickets</a>
+                      <ul>
+                         <li id="D" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/calendar.aspx">Schedule</a></li>
+                         <li id="E" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/missedappts.aspx">Missed Appt</a></li>
+                      </ul>
+                    </li>
+                    <li id="F" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/closedtickets.aspx">Closed Tickets</a>
+                      <ul>
+                         <li id="G" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/NeedPartReturned.aspx">Need Parts Returned</a></li>
+                         <li id="H" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/NeedWOReturned.aspx">Need WO Returned</a></li>
+                         <li id="I" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/ReadyForPayment.aspx">Ready for Payment</a></li>
+                      </ul>
+                    </li>  
+                    <li id="J" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/invoices.aspx">Invoices</a>
+                      <ul>
+                         <li id="K" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/currentinvoice.aspx">To be Paid</a></li>
+                         <li id="L" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/PartsCharge.aspx">Parts Charge</a></li>
+                         <li id="M" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/OldInvoices.aspx">Paid Invoices</a></li>
+                      </ul>
+                    </li>
+                    <li id="O" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/settings.aspx">My Company Info</a></li>
+                    <li id="Q" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/regularrates.aspx">Rates</a></li>
+                    <li id="LA" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/Availability.aspx">Set Availability</a></li>
+                    <li id="N" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/TrainingVideos.aspx">Training Videos</a></li>
+                    <li id="RA" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/surveys.aspx">FeedBack</a></li>
+                    <li id="SA" runat="server" onclick="SetMenuActive"><a class="clienttablink" href="/FieldTechnicians/help.aspx">Help</a></li>
+                    <li onclick="DeleteMenuActive"><a class="clienttablink" href="/logout.aspx">Log Out</a></li>
+                    
+                  </ul>
+                  </div>
+                  <div>&nbsp;</div>
+                </td>
+                <td style="width:1px;"><img src="/graphics/minheight.png" alt="Agent Interface" /></td>
+                <td style="width:100%"><asp:ContentPlaceHolder ID="bodycontent" runat="server" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="footerarea">
+          <div>
+            <table width="100%">
+              <tbody>
+                <tr>
+                  <td>Logged in as: <asp:Label ID="lblLoggedInAs" runat="server" /> [<a class="footerlink" href="/logout.aspx">Log Out</a>]</td>
+                  <td style="text-align: right;">Contact: <a class="footerlink" id="lnkEmail" runat="server"><asp:Label ID="lblPartnerSupportEmail" runat="server" /></a></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td style="text-align: right;"><asp:Label ID="lblPhone" runat="server" /></td>
+                </tr>
+              </tbody>
+            </table>     
+          </div>
+          <table style="width: 100%">
+            <tbody>
+              <tr>
+                <td class="emblems"><a href="http://validator.w3.org/check?uri=referer"><img src="/graphics/xhtml10valid.png" alt="Valid XHTML 1.0 Transitional" /></a></td>
+                <td class="copynotice">&copy; <asp:label ID="lblCopyYears" runat="server" /> <asp:Label ID="lblCompanyName" runat="server" /></td>
+              </tr>
+            </tbody>
+          </table>        
+        </td>
+      </tr>
+    </tbody>
+  </table>   
+</body>
+</html>

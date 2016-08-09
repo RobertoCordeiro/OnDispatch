@@ -1,0 +1,175 @@
+﻿<%@ Master Language="VB" %>
+<script language="VB" runat="server">
+
+  Private _UserName As String = ""
+  Private _PartnerID As Long = 0
+  Private _PartnerAgentID As Long = 0
+  Private _WebLoginID As Long = 0
+  Private _AccessCoding As String = ""
+  
+  ''' <summary>
+  ''' Returns/Sets the value for the title bar text
+  ''' </summary>
+  Public Property PageTitleText() As String
+    Get
+      Return PageTitle.Text
+    End Get
+    Set(ByVal value As String)
+      pagetitle.Text = value
+    End Set
+  End Property
+    
+  ''' <summary>
+  ''' Returns/Sets the WebLogin ID for the current user
+  ''' </summary>
+  Public Property WebLoginID() As Long
+    Get
+      Return _WebLoginID
+    End Get
+    Set(ByVal value As Long)
+      _WebLoginID = value
+      LoadUserDetail()
+    End Set
+  End Property
+
+  ''' <summary>
+  ''' Returns/Sets the text for the page header
+  ''' </summary>
+  Public Property PageHeaderText() As String
+    Get
+      Return lblPageHeader.Text
+    End Get
+    Set(ByVal value As String)
+      lblPageHeader.Text = value
+    End Set
+  End Property
+
+  Public ReadOnly Property UserID() As Long
+    Get
+      Return 2
+    End Get
+  End Property
+  
+  Public ReadOnly Property UserName() As String
+    Get
+      Return _UserName
+    End Get
+  End Property
+  
+  Public ReadOnly Property PartnerID() As Long
+    Get
+      Return _PartnerID
+    End Get
+  End Property
+  
+  Public ReadOnly Property PartnerAgentID() As Long
+    Get
+      Return _PartnerAgentID
+    End Get
+  End Property
+  
+  ''' <summary>
+  ''' Initializes the page
+  ''' </summary>
+  Private Sub Page_Load(ByVal S As Object, ByVal E As EventArgs)
+    Response.Buffer = True
+    If CType(System.Configuration.ConfigurationManager.AppSettings("DownForMaintenance"), Boolean) Then
+      Response.Redirect(System.Configuration.ConfigurationManager.AppSettings("MaintenanceUrl"), True)
+      Response.Flush()
+      Response.End()
+    Else
+      Dim blnRequireSecure As Boolean = System.Configuration.ConfigurationManager.AppSettings("RequireSecureConnection")
+      If blnRequireSecure Then
+        If (Request.ServerVariables("HTTPS") = "off") Then
+          Dim strRedirect As String = ""
+          Dim strQuery As String = ""
+          strRedirect = "https://" & Request.ServerVariables("SERVER_NAME")
+          strRedirect &= Request.ServerVariables("SCRIPT_NAME")
+          strQuery = Request.ServerVariables("QUERY_STRING")
+          If strQuery.Trim.Length > 0 Then
+            strRedirect &= "?"
+            strRedirect &= strQuery
+          End If
+          Response.Redirect(strRedirect, True)
+        End If
+      End If
+      Dim strCompanyName As String = System.Configuration.ConfigurationManager.AppSettings("CompanyName")
+      Dim lngCopyrightStartYear As Integer = CType(System.Configuration.ConfigurationManager.AppSettings("CopyrightStartYear"), Integer)
+      lnkEmail.HRef = "mailto:" & System.Configuration.ConfigurationManager.AppSettings("PartnerSupportEmail")
+      lblPartnerSupportEmail.Text = System.Configuration.ConfigurationManager.AppSettings("PartnerSupportEmail")
+      lblPhone.Text = System.Configuration.ConfigurationManager.AppSettings("PhoneNumber")
+      If lngCopyrightStartYear > DateTime.Now.Year Then
+        lblCopyYears.Text = lngCopyrightStartYear.ToString & " - " & DateTime.Now.Year.ToString
+      Else
+        lblCopyYears.Text = lngCopyrightStartYear.ToString
+      End If
+      lblCompanyName.Text = strCompanyName
+    End If
+  End Sub
+  
+  Private Sub LoadUserDetail()
+    If _WebLoginID > 0 Then
+      Dim pta As New BridgesInterface.PartnerAgentRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      Dim wbl As New BridgesInterface.WebLoginRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      wbl.Load(_WebLoginID)
+      pta.LoadByWebLoginID(_WebLoginID)
+      wbl.Load(_WebLoginID)
+      _AccessCoding = wbl.AccessCoding
+      _UserName = pta.NameTag
+      _PartnerAgentID = pta.PartnerAgentID
+      _PartnerID = pta.PartnerID
+      lblLoggedInAs.Text = pta.FirstName & " " & pta.MiddleName & " " & pta.LastName & ". (" & wbl.Login & ")"
+      If _AccessCoding.Trim.ToLower <> "e" Then
+        Response.Redirect("/logout.aspx")
+      End If
+    End If
+  End Sub
+  
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head id="pagehead" runat="server">
+    <title id="pagetitle" runat="server" />
+    <link rel="stylesheet" type="text/css"  href="/stylesheets/default.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+  <table cellspacing="0" class="dialog">
+    <tbody>
+      <tr>
+        <td class="pageheader"><asp:Label ID="lblPageHeader" runat="server" /></td>
+      </tr>
+      <tr>
+        <td><asp:ContentPlaceHolder ID="bodycontent" runat="server" /></td>
+      </tr>
+      <tr>
+        <td class="footerarea">
+          <div>
+            <table width="100%">
+              <tbody>
+                <tr>
+                  <td>Logged in as: <asp:Label ID="lblLoggedInAs" runat="server" /> [<a class="footerlink" href="/logout.aspx">Log Out</a>]</td>
+                  <td style="text-align: right;">Contact: <a class="footerlink" id="lnkEmail" runat="server"><asp:Label ID="lblPartnerSupportEmail" runat="server" /></a></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td style="text-align: right;"><asp:Label ID="lblPhone" runat="server" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <table style="width: 100%">
+            <tbody>
+              <tr>
+                <td class="emblems"><a href="http://validator.w3.org/check?uri=referer"><img src="/graphics/xhtml10valid.png" alt="Valid XHTML 1.0 Transitional" /></a></td>
+                <td class="copynotice">&copy; <asp:label ID="lblCopyYears" runat="server" /> <asp:Label ID="lblCompanyName" runat="server" /></td>
+              </tr>
+            </tbody>
+          </table>        
+        </td>
+      </tr>
+    </tbody>
+  </table>   
+</body>
+</html>

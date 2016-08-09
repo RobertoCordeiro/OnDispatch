@@ -1,0 +1,155 @@
+<%@ Master Language="VB" %>
+<script runat="server">
+  Public Sub Page_Load(ByVal S As Object, ByVal E As EventArgs)    
+    If CType(System.Configuration.ConfigurationManager.AppSettings("DownForMaintenance"), Boolean) Then
+      Response.Buffer = True
+      Response.Redirect(System.Configuration.ConfigurationManager.AppSettings("MaintenanceUrl"), True)
+      Response.Flush()
+      Response.End()
+    Else
+      Response.Buffer = True
+      Dim blnRequireSecure As Boolean = System.Configuration.ConfigurationManager.AppSettings("RequireSecureConnection")
+      If blnRequireSecure Then
+        If (Request.ServerVariables("HTTPS") = "off") Then
+          Dim strRedirect As String = ""
+          Dim strQuery As String = ""
+          strRedirect = "https://" & Request.ServerVariables("SERVER_NAME")
+          strRedirect &= Request.ServerVariables("SCRIPT_NAME")
+          strQuery = Request.ServerVariables("QUERY_STRING")
+          If strQuery.Trim.Length > 0 Then
+            strRedirect &= "?"
+            strRedirect &= strQuery
+          End If
+          Response.Redirect(strRedirect, True)
+        End If
+      End If
+      Dim strCompanyName As String = System.Configuration.ConfigurationManager.AppSettings("CompanyName")
+      Dim lngCopyrightStartYear As Integer = CType(System.Configuration.ConfigurationManager.AppSettings("CopyrightStartYear"), Integer)
+      Me.Page.Title = strCompanyName & " [Login]"
+      'If lngCopyrightStartYear > DateTime.Now.Year Then
+      '  lblCopyYears.Text = lngCopyrightStartYear.ToString & " - " & DateTime.Now.Year.ToString
+      'Else
+      '  lblCopyYears.Text = lngCopyrightStartYear.ToString
+      'End If
+      'lblCompanyName.Text = strCompanyName
+    End If
+  End Sub
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head runat="Server">
+    <title>LOG IN</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16195812-1");
+pageTracker._setDomainName(".bestservicers.com");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </head>
+  <body>
+    <div class="main">
+  <div class="blok_header">
+    <div class="header">
+      <div class="logo"><a href="/index.html"><img src="/images/fulllogo.jpg" width="359" height="99" border="0" alt="logo" /></a></div>
+      <div class="menu">
+        <ul>
+          <li><a href="/index.html"><span>Home</span></a></li>
+          <li><a href="/service.html"><span>Services</span></a></li>
+          <li><a href="/store.aspx"><span>Shop Online</span></a></li>
+          <li><a href="/orderparts.aspx"><span>Order Parts</span></a></li>
+          <li><a href="/login.aspx"><span>Log In</span></a></li>
+          <li><a href="/contact.aspx"><span> Contact Us</span></a></li>
+          <li><a href="/join/default.aspx" ><span> Register </span></a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+  <div class="header_text_bg2">
+    <div class="header_text2">
+      <h2>Customer Survey</h2>
+      <p>Your feed back is very important to us. <br />
+         Help us improve by filling out out Customer Survey.</p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="body_resize">
+    <div class="body" >
+      <div class="left">
+        <div></div>
+        <asp:ContentPlaceHolder ID="cntMain" runat="server" /></div>
+      
+      <div class="right">
+        <h2>Measuring Your Satisfaction
+        <span>Your opinion is very important to us.</span></h2>
+        <ul>
+        <li>Customer Service Experience - 3 questions</li>
+        <li>On-site Service Experience - 3 questions</li>
+        <li>About Technician - 3 questions</li>
+        <li>Website features - 3 questions</li>
+        <li>Website features - 3 questions</li>
+        </ul>
+        <div class="clr"></div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+<div class="FBG">
+  <div class="FBG_resize">
+    <div class="right">
+      <h2>Services You Can Count On</h2>
+      <p>We work with your business and adapt our system to comply with your requirements all the way through the process of dispatching, managing and completing a service call.
+        Our Network of Technicians can improve your customer experience and add value to your warranty on-site service representation.</p>
+    </div>
+    <div class="left">
+      <h2>Features </h2>
+      <ul>
+        <li>Support Services</li>
+        <li>Training</li>
+        <li>Depot Repair</li>
+        <li>Statewide Coverage</li>
+      </ul>
+    </div>
+    <div class="left">
+      <h2>Client Advantages </h2>
+      <ul>
+        <li>Highly Training Technician</li>
+        <li>Improve Customer Experience</li>
+        <li>Enhance Brand Loyalty</li>
+        <li>Total Accountability</li>
+      </ul>
+    </div>
+    <div class="right">
+      <h2>Our Message</h2>
+      <p> <img src="/images/test.gif" alt="picture" width="24" height="18" />&quot;To my customer: I may not have the answer, but I'll find it. I may not have the time, but I'll make it. I may not be the biggest, but I'll be the most committed to your success.
+        &quot;</p>
+      
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</div>
+<div class="footer">
+  <div class="footer_resize"><a href="/index.html"><img src="/images/fulllogo.jpg" alt="picture" width="214" height="84" border="0" /></a>
+    <p class="leftt">Copyright 2010 © Best Servicers of America. All Rights Reserved<br />
+      <a href="/policy.html"><strong>Private Policy</strong></a></p>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</div>
+</body>
+</html>

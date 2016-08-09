@@ -1,0 +1,111 @@
+/* Timepicker Web2.0 skin */
+
+.radTimeTableCss_Web20 caption
+{
+    display: none;
+}
+
+.radTimeTableCss_Web20 
+{
+	font-family: Arial, Verdana, Sans-Serif;
+	border: solid 1px #6788be;
+	background: white url('Img/calendarBg.gif') repeat-x;
+	cursor: pointer;
+	cursor: default;
+	border-collapse: collapse;
+}
+
+.radTimeTableCss_Web20 td
+{
+	border: solid 1px #e5e5e5;
+	padding: 0;
+}
+
+.radTimeTableCss_Web20 a
+{
+	display: block;
+	font-size: 11px;
+	text-decoration: none;
+	color: black;
+	line-height: 21px;
+	width: 75px;
+	line-height: 32px;
+	text-align: center;
+}
+
+.radTimeOverCss_Web20 a
+{
+	font-size: 12px;
+	font-weight: bold;
+	background: white url('Img/HoverBg.gif') repeat-x;
+}
+
+.radHeaderCss_Web20,
+th.radTimeOverCss_Web20
+{
+	font-size: 18px;
+	font-weight: normal;
+	color: white;
+	height: 30px;
+	background: #ebff9d url('Img/calendarBg.gif') repeat-x;
+}
+
+.radItemCss_Web20 a,
+.radAlternatingItemCss_Web20
+{
+    /**/
+}
+
+.radItemCss_Web20 a:hover,
+.radAlternatingItemCss_Web20 a:hover
+{	
+	/**/
+}
+
+.radPopupImage_Web20
+{
+	position: relative; 
+	_position: inherit; /*IE fix*/
+	outline: none;
+}
+*+html .radPopupImage_Web20
+{
+	position: inherit;
+}
+
+.radPopupImage_Web20 img
+{
+	vertical-align: middle;
+	margin:0 2px;
+	border:0;
+}
+
+.radDisabled_Web20 img
+{
+	 filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.pickerWrapper_Web20
+{
+	vertical-align:middle;
+}
+
+.pickerWrapper_Web20 table
+{
+	vertical-align:bottom;
+}
+
+.pickerWrapper_Web20 table,
+.pickerWrapper_Web20 td
+{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.pickerWrapper_Web20 .inputCell 
+{
+	padding: 0 4px 0 0;
+}

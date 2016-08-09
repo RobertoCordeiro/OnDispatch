@@ -1,0 +1,108 @@
+.radTimeTableCss_Inox caption
+{
+    display: none;
+}
+
+.radTimeTableCss_Inox 
+{
+	font-family: Verdana, Arial, Sans-Serif;
+	border: solid 1px #7b838e;
+	border-collapse: collapse;
+	background: #bbb url('Img/calendarBg.gif') repeat-y center;
+	filter: progid:DXImageTransform.Microsoft.dropShadow(Color=7b838e,offX=2,offY=2,positive=true);
+}
+
+.radTimeTableCss_Inox th,
+.radTimeTableCss_Inox td
+{
+	padding:0;
+	border:0;
+}
+
+.radTimeTableCss_Inox a
+{
+	display: block;
+	font-size: 13px;
+	text-decoration: none;
+	color: #666;
+	line-height: 21px;
+	border-right: solid 1px #7b838e;
+	padding:0 4px;
+}
+
+.radTimeOverCss_Inox a
+{
+	background: transparent url('Img/TimePickerHoverBg.gif') repeat-x;
+	border-right: solid 1px #496891;
+}
+
+.radHeaderCss_Inox,
+th.radTimeOverCss_Inox
+{
+	font-size: 12px;
+	font-weight: bold;
+	color: #4e555d;
+	height: 31px;
+	background: gray url('Img/titleBg.gif') repeat-x;
+}
+
+.radItemCss_Inox a,
+.radAlternatingItemCss_Inox
+{
+    /**/
+}
+
+.radItemCss_Inox a:hover,
+.radAlternatingItemCss_Inox a:hover
+{	
+	/**/
+}
+
+.radDisabled_Inox img
+{
+	 filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.radPopupImage_Inox
+{
+	position: relative; 
+	_position: inherit; /*IE fix*/
+	outline: none;
+}
+*+html .radPopupImage_Inox
+{
+	position: inherit;
+}
+
+.radPopupImage_Inox img
+{
+	vertical-align: middle;
+	margin-left: 2px;
+	margin-right: 2px;
+	border: 0;
+}
+
+.radDisabled_Inox img
+{
+	 filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
+*+html .pickerWrapper_Inox{height:22px !important}
+
+.pickerWrapper_Inox
+{
+	vertical-align: middle;
+	width:185px !important; /*set this to 200px if using DateTimePicker */
+}
+.pickerWrapper_Inox table,
+.pickerWrapper_Inox td
+{
+	border: 0;
+	border-style: none;
+	padding: 0;
+	margin: 0;
+}

@@ -1,0 +1,82 @@
+/* Docking Zone properties */
+
+.RadDockingZone
+{
+    border: 1px solid #070707;
+    padding: 4px 0 0 4px;
+    background-color: #191919;
+}
+
+*>.RadDockingZone.rdVertical /* hidden from IE6 */
+{
+    padding-right:4px;
+}
+
+/* Dock Object properties */
+
+/* wrappers and borders */
+
+.RadDockableObjectFixed .rdPlaceHolder,
+.RadDockableObjectResizeable .rdPlaceHolder
+{
+    border-color:#232323;
+}
+
+.RadDockableObjectFixed,
+.RadDockableObjectResizeable
+{
+    text-align: left;
+    border: 1px solid #101010;
+    background-color: #1e1e1e;
+    color:#666;
+}
+
+/* titlebar and buttons */
+
+.RadDockableObjectFixed .RadDockableObjectTitleBarLeft,
+.RadDockableObjectResizeable .RadDockableObjectTitleBarLeft
+{
+	width: 10px;
+}
+
+.RadDockableObjectFixed .RadDockableObjectTitleBar,
+.RadDockableObjectResizeable .RadDockableObjectTitleBar
+{
+    top:1px; /*brd*/
+    height:25px;
+    background:url('Img/TitlebarH.gif') repeat-x #191919;
+    font:12px/24px Arial,sans-serif;
+    color: #0d5776;
+    border-style: solid;
+    border-width: 1px 0;
+    border-top-color: #101010;
+    border-bottom-color: #181818;
+    padding-bottom: 1px;
+}
+
+.RadDockableObjectFixed .RadDockableObjectCommandButton,
+.RadDockableObjectResizeable .RadDockableObjectCommandButton
+{
+    text-align:center;
+    vertical-align:middle;
+}
+
+.RadDockableObjectResizeable
+{
+    border-width:3px;
+}
+
+.RadDockableObjectCommandButton
+{
+	width: 20px;
+}
+
+.RadDragHelper
+{
+	background-color: #666;
+}
+
+.RadDockableObjectHorizontalGrip
+{
+	background-color: #393939
+}

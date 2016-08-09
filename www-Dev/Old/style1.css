@@ -1,0 +1,46 @@
+body {padding:0; margin:0; color:#FFFFFF}
+br{font-size:10px}
+.s{font-family:Tahoma; font-size:10px;  color:#A79F9F; text-decoration:none}
+.s1{font-family:Tahoma; font-size:11px;  color:#878786; text-decoration:none}
+.s2{font-family:Tahoma; font-size:11px;  color:#9B9A9A;}
+.s3{font-family:Tahoma; font-size:11px;  color:#6D6B6B;}
+.s4{font-family:Tahoma; font-size:11px;  color:#AEAEAE;}
+.s5{font-family:Tahoma; font-size:17px; color:#FFFFFF; }
+.green{font-family:Tahoma; font-size:11px;  color:#80A630; text-decoration:none}
+.green1{font-family:Tahoma; font-size:11px;  color:#80A630; }
+.green2{font-family:Tahoma; font-size:11px;  color:#6A8434; }
+.green3{font-family:Tahoma; font-size:17px; color:#80A630; }
+  .red{font-family:Tahoma; font-size:11px;  color:#2C7F06;}
+  .o{font-family:Tahoma; font-size:11px;  color:#FFCC00;}
+.blue{font-family:Tahoma; font-size:11px;  color:#7397EF;}
+.blue1{font-family:Tahoma; font-size:11px;  color:#516AA8; text-decoration:none}
+  .w{font-family:Tahoma; font-size:11px;  color:#FFFFFF; }
+  .b{font-family:Tahoma; font-size:11px;  color:#000000; }
+.blue2{font-family:Tahoma; font-size:17px; color:#7397EF; }
+
+.green5{font-family:AvantGarde Bk Bt; font-size:24px; color:#80A630; } 
+.white{font-family:AvantGarde Bk Bt; font-size:24px; color:#FFFFFF; 
+
+  #input{
+  		width:160px; height:21px;
+		
+		}
+		 
+#input1{
+  		width:134px; height:21px;
+		
+		}
+		
+	  #textarea{
+  		width:102px; height:48px;
+		border-width:1px;
+		border-style:solid;
+		border:none;
+		background-color:FFFFFF;
+		overflow:auto
+		}
+
+
+ 
+
+

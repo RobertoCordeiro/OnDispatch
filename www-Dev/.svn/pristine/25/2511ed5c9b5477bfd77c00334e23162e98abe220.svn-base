@@ -1,0 +1,123 @@
+﻿<%@ Master Language="VB" %>
+<script language="VB" runat="server">
+
+  Private _WebLoginID As Long = 0
+  Private _UserID As Long = 0
+  Private _ResumeID As Long = 0
+  
+  ''' <summary>
+  ''' Returns/Sets the value for the title bar text
+  ''' </summary>
+  Public Property PageTitleText() As String
+    Get
+      Return PageTitle.Text
+    End Get
+    Set(ByVal value As String)
+      pagetitle.Text = value
+    End Set
+  End Property
+    
+  ''' <summary>
+  ''' Returns/Sets the WebLogin ID for the current user
+  ''' </summary>
+  Public Property WebLoginID() As Long
+    Get
+      Return _WebLoginID
+    End Get
+    Set(ByVal value As Long)
+      _WebLoginID = value
+      LoadUserDetail()
+    End Set
+  End Property
+  
+  ''' <summary>
+  ''' REturns the User that's logged in, in this case it would be the web user 2
+  ''' </summary>
+  Public ReadOnly Property UserID() As Long
+    Get
+      Return 2
+    End Get
+  End Property
+  
+  Public ReadOnly Property ResumeID() As Long
+    Get
+      Return _ResumeID
+    End Get
+  End Property
+  
+  ''' <summary>
+  ''' Initializes the page
+  ''' </summary>
+  Private Sub Page_Load(ByVal S As Object, ByVal E As EventArgs)
+    Response.Buffer = True
+    If CType(System.Configuration.ConfigurationManager.AppSettings("DownForMaintenance"), Boolean) Then
+      Response.Redirect(System.Configuration.ConfigurationManager.AppSettings("MaintenanceUrl"), True)
+      Response.Flush()
+      Response.End()
+    Else
+      Dim blnRequireSecure As Boolean = System.Configuration.ConfigurationManager.AppSettings("RequireSecureConnection")
+      If blnRequireSecure Then
+        If (Request.ServerVariables("HTTPS") = "off") Then
+          Dim strRedirect As String = ""
+          Dim strQuery As String = ""
+          strRedirect = "https://" & Request.ServerVariables("SERVER_NAME")
+          strRedirect &= Request.ServerVariables("SCRIPT_NAME")
+          strQuery = Request.ServerVariables("QUERY_STRING")
+          If strQuery.Trim.Length > 0 Then
+            strRedirect &= "?"
+            strRedirect &= strQuery
+          End If
+          Response.Redirect(strRedirect, True)
+        End If
+      End If
+      Dim strCompanyName As String = System.Configuration.ConfigurationManager.AppSettings("CompanyName")
+      Dim lngCopyrightStartYear As Integer = CType(System.Configuration.ConfigurationManager.AppSettings("CopyrightStartYear"), Integer)
+      If lngCopyrightStartYear > DateTime.Now.Year Then
+        lblCopyYears.Text = lngCopyrightStartYear.ToString & " - " & DateTime.Now.Year.ToString
+      Else
+        lblCopyYears.Text = lngCopyrightStartYear.ToString
+      End If
+      lblCompanyName.Text = strCompanyName
+    End If
+  End Sub
+  
+  Private Sub LoadUserDetail()
+    If _WebLoginID > 0 Then      
+      Dim wbl As New BridgesInterface.WebLoginRecord(_WebLoginID, System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
+      wbl.Load(_WebLoginID)
+      _ResumeID = CType(wbl.Login, Long)
+      If wbl.AccessCoding.Trim.ToLower <> "r" Then
+        Response.Redirect("/logout.aspx")
+      End If
+    End If
+  End Sub
+  
+  Protected Sub Page_PreRender(ByVal sender As Object, ByVal e As System.EventArgs)
+
+  End Sub
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head id="Head1" runat="server">
+    <title id="PageTitle" runat="server">Join</title>
+    <link rel="stylesheet" type="text/css"  href="/stylesheets/default.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16195812-1");
+pageTracker._setDomainName(".bestservicers.com");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </head>
+  <body>
+    <asp:ContentPlaceHolder ID="bodycontent" runat="server" />
+    <div class="copynotice">&copy; <asp:label ID="lblCopyYears" runat="server" /> <asp:Label ID="lblCompanyName" runat="server" /></div>        
+  </body>
+</html>
+

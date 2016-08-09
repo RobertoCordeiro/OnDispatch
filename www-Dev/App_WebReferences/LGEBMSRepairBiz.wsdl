@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax21="http://bms.sps.lgcns.com/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://bms.sps.lgcns.com" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://bms.sps.lgcns.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    Please Type your service description here
+  </wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns:ax24="http://bms.sps.lgcns.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://bms.sps.lgcns.com">
+      <xs:import namespace="http://bms.sps.lgcns.com/xsd" />
+      <xs:element name="getDailyScheduleList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DailyScheduleListRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDailyScheduleListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DailyScheduleListResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateDailySchedule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DailyScheduleUpdateRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateDailyScheduleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DailyScheduleUpdateResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="acceptDispatch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchAcceptRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="acceptDispatchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchAcceptResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelDispatch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchCancelRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelDispatchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchCancelResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="confirmDispatchList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchConfirmRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="confirmDispatchListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchConfirmResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="confirmNewDispatchList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:NewDispatchConfirmRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="confirmNewDispatchListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchConfirmResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDispatchInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchListRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDispatchInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchListResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDispatchList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchListRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDispatchListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchListResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getNewDispatchList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchListRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getNewDispatchListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchListResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDispatchList4Lotus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchListRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDispatchList4LotusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchListResponse4Lotus" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updatePendingDispatch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchPendingRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updatePendingDispatchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchPendingResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rejectDispatch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchRejectRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rejectDispatchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchRejectResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rescheduleDispatch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:DispatchRescheduleRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rescheduleDispatchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DispatchRescheduleResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMasterScheduleList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:MasterScheduleListRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMasterScheduleListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:MasterScheduleListResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateMasterSchedule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:MasterScheduleUpdateRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateMasterScheduleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:MasterScheduleUpdateResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="warrantyClaim">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:WarrantyClaimRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="warrantyClaimResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:WarrantyClaimResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getWarrantyStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="param0" nillable="true" type="ax24:WarrantyStatusRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getWarrantyStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:WarrantyStatusResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://bms.sps.lgcns.com/xsd">
+      <xs:complexType name="DailyScheduleListRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LGESecurity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bmsCompanyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DailyScheduleListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dailyScheduleList" nillable="true" type="ax21:DailyScheduleItem" />
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceEngineerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DailyScheduleItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="scheduleCount" type="xs:int" />
+          <xs:element minOccurs="0" name="scheduleDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="timeZoneId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="timeZoneName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="transferCount" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errorDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="statusCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="statusDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DailyScheduleUpdateRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dailyScheduleList" nillable="true" type="ax21:DailyScheduleItem" />
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DailyScheduleUpdateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceEngineerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchAcceptRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchAcceptResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svcStatusCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchCancelRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cancelReasonCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cancelReasonRemark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchCancelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svcStatusCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchConfirmRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="serviceReceiptNoList" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchConfirmResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NewDispatchConfirmRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchListRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dispatchList" nillable="true" type="ax21:DispatchItem" />
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToPhoneNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="address3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="approvalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ascRepairRemarkDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cellularNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cityName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dealerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dealerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="detailSymptomCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="detailSymptomDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="emailAddr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="faxNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="firstPromiseDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="firstPromiseTimeZoneId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="firstPromiseTimeZoneName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="inputTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastUpdateTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastUpdateUserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="officePhoneNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="partOrderFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pendingReasonCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pendingReasonDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="phoneNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="promiseDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="promiseTimeZoneId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="promiseTimeZoneName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="purchaseDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptDetail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptSymptomCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptSymptomDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="requestTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serialNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceEngineerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceProductCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceProductName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="stateName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svcStatusCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="technicalFindingDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="warrantyFlag" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchListResponse4Lotus">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dispatchList" nillable="true" type="ax21:DispatchItem4Lotus" />
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToPhoneNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchItem4Lotus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="addressLine1Info" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="addressLine2Info" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="addressLine3Info" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute5" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="b2bFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="boxFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cancelReason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cancelTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cityName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="confirmUserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="confirmUserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="detailSymptomDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="emailAddr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fieldScrapFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ibUnitTrackingNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="obBoxTrackingNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="obUnitTrackingNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="offerModelCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="offerModelDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="phoneNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="prcAuthNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="prcConfirmDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="prcCreditAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="productCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="purchaseDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptDetail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptSymptomDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptUserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptUserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiveIoStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serialNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceDepartmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipmentIoStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="stateName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="supplierCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svcEngrForwardingContent" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svcStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svcType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="swapCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="transferReceiveEngineerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="unitReceiveTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="unitShipmentModelCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="unitShipmentSerialNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="unitShipmentTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="warehouseTypeCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchPendingRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="pendingReasonCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pendingReasonRemark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchPendingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svcStatusCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchRejectRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="rejectReasonCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rejectReasonRemark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchRejectResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rejectReasonCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rejectReasonDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svcStatusCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchRescheduleRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="promiseDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="promiseTimeZoneId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispatchRescheduleResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MasterScheduleListRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MasterScheduleListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="masterScheduleList" nillable="true" type="ax21:MasterScheduleItem" />
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceEngineerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MasterScheduleItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fri" type="xs:int" />
+          <xs:element minOccurs="0" name="hol" type="xs:int" />
+          <xs:element minOccurs="0" name="mon" type="xs:int" />
+          <xs:element minOccurs="0" name="sat" type="xs:int" />
+          <xs:element minOccurs="0" name="scheduleEndTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="scheduleStartTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sun" type="xs:int" />
+          <xs:element minOccurs="0" name="thu" type="xs:int" />
+          <xs:element minOccurs="0" name="timeZoneId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="timeZoneName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tue" type="xs:int" />
+          <xs:element minOccurs="0" name="wed" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MasterScheduleUpdateRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="masterScheduleList" nillable="true" type="ax21:MasterScheduleItem" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MasterScheduleUpdateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WarrantyClaimRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="addressLine1Info" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="approvalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ascClaimNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ascRepairRemarkDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute10" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute5" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute6" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute7" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute8" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attribute9" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cityName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="completionTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dealerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dealerStockFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="emailAddr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="esnImeiNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="phoneNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="primaryDefectCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="primaryRepairCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="primarySymptom2Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="purchaseDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptDetail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receiptTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="repairLevelCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reqFreightTxnAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reqLaborCostTxnAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reqMaterialTxnAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reqOtherTxnAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reqPartsTaxTxnAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reqTaxTxnAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reqVisitTxnAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="requestTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serialNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceEngineerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="specialClaimCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="startTimestamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="stateName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="swOutboundVersion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="technicalFindingDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="warrantyClaimPartItem" nillable="true" type="ax21:WarrantyClaimPartItem" />
+          <xs:element minOccurs="0" name="warrantyFlag" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WarrantyClaimPartItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="circuitNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="partNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reusePartsFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="useQty" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WarrantyClaimResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ascClaimNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WarrantyStatusRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ascClaimNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lgeSecurity" nillable="true" type="ax21:LGESecurity" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WarrantyStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ascClaimNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="responseType" nillable="true" type="ax21:ResponseType" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="warrantyStatus" nillable="true" type="ax21:WarrantyStatusItem" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WarrantyStatusItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="approvedFreight" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="approvedIncentive" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="approvedLabor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="approvedMaterial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="approvedOther" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="approvedParts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="approvedTotal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="approvedVisit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ascClaimNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="invoiceDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastInputDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lgWarrantyRemark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mileageAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mileageLaborAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="miles" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="origInputDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="partUseQty" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rejectReasonCodes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="resubmitCount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shipToCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svcStatusCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="warrantyClaimRequest">
+    <wsdl:part name="parameters" element="ns:warrantyClaim" />
+  </wsdl:message>
+  <wsdl:message name="warrantyClaimResponse">
+    <wsdl:part name="parameters" element="ns:warrantyClaimResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWarrantyStatusRequest">
+    <wsdl:part name="parameters" element="ns:getWarrantyStatus" />
+  </wsdl:message>
+  <wsdl:message name="getWarrantyStatusResponse">
+    <wsdl:part name="parameters" element="ns:getWarrantyStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="acceptDispatchRequest">
+    <wsdl:part name="parameters" element="ns:acceptDispatch" />
+  </wsdl:message>
+  <wsdl:message name="acceptDispatchResponse">
+    <wsdl:part name="parameters" element="ns:acceptDispatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="rejectDispatchRequest">
+    <wsdl:part name="parameters" element="ns:rejectDispatch" />
+  </wsdl:message>
+  <wsdl:message name="rejectDispatchResponse">
+    <wsdl:part name="parameters" element="ns:rejectDispatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDailyScheduleRequest">
+    <wsdl:part name="parameters" element="ns:updateDailySchedule" />
+  </wsdl:message>
+  <wsdl:message name="updateDailyScheduleResponse">
+    <wsdl:part name="parameters" element="ns:updateDailyScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDailyScheduleListRequest">
+    <wsdl:part name="parameters" element="ns:getDailyScheduleList" />
+  </wsdl:message>
+  <wsdl:message name="getDailyScheduleListResponse">
+    <wsdl:part name="parameters" element="ns:getDailyScheduleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePendingDispatchRequest">
+    <wsdl:part name="parameters" element="ns:updatePendingDispatch" />
+  </wsdl:message>
+  <wsdl:message name="updatePendingDispatchResponse">
+    <wsdl:part name="parameters" element="ns:updatePendingDispatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="confirmNewDispatchListRequest">
+    <wsdl:part name="parameters" element="ns:confirmNewDispatchList" />
+  </wsdl:message>
+  <wsdl:message name="confirmNewDispatchListResponse">
+    <wsdl:part name="parameters" element="ns:confirmNewDispatchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateMasterScheduleRequest">
+    <wsdl:part name="parameters" element="ns:updateMasterSchedule" />
+  </wsdl:message>
+  <wsdl:message name="updateMasterScheduleResponse">
+    <wsdl:part name="parameters" element="ns:updateMasterScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDispatchListRequest">
+    <wsdl:part name="parameters" element="ns:getDispatchList" />
+  </wsdl:message>
+  <wsdl:message name="getDispatchListResponse">
+    <wsdl:part name="parameters" element="ns:getDispatchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDispatchList4LotusRequest">
+    <wsdl:part name="parameters" element="ns:getDispatchList4Lotus" />
+  </wsdl:message>
+  <wsdl:message name="getDispatchList4LotusResponse">
+    <wsdl:part name="parameters" element="ns:getDispatchList4LotusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMasterScheduleListRequest">
+    <wsdl:part name="parameters" element="ns:getMasterScheduleList" />
+  </wsdl:message>
+  <wsdl:message name="getMasterScheduleListResponse">
+    <wsdl:part name="parameters" element="ns:getMasterScheduleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelDispatchRequest">
+    <wsdl:part name="parameters" element="ns:cancelDispatch" />
+  </wsdl:message>
+  <wsdl:message name="cancelDispatchResponse">
+    <wsdl:part name="parameters" element="ns:cancelDispatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDispatchInfoRequest">
+    <wsdl:part name="parameters" element="ns:getDispatchInfo" />
+  </wsdl:message>
+  <wsdl:message name="getDispatchInfoResponse">
+    <wsdl:part name="parameters" element="ns:getDispatchInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="rescheduleDispatchRequest">
+    <wsdl:part name="parameters" element="ns:rescheduleDispatch" />
+  </wsdl:message>
+  <wsdl:message name="rescheduleDispatchResponse">
+    <wsdl:part name="parameters" element="ns:rescheduleDispatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNewDispatchListRequest">
+    <wsdl:part name="parameters" element="ns:getNewDispatchList" />
+  </wsdl:message>
+  <wsdl:message name="getNewDispatchListResponse">
+    <wsdl:part name="parameters" element="ns:getNewDispatchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="confirmDispatchListRequest">
+    <wsdl:part name="parameters" element="ns:confirmDispatchList" />
+  </wsdl:message>
+  <wsdl:message name="confirmDispatchListResponse">
+    <wsdl:part name="parameters" element="ns:confirmDispatchListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LGEBMSRepairBizPortType">
+    <wsdl:operation name="warrantyClaim">
+      <wsdl:input wsaw:Action="urn:warrantyClaim" message="ns:warrantyClaimRequest" />
+      <wsdl:output wsaw:Action="urn:warrantyClaimResponse" message="ns:warrantyClaimResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getWarrantyStatus">
+      <wsdl:input wsaw:Action="urn:getWarrantyStatus" message="ns:getWarrantyStatusRequest" />
+      <wsdl:output wsaw:Action="urn:getWarrantyStatusResponse" message="ns:getWarrantyStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="acceptDispatch">
+      <wsdl:input wsaw:Action="urn:acceptDispatch" message="ns:acceptDispatchRequest" />
+      <wsdl:output wsaw:Action="urn:acceptDispatchResponse" message="ns:acceptDispatchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="rejectDispatch">
+      <wsdl:input wsaw:Action="urn:rejectDispatch" message="ns:rejectDispatchRequest" />
+      <wsdl:output wsaw:Action="urn:rejectDispatchResponse" message="ns:rejectDispatchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDailySchedule">
+      <wsdl:input wsaw:Action="urn:updateDailySchedule" message="ns:updateDailyScheduleRequest" />
+      <wsdl:output wsaw:Action="urn:updateDailyScheduleResponse" message="ns:updateDailyScheduleResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDailyScheduleList">
+      <wsdl:input wsaw:Action="urn:getDailyScheduleList" message="ns:getDailyScheduleListRequest" />
+      <wsdl:output wsaw:Action="urn:getDailyScheduleListResponse" message="ns:getDailyScheduleListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePendingDispatch">
+      <wsdl:input wsaw:Action="urn:updatePendingDispatch" message="ns:updatePendingDispatchRequest" />
+      <wsdl:output wsaw:Action="urn:updatePendingDispatchResponse" message="ns:updatePendingDispatchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="confirmNewDispatchList">
+      <wsdl:input wsaw:Action="urn:confirmNewDispatchList" message="ns:confirmNewDispatchListRequest" />
+      <wsdl:output wsaw:Action="urn:confirmNewDispatchListResponse" message="ns:confirmNewDispatchListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMasterSchedule">
+      <wsdl:input wsaw:Action="urn:updateMasterSchedule" message="ns:updateMasterScheduleRequest" />
+      <wsdl:output wsaw:Action="urn:updateMasterScheduleResponse" message="ns:updateMasterScheduleResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchList">
+      <wsdl:input wsaw:Action="urn:getDispatchList" message="ns:getDispatchListRequest" />
+      <wsdl:output wsaw:Action="urn:getDispatchListResponse" message="ns:getDispatchListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchList4Lotus">
+      <wsdl:input wsaw:Action="urn:getDispatchList4Lotus" message="ns:getDispatchList4LotusRequest" />
+      <wsdl:output wsaw:Action="urn:getDispatchList4LotusResponse" message="ns:getDispatchList4LotusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMasterScheduleList">
+      <wsdl:input wsaw:Action="urn:getMasterScheduleList" message="ns:getMasterScheduleListRequest" />
+      <wsdl:output wsaw:Action="urn:getMasterScheduleListResponse" message="ns:getMasterScheduleListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelDispatch">
+      <wsdl:input wsaw:Action="urn:cancelDispatch" message="ns:cancelDispatchRequest" />
+      <wsdl:output wsaw:Action="urn:cancelDispatchResponse" message="ns:cancelDispatchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchInfo">
+      <wsdl:input wsaw:Action="urn:getDispatchInfo" message="ns:getDispatchInfoRequest" />
+      <wsdl:output wsaw:Action="urn:getDispatchInfoResponse" message="ns:getDispatchInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="rescheduleDispatch">
+      <wsdl:input wsaw:Action="urn:rescheduleDispatch" message="ns:rescheduleDispatchRequest" />
+      <wsdl:output wsaw:Action="urn:rescheduleDispatchResponse" message="ns:rescheduleDispatchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getNewDispatchList">
+      <wsdl:input wsaw:Action="urn:getNewDispatchList" message="ns:getNewDispatchListRequest" />
+      <wsdl:output wsaw:Action="urn:getNewDispatchListResponse" message="ns:getNewDispatchListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="confirmDispatchList">
+      <wsdl:input wsaw:Action="urn:confirmDispatchList" message="ns:confirmDispatchListRequest" />
+      <wsdl:output wsaw:Action="urn:confirmDispatchListResponse" message="ns:confirmDispatchListResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LGEBMSRepairBizSoap11Binding" type="ns:LGEBMSRepairBizPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="warrantyClaim">
+      <soap:operation soapAction="urn:warrantyClaim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarrantyStatus">
+      <soap:operation soapAction="urn:getWarrantyStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptDispatch">
+      <soap:operation soapAction="urn:acceptDispatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rejectDispatch">
+      <soap:operation soapAction="urn:rejectDispatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDailyScheduleList">
+      <soap:operation soapAction="urn:getDailyScheduleList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDailySchedule">
+      <soap:operation soapAction="urn:updateDailySchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmNewDispatchList">
+      <soap:operation soapAction="urn:confirmNewDispatchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePendingDispatch">
+      <soap:operation soapAction="urn:updatePendingDispatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchList">
+      <soap:operation soapAction="urn:getDispatchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMasterSchedule">
+      <soap:operation soapAction="urn:updateMasterSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchList4Lotus">
+      <soap:operation soapAction="urn:getDispatchList4Lotus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelDispatch">
+      <soap:operation soapAction="urn:cancelDispatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMasterScheduleList">
+      <soap:operation soapAction="urn:getMasterScheduleList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchInfo">
+      <soap:operation soapAction="urn:getDispatchInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rescheduleDispatch">
+      <soap:operation soapAction="urn:rescheduleDispatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewDispatchList">
+      <soap:operation soapAction="urn:getNewDispatchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmDispatchList">
+      <soap:operation soapAction="urn:confirmDispatchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LGEBMSRepairBizSoap12Binding" type="ns:LGEBMSRepairBizPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="warrantyClaim">
+      <soap12:operation soapAction="urn:warrantyClaim" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarrantyStatus">
+      <soap12:operation soapAction="urn:getWarrantyStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptDispatch">
+      <soap12:operation soapAction="urn:acceptDispatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rejectDispatch">
+      <soap12:operation soapAction="urn:rejectDispatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDailyScheduleList">
+      <soap12:operation soapAction="urn:getDailyScheduleList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDailySchedule">
+      <soap12:operation soapAction="urn:updateDailySchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmNewDispatchList">
+      <soap12:operation soapAction="urn:confirmNewDispatchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePendingDispatch">
+      <soap12:operation soapAction="urn:updatePendingDispatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchList">
+      <soap12:operation soapAction="urn:getDispatchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMasterSchedule">
+      <soap12:operation soapAction="urn:updateMasterSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchList4Lotus">
+      <soap12:operation soapAction="urn:getDispatchList4Lotus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelDispatch">
+      <soap12:operation soapAction="urn:cancelDispatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMasterScheduleList">
+      <soap12:operation soapAction="urn:getMasterScheduleList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchInfo">
+      <soap12:operation soapAction="urn:getDispatchInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rescheduleDispatch">
+      <soap12:operation soapAction="urn:rescheduleDispatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewDispatchList">
+      <soap12:operation soapAction="urn:getNewDispatchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmDispatchList">
+      <soap12:operation soapAction="urn:confirmDispatchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LGEBMSRepairBizHttpBinding" type="ns:LGEBMSRepairBizPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="warrantyClaim">
+      <http:operation location="LGEBMSRepairBiz/warrantyClaim" />
+      <wsdl:input>
+        <mime:content part="warrantyClaim" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="warrantyClaim" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarrantyStatus">
+      <http:operation location="LGEBMSRepairBiz/getWarrantyStatus" />
+      <wsdl:input>
+        <mime:content part="getWarrantyStatus" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getWarrantyStatus" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptDispatch">
+      <http:operation location="LGEBMSRepairBiz/acceptDispatch" />
+      <wsdl:input>
+        <mime:content part="acceptDispatch" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="acceptDispatch" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rejectDispatch">
+      <http:operation location="LGEBMSRepairBiz/rejectDispatch" />
+      <wsdl:input>
+        <mime:content part="rejectDispatch" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="rejectDispatch" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDailyScheduleList">
+      <http:operation location="LGEBMSRepairBiz/getDailyScheduleList" />
+      <wsdl:input>
+        <mime:content part="getDailyScheduleList" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getDailyScheduleList" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDailySchedule">
+      <http:operation location="LGEBMSRepairBiz/updateDailySchedule" />
+      <wsdl:input>
+        <mime:content part="updateDailySchedule" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="updateDailySchedule" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmNewDispatchList">
+      <http:operation location="LGEBMSRepairBiz/confirmNewDispatchList" />
+      <wsdl:input>
+        <mime:content part="confirmNewDispatchList" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="confirmNewDispatchList" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePendingDispatch">
+      <http:operation location="LGEBMSRepairBiz/updatePendingDispatch" />
+      <wsdl:input>
+        <mime:content part="updatePendingDispatch" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="updatePendingDispatch" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchList">
+      <http:operation location="LGEBMSRepairBiz/getDispatchList" />
+      <wsdl:input>
+        <mime:content part="getDispatchList" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getDispatchList" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMasterSchedule">
+      <http:operation location="LGEBMSRepairBiz/updateMasterSchedule" />
+      <wsdl:input>
+        <mime:content part="updateMasterSchedule" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="updateMasterSchedule" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchList4Lotus">
+      <http:operation location="LGEBMSRepairBiz/getDispatchList4Lotus" />
+      <wsdl:input>
+        <mime:content part="getDispatchList4Lotus" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getDispatchList4Lotus" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelDispatch">
+      <http:operation location="LGEBMSRepairBiz/cancelDispatch" />
+      <wsdl:input>
+        <mime:content part="cancelDispatch" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="cancelDispatch" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMasterScheduleList">
+      <http:operation location="LGEBMSRepairBiz/getMasterScheduleList" />
+      <wsdl:input>
+        <mime:content part="getMasterScheduleList" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getMasterScheduleList" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDispatchInfo">
+      <http:operation location="LGEBMSRepairBiz/getDispatchInfo" />
+      <wsdl:input>
+        <mime:content part="getDispatchInfo" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getDispatchInfo" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rescheduleDispatch">
+      <http:operation location="LGEBMSRepairBiz/rescheduleDispatch" />
+      <wsdl:input>
+        <mime:content part="rescheduleDispatch" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="rescheduleDispatch" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewDispatchList">
+      <http:operation location="LGEBMSRepairBiz/getNewDispatchList" />
+      <wsdl:input>
+        <mime:content part="getNewDispatchList" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getNewDispatchList" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmDispatchList">
+      <http:operation location="LGEBMSRepairBiz/confirmDispatchList" />
+      <wsdl:input>
+        <mime:content part="confirmDispatchList" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="confirmDispatchList" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LGEBMSRepairBiz">
+    <wsdl:port name="LGEBMSRepairBizHttpSoap11Endpoint" binding="ns:LGEBMSRepairBizSoap11Binding">
+      <soap:address location="http://136.166.10.23:80/sps/services/LGEBMSRepairBiz.LGEBMSRepairBizHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="LGEBMSRepairBizHttpSoap12Endpoint" binding="ns:LGEBMSRepairBizSoap12Binding">
+      <soap12:address location="http://136.166.10.23:80/sps/services/LGEBMSRepairBiz.LGEBMSRepairBizHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="LGEBMSRepairBizHttpEndpoint" binding="ns:LGEBMSRepairBizHttpBinding">
+      <http:address location="http://136.166.10.23:80/sps/services/LGEBMSRepairBiz.LGEBMSRepairBizHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,315 @@
+body {
+	background-color: White;
+	text-align: left;
+	font-family:  Tahoma;
+	font-size: 9pt;
+}
+
+.smalltext{
+	font-size: 7pt;
+}
+
+img {
+	border: 0;
+}
+
+td{
+	vertical-align: top;
+	text-align: left;
+}
+
+.notokay{
+	background-color: #FFE4E1;
+	font-weight: bold;
+}
+
+.okay{
+	font-weight: bold;
+	background-color: #BCFCBC;
+}
+
+p{
+	text-indent: 32px;
+}
+
+.mainlink{
+	color: #EFFFEF;
+	font-weight: bold; 
+	font-size: 9pt; 
+	text-decoration: none;
+}
+
+.resumesectionheader{
+	background-color: #FAFAD2;
+	margin-top: 10px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.footerlink{
+	color: #E0FFFF;
+	font-weight: bold;
+	font-size: 9pt;
+	text-decoration: none;
+}
+
+.clienttablink{
+  color: #515D85;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+}
+
+.selectedclienttablink{
+  color:	#488545;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+}
+
+.clienttab{
+	white-space: nowrap;
+	font-weight: bold;
+	font-size: 9pt;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.copynotice{
+	text-align: right; 
+	font-size: 8pt; 
+	color: #F2F2F2;
+}
+
+.paper
+{
+  background-color: White;
+  text-align: left;
+}
+
+.pageheader{
+	font-weight: bolder; 
+	font-size: 18pt; 
+	text-align: right; 
+	color: #585858;
+	background: #F0F8FF;
+}
+
+.ticketsectionheader{
+	color: #585858;
+	font-size: 14pt;
+}
+
+.unselectedheaderlink{
+	text-decoration: none; 
+	font-weight: bold; 
+	color: #515D85;
+}
+
+.selectedheaderlink{
+	text-decoration: none; 
+	font-weight: bold; 
+	color: #515D85;
+}
+
+.headermenu{
+	text-align: right;
+	border-bottom: 1px solid grey;
+	background-color: white;
+	font-weight: bold;
+	text-align: right;
+	white-space: nowrap;
+}
+
+
+.tightlabel{
+	font-weight: bold;
+	white-space: nowrap;
+	width: 1%;
+}
+
+.bodytable{
+	border: 1px solid #585858; 
+	font-size: 10pt; 
+	width: 99%; 
+	background-color: white; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+.logintable{
+	border: 1px solid #585858; 
+	font-size: 10pt; 
+	width: 300px; 
+	background-color: white; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+
+
+.bodyarea{
+	text-align: left;
+}
+
+.emblems{
+	text-align: left;
+}
+
+.footerarea{
+  border: 1px solid black; 
+  margin-left: auto; 
+  margin-right: auto; 
+  background-color: #585858;
+  color: #F5F5F5;
+}
+
+#splash{
+	width: 600px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	border: 1px solid grey;
+}
+
+.errortext{
+	color: red;
+	font-size: 10pt;
+}
+
+.formcaption{
+	font-weight: bold;
+	font-size:10pt;
+}
+
+.inputform{
+	background-color: #FAFAD2;
+}
+
+#mainfooter{
+  border: 1px solid black; 
+  width: 600px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  background-color: #585858;	
+}
+
+.resumeform{
+	margin-left: auto; 
+	margin-right: auto; 
+	margin-top: 16px; 
+	background-color: White; 
+	border: solid 1px black;
+	text-align: left;
+	width: 620px;
+}
+
+.errorzone{
+	background-color: #FFF0F5;
+	border: 1px solid Maroon;
+	color: maroon;
+}
+
+.bandbar{
+   text-align: left;
+	white-space: nowrap;
+	border-bottom: 1px solid gainsboro;
+	background-color: white;
+}
+
+.selectedbandbar{
+	white-space: nowrap;
+	border-bottom: 1px solid gainsboro;
+	background-color: #FFFFCC;
+}
+
+.bandpanel{
+	background-color: #E6E6FA;
+	border: 1px outset;
+}
+
+.band{
+	background-color: #E6E6FA;
+	border: 1px solid #5F9EA0;
+}
+
+.bandheader{
+	background-color: #FAFAD2;
+	margin-top: 10px;
+	text-align: left;
+	font-weight: bold;
+	white-space: nowrap
+}
+
+.bandbutton{
+	background-color: #E6E6FA;
+	border: 1px outset;
+	white-space: nowrap;
+}
+
+.altrow
+{
+	background-color: #FFFAF0;
+}
+
+.griddatacell{
+  padding-left: 2px;
+}
+
+.gridheader{
+	background-color: #E6E6FA;
+	font-weight: bold;
+	color: black;
+	border: 2px outset gainsboro;
+}
+
+.resumedisplay{
+	background-color: white;
+	border: 1px solid black;
+	width: 99%;
+	height: 250px;	
+}
+
+.label{
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.notefield{
+	background-color: white;
+	border-bottom: 1px solid gainsboro;
+}
+
+.forcebreakfield{
+  /* only works in IE */
+  word-wrap: break-word;
+}
+
+.dialog{
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	border: 1px solid black;
+	margin-top: 32px;
+}
+
+.successtext {
+	color: Green;
+	font-weight: bold;
+}
+
+.highlightcell{
+	background-color: #FFFFB9;
+	border: 1px solid Olive;
+	font-weight: bold;
+}
+
+.notedisplayfield {
+	white-space: pre;
+}
+
+.savednotice{
+	background-color: #E0FFFF;
+	border: 1px solid Green;
+}

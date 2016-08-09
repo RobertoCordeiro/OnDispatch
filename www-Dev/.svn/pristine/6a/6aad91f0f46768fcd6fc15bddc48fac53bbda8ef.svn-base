@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Best Servicers of America, Inc : Florida, Louisian and Georia : Appliace, TV and AC Services</title>
+<meta name="description" content="Best Servicers of America, Inc : Covering Florida : Appliance, TV, Air Conditioner Repair Services" />
+<meta name="keywords" content="Appliance, TV, HVAC, Air Conditioner, Repair, On-site Service, Refrigerator, Range, Washer, Dryer, Dishwasher, Microwave, Oven, High Definition, Plasma, LCD, LED" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+  <div class="blok_header">
+    <div class="header">
+      <div class="logo"><a href="index.html"><img src="images/fulllogo.jpg" width="359" height="99" border="0" alt="logo" /></a></div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html"><span>Home</span></a></li>
+          <li><a href="service.html" class="active"><span>Services</span></a></li>
+          <li><a href="store.aspx"><span>Shop Online</span></a></li>
+          <li><a href="login.aspx"><span>Log In</span></a></li>
+          <li><a href="contact.aspx"><span> Contact Us</span></a></li>
+          <li><a href="/join/default.aspx"><span> Register </span></a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+  <div class="header_text_bg2">
+    <div class="header_text2">
+      <h2>Repair & Installation Services</h2>
+      <p>We provide a complete, accountable and satisfying service experience 
+        developing loyalty and increase satisfaction from our customers. </p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="body_resize">
+    <div class="body">
+      <div class="port">
+        <h2>Business to Business Services <span> We provide In/Out of Warranty Repair and Installation Services for Manufacturers, Warranty Companies and Retail Stores</span> </h2>
+        <p>Best Servicers of America is an innovative and cost-effective provider of on-site services solutions. As important as enhance your brand image when servicing your customer, their service experience is very important to us. We provide you accurate diagnostic and technical information during the service process along with follow up phone calls to verify customer satisfaction. We are always looking to maintain the high level of service we offer. <br /><br />
+        We work with your business model and adapt our system to comply with your requirements all the way through the process of dispatching, managing and completing a service call. Our Technicians will represent your organization with professionalism, following restricted customer service guide lines and methodologies. <br /><br />
+        We strive to provide you a Total Business Solution!<div class="right"><a href="requestservice.aspx"><img src="images/needservice1.jpg" alt="Request Service"  /></div></a></p>
+        <h2>Residential Services <span> Fast and Affordable Repair & Installation Services</span> </h2>
+        <p>Our Certified Service Technicians can provide service direct to your home or residence within 24 hours of your phone call. We are able to repair and/or install any major brand of Appliances, Flat Panel TVs and Central or Window AC Units. <br /><br />
+        We will dispatch a Professional Service Technician to diagnose your unit and provide you with an estimate for the repair. The diagnostic fee will be waived if repair completed. We warranty our work for 30 days. We are Licensed and Insured.</p>
+        <p>&nbsp;</p>
+        <h2>Service Details<span>We stand alone when it comes to offering affordable prices and cost effective services</span></h2>
+        <div class="port_resize"> <a href="/appliancerepair.html"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>Appliance Repair</h2>
+          <img src="images/appliancerepair1.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>We can repair or service any brand of major appliance!</p>
+        </div>
+        <div class="port_resize"> <a href="/tvrepair.html"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>Flat Panel TV Repair</h2>
+          <img src="images/tv1.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>If you are looking for Flat Panel TV Repair, you have come to the right place!</p>
+        </div>
+        <div class="port_resize"> <a href="/acrepair.html"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>AC Units Repair</h2>
+          <img src="images/ac.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>Servicing Residential and Commercial HVAC Customers!</p>
+        </div>
+        <div class="port_resize"> <a href="/apinstallation.html"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>Appliance Installation</h2>
+          <img src="images/apinstallation.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>We ensure the maximum performance from your appliance by installing it right the first time!</p>
+        </div>
+        <div class="port_resize"> <a href="/tvinstallation.html"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>TV Installation</h2>
+          <img src="images/tvinstallation.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>Have your Flat Panel TV installed and mounted!</p>
+        </div>
+        <div class="port_resize"> <a href="/acinstallation.html"><img src="images/view.gif" alt="picture" width="48" height="19" border="0" class="floated" /></a>
+          <h2>AC Units Installation</h2>
+          <img src="images/ACinstallation.jpg" alt="picture" width="282" height="194" class="portf" />
+          <div class="clr"></div>
+          <p>Fast Service to get you cool and comfortable again!</p>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+<div class="FBG">
+  <div class="FBG_resize">
+    <div class="right">
+      <h2>Services You Can Count On</h2>
+      <p>We work with your business and adapt our system to comply with your requirements all the way through the process of dispatching, managing and completing a service call.
+        Our Network of Technicians can improve your customer experience and add value to your warranty on-site service representation.</p>
+    </div>
+    <div class="left">
+      <h2>Features </h2>
+      <ul>
+        <li>Support Services</li>
+        <li>Training</li>
+        <li>Depot Repair</li>
+        <li>Statewide Coverage</li>
+      </ul>
+    </div>
+    <div class="left">
+      <h2>Client Advantages </h2>
+      <ul>
+        <li>Highly Training Technician</li>
+        <li>Improve Customer Experience</li>
+        <li>Enhance Brand Loyalty</li>
+        <li>Total Accountability</li>
+      </ul>
+    </div>
+    <div class="right">
+      <h2>Our Message</h2>
+      <p> <img src="images/test.gif" alt="picture" width="24" height="18" />&quot;To my customer: I may not have the answer, but I'll find it. I may not have the time, but I'll make it. I may not be the biggest, but I'll be the most committed to your success.
+        &quot;</p>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</div>
+<div class="footer">
+  <div class="footer_resize"><a href="/index.html"><img src="images/fulllogo.jpg" alt="picture" width="214" height="84" border="0" /></a>
+    <p class="leftt">Copyright 2010 © Best Servicers of America. All Rights Reserved<br />
+      <a href="/policy.html"><strong>Private Policy</strong></a></p>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</div>
+</body>
+</html>
