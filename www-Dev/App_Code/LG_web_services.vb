@@ -12,7 +12,7 @@ Namespace LGInterface
             Dim CCreds As New BridgesInterface.CustomerCredentialsRecord(System.Configuration.ConfigurationManager.AppSettings("DBCnn"))
             'test
             _URL = "http://136.166.4.201/sps/services/LGEBMSRepairBiz"
-            'prod
+            'prod url
             '_URL = "http://136.166.4.221/sps/services/LGEBMSRepairBiz"
 
             usr.Load(userID)
